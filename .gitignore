@@ -1,0 +1,9 @@
+# environments
+.venv
+
+# config
+.env
+
+.gitmodules
+
+__pycache__/
