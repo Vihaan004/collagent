@@ -42,31 +42,28 @@ def get_model() -> ChatOpenAI:
 
 
 model = get_model()
-model_with_tools = model.bind_tools(_tools)
-
-
-# ==================== nodes ====================
-def llm_node(state: AgentState) -> AgentState:
-    response = model_with_tools.invoke(
-        [SystemMessage(content=_SYSTEM_PROMPT)] + state["messages"]
-    )
-    return {
-        "messages": [response],
-        "llm_calls": state.get("llm_calls", 0) + 1,
-    }
-
-
-def route_after_llm(state: AgentState) -> Literal["tool_node", "__end__"]:
-    if state["messages"][-1].tool_calls:
-        return "tool_node"
-    return END
 
 
 # ==================== graph ====================
-def create_graph(checkpointer=None):
+def create_graph(checkpointer=None, system_prompt: str = _SYSTEM_PROMPT, extra_tools: tuple = ()):
+    tools = [*_tools, *extra_tools]
+    bound = get_model().bind_tools(tools)
+
+    def llm_node(state: AgentState) -> AgentState:
+        response = bound.invoke([SystemMessage(content=system_prompt)] + state["messages"])
+        return {
+            "messages": [response],
+            "llm_calls": state.get("llm_calls", 0) + 1,
+        }
+
+    def route_after_llm(state: AgentState) -> Literal["tool_node", "__end__"]:
+        if state["messages"][-1].tool_calls:
+            return "tool_node"
+        return END
+
     graph = StateGraph(AgentState)
     graph.add_node("llm_node", llm_node)
-    graph.add_node("tool_node", ToolNode(_tools))
+    graph.add_node("tool_node", ToolNode(tools))
     graph.add_edge(START, "llm_node")
     graph.add_conditional_edges("llm_node", route_after_llm, ["tool_node", END])
     graph.add_edge("tool_node", "llm_node")
