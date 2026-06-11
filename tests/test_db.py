@@ -1,3 +1,4 @@
+import pytest
 from unittest.mock import MagicMock
 
 from collagent import db
@@ -54,3 +55,18 @@ def test_replace_major_map_courses_deletes_then_inserts(monkeypatch):
     inserted = client.table.return_value.insert.call_args.args[0]
     assert inserted[0]["user_id"] == "u1"
     assert result[0].id == "c1"
+
+
+def test_replace_major_map_courses_rejects_empty(monkeypatch):
+    client = _client_returning([COURSE_ROW])
+    monkeypatch.setattr(db, "get_client", lambda: client)
+    with pytest.raises(ValueError):
+        db.replace_major_map_courses("u1", [])
+    client.table.return_value.delete.assert_not_called()
+
+
+def test_update_course_statuses_patches_each(monkeypatch):
+    client = _client_returning([COURSE_ROW])
+    monkeypatch.setattr(db, "get_client", lambda: client)
+    db.update_course_statuses("u1", [("c1", "taken")])
+    client.table.return_value.update.assert_called_once_with({"status": "taken"})

@@ -21,6 +21,8 @@ def get_profile(user_id: str) -> Profile | None:
 def update_profile(user_id: str, update: ProfileUpdate) -> Profile:
     payload = update.model_dump(exclude_unset=True)
     res = get_client().table("profiles").update(payload).eq("id", user_id).execute()
+    if not res.data:
+        raise ValueError(f"Profile {user_id} not found during update")
     return Profile(**res.data[0])
 
 
@@ -35,6 +37,8 @@ def get_major_map_courses(user_id: str) -> list[MajorMapCourse]:
 
 
 def replace_major_map_courses(user_id: str, courses: list[dict]) -> list[MajorMapCourse]:
+    if not courses:
+        raise ValueError("courses must not be empty; refusing to delete existing map")
     client = get_client()
     client.table("major_map_courses").delete().eq("user_id", user_id).execute()
     rows = [{**c, "user_id": user_id} for c in courses]
