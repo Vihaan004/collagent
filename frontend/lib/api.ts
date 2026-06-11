@@ -3,6 +3,8 @@ import { createClient } from "@/lib/supabase/client";
 const API = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
 export async function getAccessToken(): Promise<string | null> {
+  // getSession() reads the local session; supabase-js refreshes it automatically.
+  // The backend verifies the JWT on every request, so a stale token just 401s.
   const supabase = createClient();
   const { data } = await supabase.auth.getSession();
   return data.session?.access_token ?? null;
@@ -10,6 +12,7 @@ export async function getAccessToken(): Promise<string | null> {
 
 export async function apiFetch(path: string, init: RequestInit = {}): Promise<Response> {
   const token = await getAccessToken();
+  if (!token) throw new Error("Not authenticated");
   const res = await fetch(`${API}${path}`, {
     ...init,
     headers: {

@@ -77,12 +77,16 @@ export default function OnboardingPage() {
   }
 
   async function finish() {
-    const updates = courses
-      .filter((c) => c.status !== "remaining")
-      .map((c) => ({ id: c.id, status: c.status }));
-    if (updates.length) await api.put("/api/major-map/statuses", { updates });
-    await api.put("/api/profile", { onboarded: true });
-    router.push("/");
+    try {
+      const updates = courses
+        .filter((c) => c.status !== "remaining")
+        .map((c) => ({ id: c.id, status: c.status }));
+      if (updates.length) await api.put("/api/major-map/statuses", { updates });
+      await api.put("/api/profile", { onboarded: true });
+      router.push("/");
+    } catch {
+      setError("Couldn't save your setup — check that the backend is running and try again.");
+    }
   }
 
   return (
