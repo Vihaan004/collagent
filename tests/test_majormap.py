@@ -7,7 +7,7 @@ from collagent.asu.majormap import ExtractedMajorMap, extract_major_map
 
 # Note: year 2025 ASU major map requires CAS authentication — fixture uses 2024 catalog
 # which has identical structure and is publicly accessible.
-FIXTURE = Path("tests/fixtures/roadmap_escsebs_2024.txt")
+FIXTURE = Path(__file__).parent / "fixtures" / "roadmap_escsebs_2024.txt"
 
 
 def test_extracted_schema_round_trip():

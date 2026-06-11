@@ -37,7 +37,7 @@ def make_profile_tools(user_id: str) -> list:
         """Mark a major-map course as taken, in_progress, or remaining.
         course_code is the catalog code, e.g. 'CSE 110'."""
         courses = db.get_major_map_courses(user_id)
-        normalized = course_code.upper().replace("  ", " ").strip()
+        normalized = " ".join(course_code.upper().split())
         match = next((c for c in courses if (c.course_code or "").upper() == normalized), None)
         if match is None:
             return f"Course '{course_code}' not found on the major map."

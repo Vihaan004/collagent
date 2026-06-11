@@ -1,6 +1,7 @@
 import json
 import re
 from difflib import SequenceMatcher
+from functools import lru_cache
 from pathlib import Path
 
 import httpx
@@ -39,7 +40,13 @@ def fetch_all_programs() -> list[dict]:
 
 
 def load_programs() -> list[dict]:
-    return json.loads(DATA_PATH.read_text(encoding="utf-8"))
+    # Tiny catalog (~450 rows); cache keyed on path so tests can swap DATA_PATH.
+    return _load_programs_cached(DATA_PATH)
+
+
+@lru_cache(maxsize=2)
+def _load_programs_cached(path: Path) -> list[dict]:
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def search_programs(query: str, limit: int = 10) -> list[dict]:

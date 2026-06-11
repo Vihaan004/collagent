@@ -40,8 +40,11 @@ def chat(req: ChatRequest, user_id: str = Depends(get_current_user_id)):
     config = {"configurable": {"thread_id": f"{user_id}:{req.thread_id}"}}
 
     def gen():
-        for event in stream_events(agent, req.message, config):
-            yield sse_format(event)
+        try:
+            for event in stream_events(agent, req.message, config):
+                yield sse_format(event)
+        except Exception as exc:  # headers already sent; surface the error in-stream
+            yield sse_format({"type": "error", "detail": str(exc)})
         yield sse_format({"type": "done"})
 
     return StreamingResponse(gen(), media_type="text/event-stream")

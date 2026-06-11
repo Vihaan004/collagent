@@ -40,6 +40,8 @@ Rules:
 
 
 def render_roadmap_text(code: str, year: str) -> str:
+    from playwright.sync_api import Error as PlaywrightError
+    from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
     from playwright.sync_api import sync_playwright
 
     url = ROADMAP_URL.format(code=code, year=year)
@@ -50,11 +52,11 @@ def render_roadmap_text(code: str, year: str) -> str:
         # Wait for actual course codes to appear (JS-loaded content)
         try:
             page.wait_for_selector("text=/[A-Z]{3} [0-9]{3}/", timeout=30_000)
-        except Exception:
+        except PlaywrightTimeoutError:
             pass  # Proceed even if the selector times out; fallback below
         try:
             text = page.inner_text("#roadmap_middle_section")
-        except Exception:
+        except PlaywrightError:
             # Fallback: selector missing — use full body text
             text = page.inner_text("body")
         browser.close()

@@ -25,7 +25,7 @@ def _format_major_map(courses: list[MajorMapCourse]) -> str:
 
 
 def build_system_prompt(profile: Profile | None, courses: list[MajorMapCourse]) -> str:
-    if profile is None or not profile.onboarded and not profile.major_name:
+    if profile is None or (not profile.onboarded and not profile.major_name):
         return _BASE + "\nThe student has not completed onboarding yet; encourage them to."
 
     parts = [_BASE, "Student context:"]
