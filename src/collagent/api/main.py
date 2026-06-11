@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from collagent.api.routes import profile, programs
+from collagent.api.routes import majormap, profile, programs
 from collagent.config import settings
 
 app = FastAPI(title="collagent api")
@@ -14,6 +14,7 @@ app.add_middleware(
 )
 app.include_router(profile.router)
 app.include_router(programs.router)
+app.include_router(majormap.router)
 
 
 @app.get("/api/health")
