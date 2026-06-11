@@ -65,3 +65,7 @@ create policy "own profile" on public.profiles
   for all using (auth.uid() = id) with check (auth.uid() = id);
 create policy "own courses" on public.major_map_courses
   for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- Trigger-only functions: keep them off the REST surface (no /rpc exposure).
+revoke execute on function public.handle_new_user() from public, anon, authenticated;
+revoke execute on function public.touch_updated_at() from public, anon, authenticated;
