@@ -47,3 +47,26 @@ def test_expired_token_401():
     with pytest.raises(HTTPException) as e:
         auth.get_current_user_id(_creds(_token(exp_offset=-100)))
     assert e.value.status_code == 401
+
+
+def test_es256_token_verified_via_jwks(monkeypatch):
+    # Real Supabase access tokens are ES256-signed; verify them via the JWKS key
+    # (here a stubbed signing key) rather than the HS256 shared secret.
+    from cryptography.hazmat.primitives.asymmetric import ec
+
+    private_key = ec.generate_private_key(ec.SECP256R1())
+    token = jwt.encode(
+        {"sub": "user-es", "aud": "authenticated", "exp": int(time.time()) + 3600},
+        private_key,
+        algorithm="ES256",
+    )
+
+    class _Signing:
+        key = private_key.public_key()
+
+    class _Client:
+        def get_signing_key_from_jwt(self, _token):
+            return _Signing()
+
+    monkeypatch.setattr(auth, "_get_jwks_client", lambda: _Client())
+    assert auth.get_current_user_id(_creds(token)) == "user-es"
