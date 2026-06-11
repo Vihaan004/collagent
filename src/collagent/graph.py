@@ -31,13 +31,17 @@ def _env(name: str, *aliases: str, default: str | None = None) -> str | None:
     return default
 
 
-model = ChatOpenAI(
-    api_key=_env("OPENAI_API_KEY", "LLM_API_KEY"),
-    base_url=_env("OPENAI_BASE_URL", default="https://openai.rc.asu.edu/v1"),
-    model=_env("MODEL_NAME", default="qwen3-30b-a3b-instruct-2507"),
-    temperature=float(_env("TEMPERATURE", default="0.0")),
-    streaming=True,
-)
+def get_model() -> ChatOpenAI:
+    return ChatOpenAI(
+        api_key=_env("OPENAI_API_KEY", "LLM_API_KEY"),
+        base_url=_env("OPENAI_BASE_URL", default="https://openai.rc.asu.edu/v1"),
+        model=_env("MODEL_NAME", default="qwen3-30b-a3b-instruct-2507"),
+        temperature=float(_env("TEMPERATURE", default="0.0")),
+        streaming=True,
+    )
+
+
+model = get_model()
 model_with_tools = model.bind_tools(_tools)
 
 
