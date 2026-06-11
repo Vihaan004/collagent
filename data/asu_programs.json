@@ -1,0 +1,2207 @@
+[
+ {
+  "code": "BAACCBS",
+  "slug": "accountancy",
+  "name": "Accountancy,BS"
+ },
+ {
+  "code": "LAACTBS",
+  "slug": "actuarial-science",
+  "name": "Actuarial Science,BS"
+ },
+ {
+  "code": "ESAMTATBS",
+  "slug": "aeronautical-management-technology-air-traffic-management",
+  "name": "Aeronautical Management Technology (Air Traffic Management),BS"
+ },
+ {
+  "code": "TSAMTMBS",
+  "slug": "aeronautical-management-technology-air-transportation-management",
+  "name": "Aeronautical Management Technology (Air Transportation Management),BS"
+ },
+ {
+  "code": "TSAMTFBS",
+  "slug": "aeronautical-management-technology-professional-flight",
+  "name": "Aeronautical Management Technology (Professional Flight),BS"
+ },
+ {
+  "code": "TSAMTUASBS",
+  "slug": "aeronautical-management-technology-unmanned-aerial-systems",
+  "name": "Aeronautical Management Technology (Unmanned Aerial Systems),BS"
+ },
+ {
+  "code": "ESAEROBSE",
+  "slug": "aerospace-engineering-aeronautics",
+  "name": "Aerospace Engineering (Aeronautics),BSE"
+ },
+ {
+  "code": "ESAEASBSE",
+  "slug": "aerospace-engineering-astronautics",
+  "name": "Aerospace Engineering (Astronautics),BSE"
+ },
+ {
+  "code": "ESAEAVSBSE",
+  "slug": "aerospace-engineering-autonomous-vehicle-systems",
+  "name": "Aerospace Engineering (Autonomous Vehicle Systems),BSE"
+ },
+ {
+  "code": "LAAFRBA",
+  "slug": "african-and-african-american-studies",
+  "name": "African and African American Studies,BA"
+ },
+ {
+  "code": "ASALDBS",
+  "slug": "aging",
+  "name": "Aging,BS"
+ },
+ {
+  "code": "LAAISBS",
+  "slug": "american-indian-studies",
+  "name": "American Indian Studies,BS"
+ },
+ {
+  "code": "LAAMRSTBA",
+  "slug": "american-studies",
+  "name": "American Studies,BA"
+ },
+ {
+  "code": "LAASBBA",
+  "slug": "anthropology",
+  "name": "Anthropology,BA"
+ },
+ {
+  "code": "LAASBBS",
+  "slug": "anthropology",
+  "name": "Anthropology,BS"
+ },
+ {
+  "code": "HIATDAA",
+  "slug": "apparel-technical-design",
+  "name": "Apparel Technical Design,AA"
+ },
+ {
+  "code": "LSABSNRBS",
+  "slug": "applied-biological-sciences-natural-resource-ecology",
+  "name": "Applied Biological Sciences (Natural Resource Ecology),BS"
+ },
+ {
+  "code": "LSABSPDBS",
+  "slug": "applied-biological-sciences-pre-dental",
+  "name": "Applied Biological Sciences (Pre-Dental),BS"
+ },
+ {
+  "code": "TSABSUBS",
+  "slug": "applied-biological-sciences-sustainable-horticulture",
+  "name": "Applied Biological Sciences (Sustainable Horticulture),BS"
+ },
+ {
+  "code": "BAAPBTSBA",
+  "slug": "applied-business-and-technology-solutions",
+  "name": "Applied Business and Technology Solutions,BA"
+ },
+ {
+  "code": "LSMATBS",
+  "slug": "applied-mathematics",
+  "name": "Applied Mathematics,BS"
+ },
+ {
+  "code": "ASMATBS",
+  "slug": "applied-mathematics",
+  "name": "Applied Mathematics,BS"
+ },
+ {
+  "code": "LSAMVSBA",
+  "slug": "applied-military-and-veterans-studies",
+  "name": "Applied Military and Veterans Studies,BA"
+ },
+ {
+  "code": "NHFNUENBS",
+  "slug": "applied-nutrition-and-health",
+  "name": "Applied Nutrition and Health,BS"
+ },
+ {
+  "code": "LSAPHYBS",
+  "slug": "applied-physics",
+  "name": "Applied Physics,BS"
+ },
+ {
+  "code": "LSAQSBS",
+  "slug": "applied-quantitative-science",
+  "name": "Applied Quantitative Science,BS"
+ },
+ {
+  "code": "LSALSBAS",
+  "slug": "applied-science-applied-leadership",
+  "name": "Applied Science (Applied Leadership),BAS"
+ },
+ {
+  "code": "ECNTRBAS",
+  "slug": "applied-science-applied-nutrition-and-health",
+  "name": "Applied Science (Applied Nutrition and Health),BAS"
+ },
+ {
+  "code": "TSAMTABAS",
+  "slug": "applied-science-aviation",
+  "name": "Applied Science (Aviation),BAS"
+ },
+ {
+  "code": "TEAPSECBAS",
+  "slug": "applied-science-early-childhood-studies",
+  "name": "Applied Science (Early Childhood Studies),BAS"
+ },
+ {
+  "code": "PPEMGBAS",
+  "slug": "applied-science-emergency-management",
+  "name": "Applied Science (Emergency Management),BAS"
+ },
+ {
+  "code": "TSGITBAS",
+  "slug": "applied-science-graphic-information-technology",
+  "name": "Applied Science (Graphic Information Technology),BAS"
+ },
+ {
+  "code": "NUHCIBAS",
+  "slug": "applied-science-health-entrepreneurship-and-innovation",
+  "name": "Applied Science (Health Entrepreneurship and Innovation),BAS"
+ },
+ {
+  "code": "NUHSCBAS",
+  "slug": "applied-science-health-sciences",
+  "name": "Applied Science (Health Sciences),BAS"
+ },
+ {
+  "code": "TSIWDBAS",
+  "slug": "applied-science-internet-and-web-development",
+  "name": "Applied Science (Internet and Web Development),BAS"
+ },
+ {
+  "code": "NUMLSBAS",
+  "slug": "applied-science-medical-laboratory-science",
+  "name": "Applied Science (Medical Laboratory Science),BAS"
+ },
+ {
+  "code": "TSIMCOBAS",
+  "slug": "applied-science-operations-management",
+  "name": "Applied Science (Operations Management),BAS"
+ },
+ {
+  "code": "LSAPSPMBAS",
+  "slug": "applied-science-project-management",
+  "name": "Applied Science (Project Management),BAS"
+ },
+ {
+  "code": "LSTECBAS",
+  "slug": "applied-science-technical-communication",
+  "name": "Applied Science (Technical Communication),BAS"
+ },
+ {
+  "code": "ASBASBAS",
+  "slug": "applied-science",
+  "name": "Applied Science,BAS"
+ },
+ {
+  "code": "ARSTDBSD",
+  "slug": "architectural-studies",
+  "name": "Architectural Studies,BSD"
+ },
+ {
+  "code": "HIARTANBFA",
+  "slug": "art-animation",
+  "name": "Art (Animation),BFA"
+ },
+ {
+  "code": "FAARTEBFA",
+  "slug": "art-art-education",
+  "name": "Art (Art Education),BFA"
+ },
+ {
+  "code": "FAARTHBA",
+  "slug": "art-art-history",
+  "name": "Art (Art History),BA"
+ },
+ {
+  "code": "FAARTSTDBA",
+  "slug": "art-art-studies",
+  "name": "Art (Art Studies),BA"
+ },
+ {
+  "code": "HIARTATBFA",
+  "slug": "art-art-therapy",
+  "name": "Art (Art Therapy),BFA"
+ },
+ {
+  "code": "FAARTCBFA",
+  "slug": "art-ceramics",
+  "name": "Art (Ceramics),BFA"
+ },
+ {
+  "code": "FAARTSBFA",
+  "slug": "art-craft-and-sculptural-practices",
+  "name": "Art (Craft and Sculptural Practices),BFA"
+ },
+ {
+  "code": "HIARTDPBFA",
+  "slug": "art-digital-photography",
+  "name": "Art (Digital Photography),BFA"
+ },
+ {
+  "code": "FAARTIBFA",
+  "slug": "art-expanded-arts",
+  "name": "Art (Expanded Arts),BFA"
+ },
+ {
+  "code": "FAARTMSBA",
+  "slug": "art-museum-and-curatorial-practices",
+  "name": "Art (Museum and Curatorial Practices),BA"
+ },
+ {
+  "code": "HIARTPDBFA",
+  "slug": "art-painting-drawing-and-printmaking",
+  "name": "Art (Painting, Drawing and Printmaking),BFA"
+ },
+ {
+  "code": "FAARTPHBFA",
+  "slug": "art-photography",
+  "name": "Art (Photography),BFA"
+ },
+ {
+  "code": "BAAIBBS",
+  "slug": "artificial-intelligence-in-business",
+  "name": "Artificial Intelligence in Business,BS"
+ },
+ {
+  "code": "FAATSBA",
+  "slug": "arts-ba-in-the-arts",
+  "name": "Arts (BA in the Arts),BA"
+ },
+ {
+  "code": "LACHIBA",
+  "slug": "asian-languages-chinese",
+  "name": "Asian Languages (Chinese),BA"
+ },
+ {
+  "code": "LAJPNBA",
+  "slug": "asian-languages-japanese",
+  "name": "Asian Languages (Japanese),BA"
+ },
+ {
+  "code": "LAAPABA",
+  "slug": "asian-pacific-american-studies",
+  "name": "Asian Pacific American Studies,BA"
+ },
+ {
+  "code": "TEBEHANBS",
+  "slug": "behavior-analysis",
+  "name": "Behavior Analysis,BS"
+ },
+ {
+  "code": "LABSCMBS",
+  "slug": "biological-sciences-biomedical-sciences",
+  "name": "Biological Sciences (Biomedical Sciences),BS"
+ },
+ {
+  "code": "LABSCCBS",
+  "slug": "biological-sciences-conservation-biology-and-ecology",
+  "name": "Biological Sciences (Conservation Biology and Ecology),BS"
+ },
+ {
+  "code": "ASLSCEJBA",
+  "slug": "biology-environmental-justice",
+  "name": "Biology (Environmental Justice),BA"
+ },
+ {
+  "code": "ASLSCEJBS",
+  "slug": "biology-environmental-justice",
+  "name": "Biology (Environmental Justice),BS"
+ },
+ {
+  "code": "ASLSCPBS",
+  "slug": "biology-pharmacology-toxicology",
+  "name": "Biology (Pharmacology/Toxicology),BS"
+ },
+ {
+  "code": "ESBMEBDBSE",
+  "slug": "biomedical-engineering-biological-devices",
+  "name": "Biomedical Engineering (Biological Devices),BSE"
+ },
+ {
+  "code": "ESBMEMDBSE",
+  "slug": "biomedical-engineering-biomedical-devices",
+  "name": "Biomedical Engineering (Biomedical Devices),BSE"
+ },
+ {
+  "code": "ESBMEBSE",
+  "slug": "biomedical-engineering",
+  "name": "Biomedical Engineering,BSE"
+ },
+ {
+  "code": "ESBMIBS",
+  "slug": "biomedical-informatics-and-data-science",
+  "name": "Biomedical Informatics and Data Science,BS"
+ },
+ {
+  "code": "BABUSCABA",
+  "slug": "business-accounting-and-business-decisions",
+  "name": "Business (Accounting and Business Decisions),BA"
+ },
+ {
+  "code": "BABUSGAGBA",
+  "slug": "business-agribusiness-innovation-and-technology",
+  "name": "Business (Agribusiness Innovation and Technology),BA"
+ },
+ {
+  "code": "BABUSGLBA",
+  "slug": "business-applied-supply-chains",
+  "name": "Business (Applied Supply Chains),BA"
+ },
+ {
+  "code": "BABUSBABA",
+  "slug": "business-business-administration",
+  "name": "Business (Business Administration),BA"
+ },
+ {
+  "code": "BABUSCBA",
+  "slug": "business-communication",
+  "name": "Business (Communication),BA"
+ },
+ {
+  "code": "BABUSFPBA",
+  "slug": "business-financial-planning",
+  "name": "Business (Financial Planning),BA"
+ },
+ {
+  "code": "BABUSFIMBA",
+  "slug": "business-food-industry-management",
+  "name": "Business (Food Industry Management),BA"
+ },
+ {
+  "code": "BABUSGBA",
+  "slug": "business-global-leadership",
+  "name": "Business (Global Leadership),BA"
+ },
+ {
+  "code": "BABUSGPBA",
+  "slug": "business-global-politics",
+  "name": "Business (Global Politics),BA"
+ },
+ {
+  "code": "BABUSHCBA",
+  "slug": "business-health-care",
+  "name": "Business (Health Care),BA"
+ },
+ {
+  "code": "BABUSHRBA",
+  "slug": "business-human-resources",
+  "name": "Business (Human Resources),BA"
+ },
+ {
+  "code": "BABUSISBA",
+  "slug": "business-information-security",
+  "name": "Business (Information Security),BA"
+ },
+ {
+  "code": "BABSLACUBA",
+  "slug": "business-language-and-culture",
+  "name": "Business (Language and Culture),BA"
+ },
+ {
+  "code": "BABUSLBA",
+  "slug": "business-law",
+  "name": "Business (Law),BA"
+ },
+ {
+  "code": "BABUSPBA",
+  "slug": "business-public-service-and-public-policy",
+  "name": "Business (Public Service and Public Policy),BA"
+ },
+ {
+  "code": "BABUSRBA",
+  "slug": "business-retail-management",
+  "name": "Business (Retail Management),BA"
+ },
+ {
+  "code": "BABUSMSBA",
+  "slug": "business-sports-business",
+  "name": "Business (Sports Business),BA"
+ },
+ {
+  "code": "BABUSTABA",
+  "slug": "business-statistics",
+  "name": "Business (Statistics),BA"
+ },
+ {
+  "code": "BABUSSBA",
+  "slug": "business-sustainability",
+  "name": "Business (Sustainability),BA"
+ },
+ {
+  "code": "BABUSTCBA",
+  "slug": "business-technology",
+  "name": "Business (Technology),BA"
+ },
+ {
+  "code": "BABUSTBA",
+  "slug": "business-tourism",
+  "name": "Business (Tourism),BA"
+ },
+ {
+  "code": "BABDABS",
+  "slug": "business-data-analytics",
+  "name": "Business Data Analytics,BS"
+ },
+ {
+  "code": "BABUENTBS",
+  "slug": "business-entrepreneurship",
+  "name": "Business Entrepreneurship,BS"
+ },
+ {
+  "code": "BABUSEXP",
+  "slug": "business-exploratory",
+  "name": "Business Exploratory"
+ },
+ {
+  "code": "BABUSBA",
+  "slug": "business",
+  "name": "Business,BA"
+ },
+ {
+  "code": "ESCHEBSE",
+  "slug": "chemical-engineering",
+  "name": "Chemical Engineering,BSE"
+ },
+ {
+  "code": "LACELBA",
+  "slug": "civic-and-economic-thought-and-leadership",
+  "name": "Civic and Economic Thought and Leadership,BA"
+ },
+ {
+  "code": "LACETLBS",
+  "slug": "civic-and-economic-thought-and-leadership",
+  "name": "Civic and Economic Thought and Leadership,BS"
+ },
+ {
+  "code": "ESCEESUBSE",
+  "slug": "civil-engineering-sustainable-engineering",
+  "name": "Civil Engineering (Sustainable Engineering),BSE"
+ },
+ {
+  "code": "ESCEEBSE",
+  "slug": "civil-engineering",
+  "name": "Civil Engineering,BSE"
+ },
+ {
+  "code": "ECEXERBS",
+  "slug": "clinical-exercise-science",
+  "name": "Clinical Exercise Science,BS"
+ },
+ {
+  "code": "ASCOMMBA",
+  "slug": "communication",
+  "name": "Communication,BA"
+ },
+ {
+  "code": "LACOMBA",
+  "slug": "communication",
+  "name": "Communication,BA"
+ },
+ {
+  "code": "LSCOMBA",
+  "slug": "communication",
+  "name": "Communication,BA"
+ },
+ {
+  "code": "LACOMBS",
+  "slug": "communication",
+  "name": "Communication,BS"
+ },
+ {
+  "code": "ASCOMMBS",
+  "slug": "communication",
+  "name": "Communication,BS"
+ },
+ {
+  "code": "PPCASPBA",
+  "slug": "community-advocacy-and-social-policy",
+  "name": "Community Advocacy and Social Policy,BA"
+ },
+ {
+  "code": "NUCHLTBS",
+  "slug": "community-health",
+  "name": "Community Health,BS"
+ },
+ {
+  "code": "LAAMLBS",
+  "slug": "complexity-science",
+  "name": "Complexity Science,BS"
+ },
+ {
+  "code": "LACMSBS",
+  "slug": "computational-mathematical-sciences",
+  "name": "Computational Mathematical Sciences,BS"
+ },
+ {
+  "code": "BACISBS",
+  "slug": "computer-information-systems",
+  "name": "Computer Information Systems,BS"
+ },
+ {
+  "code": "ESCSEAIBS",
+  "slug": "computer-science-artificial-intelligence",
+  "name": "Computer Science (Artificial Intelligence),BS"
+ },
+ {
+  "code": "ESCSEIBA",
+  "slug": "computer-science-cybersecurity",
+  "name": "Computer Science (Cybersecurity),BA"
+ },
+ {
+  "code": "ESCSEIBS",
+  "slug": "computer-science-cybersecurity",
+  "name": "Computer Science (Cybersecurity),BS"
+ },
+ {
+  "code": "ESCSESBS",
+  "slug": "computer-science-software-engineering",
+  "name": "Computer Science (Software Engineering),BS"
+ },
+ {
+  "code": "ESCSEAIAS",
+  "slug": "computer-science-and-artificial-intelligence",
+  "name": "Computer Science and Artificial Intelligence,AS"
+ },
+ {
+  "code": "ESCSEBA",
+  "slug": "computer-science",
+  "name": "Computer Science,BA"
+ },
+ {
+  "code": "ESCSEBS",
+  "slug": "computer-science",
+  "name": "Computer Science,BS"
+ },
+ {
+  "code": "ESCSEIBSE",
+  "slug": "computer-systems-engineering-cybersecurity",
+  "name": "Computer Systems Engineering (Cybersecurity),BSE"
+ },
+ {
+  "code": "ESCSEBSE",
+  "slug": "computer-systems-engineering",
+  "name": "Computer Systems Engineering,BSE"
+ },
+ {
+  "code": "ASCNRBA",
+  "slug": "conflict-resolution",
+  "name": "Conflict Resolution,BA"
+ },
+ {
+  "code": "ESCONBSE",
+  "slug": "construction-engineering",
+  "name": "Construction Engineering,BSE"
+ },
+ {
+  "code": "ESCONMGTBS",
+  "slug": "construction-management-and-technology",
+  "name": "Construction Management and Technology,BS"
+ },
+ {
+  "code": "CSCCBA",
+  "slug": "content-creation",
+  "name": "Content Creation,BA"
+ },
+ {
+  "code": "HICOSBFA",
+  "slug": "costume-design-and-technology-for-the-creative-industries",
+  "name": "Costume Design and Technology for the Creative Industries,BFA"
+ },
+ {
+  "code": "LSCAPSMVBS",
+  "slug": "counseling-and-applied-psychological-science-counseling-military-members-and-veterans",
+  "name": "Counseling and Applied Psychological Science (Counseling Military Members and Veterans),BS"
+ },
+ {
+  "code": "LSCAPSSGBS",
+  "slug": "counseling-and-applied-psychological-science-sexuality-and-gender-issues-in-counseling",
+  "name": "Counseling and Applied Psychological Science (Sexuality and Gender Issues in Counseling),BS"
+ },
+ {
+  "code": "LSCAPSSPBS",
+  "slug": "counseling-and-applied-psychological-science-sport-and-performance-counseling",
+  "name": "Counseling and Applied Psychological Science (Sport and Performance Counseling),BS"
+ },
+ {
+  "code": "LSCAPSAABS",
+  "slug": "counseling-and-applied-psychological-science-substance-abuse-and-addictions",
+  "name": "Counseling and Applied Psychological Science (Substance Abuse and Addictions),BS"
+ },
+ {
+  "code": "LSCAPSBS",
+  "slug": "counseling-and-applied-psychological-science",
+  "name": "Counseling and Applied Psychological Science,BS"
+ },
+ {
+  "code": "PPCRJCSLBS",
+  "slug": "criminology-and-criminal-justice-community-safety-law-and-social-change",
+  "name": "Criminology and Criminal Justice (Community Safety, Law and Social Change),BS"
+ },
+ {
+  "code": "PPCRJPOLBS",
+  "slug": "criminology-and-criminal-justice-policing",
+  "name": "Criminology and Criminal Justice (Policing),BS"
+ },
+ {
+  "code": "PPCRIMJBS",
+  "slug": "criminology-and-criminal-justice",
+  "name": "Criminology and Criminal Justice,BS"
+ },
+ {
+  "code": "LACTEBA",
+  "slug": "culture-technology-and-environment",
+  "name": "Culture, Technology and Environment,BA"
+ },
+ {
+  "code": "FADANEBFA",
+  "slug": "dance-dance-education",
+  "name": "Dance (Dance Education),BFA"
+ },
+ {
+  "code": "FADANBFA",
+  "slug": "dance",
+  "name": "Dance,BFA"
+ },
+ {
+  "code": "LADATSCIBS",
+  "slug": "data-science",
+  "name": "Data Science,BS"
+ },
+ {
+  "code": "NHDIETCSBS",
+  "slug": "dietetics",
+  "name": "Dietetics,BS"
+ },
+ {
+  "code": "ASCPFBS",
+  "slug": "digital-forensics",
+  "name": "Digital Forensics,BS"
+ },
+ {
+  "code": "CSDIGABS",
+  "slug": "digital-strategy-and-audience-engagement",
+  "name": "Digital Strategy and Audience Engagement,BS"
+ },
+ {
+  "code": "ASDISASBA",
+  "slug": "disability-studies",
+  "name": "Disability Studies,BA"
+ },
+ {
+  "code": "TEECDEDBAE",
+  "slug": "early-childhood-education",
+  "name": "Early Childhood Education,BAE"
+ },
+ {
+  "code": "LAEESBA",
+  "slug": "earth-and-environmental-sciences",
+  "name": "Earth and Environmental Sciences,BA"
+ },
+ {
+  "code": "LAEESBS",
+  "slug": "earth-and-environmental-sciences",
+  "name": "Earth and Environmental Sciences,BS"
+ },
+ {
+  "code": "LASESABBS",
+  "slug": "earth-and-space-exploration-astrobiology-and-biogeosciences",
+  "name": "Earth and Space Exploration (Astrobiology and Biogeosciences),BS"
+ },
+ {
+  "code": "LASESABS",
+  "slug": "earth-and-space-exploration-astrophysics",
+  "name": "Earth and Space Exploration (Astrophysics),BS"
+ },
+ {
+  "code": "LASESESDBS",
+  "slug": "earth-and-space-exploration-exploration-systems-design",
+  "name": "Earth and Space Exploration (Exploration Systems Design),BS"
+ },
+ {
+  "code": "LASESGSBS",
+  "slug": "earth-and-space-exploration-geological-and-planetary-sciences",
+  "name": "Earth and Space Exploration (Geological and Planetary Sciences),BS"
+ },
+ {
+  "code": "LASESBS",
+  "slug": "earth-and-space-exploration",
+  "name": "Earth and Space Exploration,BS"
+ },
+ {
+  "code": "LAECNPECBS",
+  "slug": "economics-politics-and-the-economy",
+  "name": "Economics (Politics and the Economy),BS"
+ },
+ {
+  "code": "BAECNBS",
+  "slug": "economics",
+  "name": "Economics,BS"
+ },
+ {
+  "code": "LAECNBS",
+  "slug": "economics",
+  "name": "Economics,BS"
+ },
+ {
+  "code": "TEEDUEXPL",
+  "slug": "education-exploratory",
+  "name": "Education Exploratory"
+ },
+ {
+  "code": "TEESECEBAE",
+  "slug": "educational-studies-early-childhood-studies",
+  "name": "Educational Studies (Early Childhood Studies),BAE"
+ },
+ {
+  "code": "TEEDUSTBAE",
+  "slug": "educational-studies-instructional-design",
+  "name": "Educational Studies (Instructional Design),BAE"
+ },
+ {
+  "code": "EDSLSTBAE",
+  "slug": "educational-studies",
+  "name": "Educational Studies,BAE"
+ },
+ {
+  "code": "ESEEEPBSE",
+  "slug": "electrical-engineering-electric-power-and-energy-systems",
+  "name": "Electrical Engineering (Electric Power and Energy Systems),BSE"
+ },
+ {
+  "code": "ESEEEBSE",
+  "slug": "electrical-engineering",
+  "name": "Electrical Engineering,BSE"
+ },
+ {
+  "code": "TEEEDBAE",
+  "slug": "elementary-education",
+  "name": "Elementary Education,BAE"
+ },
+ {
+  "code": "TEEMLEBAE",
+  "slug": "elementary-multilingual-education",
+  "name": "Elementary Multilingual Education,BAE"
+ },
+ {
+  "code": "PPEMHSBS",
+  "slug": "emergency-management-and-homeland-security",
+  "name": "Emergency Management and Homeland Security,BS"
+ },
+ {
+  "code": "PPEMEAS",
+  "slug": "emergency-management",
+  "name": "Emergency Management,AS"
+ },
+ {
+  "code": "TSEGRASBSE",
+  "slug": "engineering-automotive-systems",
+  "name": "Engineering (Automotive Systems),BSE"
+ },
+ {
+  "code": "ESEGRCEBSE",
+  "slug": "engineering-clean-energy-systems",
+  "name": "Engineering (Clean Energy Systems),BSE"
+ },
+ {
+  "code": "TSEGRESBSE",
+  "slug": "engineering-electrical-systems",
+  "name": "Engineering (Electrical Systems),BSE"
+ },
+ {
+  "code": "TSEGRMEBSE",
+  "slug": "engineering-mechanical-engineering-systems",
+  "name": "Engineering (Mechanical Engineering Systems),BSE"
+ },
+ {
+  "code": "TSEGRRBSE",
+  "slug": "engineering-robotics",
+  "name": "Engineering (Robotics),BSE"
+ },
+ {
+  "code": "ESEMGBSE",
+  "slug": "engineering-management",
+  "name": "Engineering Management,BSE"
+ },
+ {
+  "code": "ESESCBUSBS",
+  "slug": "engineering-science-business",
+  "name": "Engineering Science (Business),BS"
+ },
+ {
+  "code": "ESESCMEBS",
+  "slug": "engineering-science-microelectronics",
+  "name": "Engineering Science (Microelectronics),BS"
+ },
+ {
+  "code": "TSEGRBSE",
+  "slug": "engineering",
+  "name": "Engineering,BSE"
+ },
+ {
+  "code": "LAENGCBA",
+  "slug": "english-creative-writing",
+  "name": "English (Creative Writing),BA"
+ },
+ {
+  "code": "LAENGNBA",
+  "slug": "english-linguistics",
+  "name": "English (Linguistics),BA"
+ },
+ {
+  "code": "LAENGTBA",
+  "slug": "english-literature",
+  "name": "English (Literature),BA"
+ },
+ {
+  "code": "LAENGNSBA",
+  "slug": "english-narrative-studies",
+  "name": "English (Narrative Studies),BA"
+ },
+ {
+  "code": "LAENGSEBA",
+  "slug": "english-secondary-education",
+  "name": "English (Secondary Education),BA"
+ },
+ {
+  "code": "ASENGSEBA",
+  "slug": "english-secondary-education",
+  "name": "English (Secondary Education),BA"
+ },
+ {
+  "code": "LAENGWBA",
+  "slug": "english-writing-rhetorics-and-literacies",
+  "name": "English (Writing, Rhetorics and Literacies),BA"
+ },
+ {
+  "code": "ASENGBA",
+  "slug": "english",
+  "name": "English,BA"
+ },
+ {
+  "code": "LSENGBA",
+  "slug": "english",
+  "name": "English,BA"
+ },
+ {
+  "code": "LAENGBA",
+  "slug": "english",
+  "name": "English,BA"
+ },
+ {
+  "code": "BAENTLBA",
+  "slug": "entrepreneurial-leadership",
+  "name": "Entrepreneurial Leadership,BA"
+ },
+ {
+  "code": "HIEDSBS",
+  "slug": "environmental-design",
+  "name": "Environmental Design,BS"
+ },
+ {
+  "code": "ESEVEBSE",
+  "slug": "environmental-engineering",
+  "name": "Environmental Engineering,BSE"
+ },
+ {
+  "code": "ASENVEJBS",
+  "slug": "environmental-science-environmental-justice",
+  "name": "Environmental Science (Environmental Justice),BS"
+ },
+ {
+  "code": "ASENVBS",
+  "slug": "environmental-science",
+  "name": "Environmental Science,BS"
+ },
+ {
+  "code": "ASENVEJBA",
+  "slug": "environmental-studies-environmental-justice",
+  "name": "Environmental Studies (Environmental Justice),BA"
+ },
+ {
+  "code": "ASENVBA",
+  "slug": "environmental-studies",
+  "name": "Environmental Studies,BA"
+ },
+ {
+  "code": "TSETMBS",
+  "slug": "environmental-and-resource-management",
+  "name": "Environmental and Resource Management,BS"
+ },
+ {
+  "code": "ASHSCIEXPL",
+  "slug": "exploratory-health-and-life-sciences",
+  "name": "Exploratory Health and Life Sciences"
+ },
+ {
+  "code": "UCHSCIEXPL",
+  "slug": "exploratory-health-and-life-sciences",
+  "name": "Exploratory Health and Life Sciences"
+ },
+ {
+  "code": "UCHUFAEXPL",
+  "slug": "exploratory-humanities-fine-arts-and-design",
+  "name": "Exploratory Humanities, Fine Arts and Design"
+ },
+ {
+  "code": "ASHUFAEXPL",
+  "slug": "exploratory-humanities-fine-arts-and-design",
+  "name": "Exploratory Humanities, Fine Arts and Design"
+ },
+ {
+  "code": "ASACMTEXPL",
+  "slug": "exploratory-math-physical-sciences-engineering-and-technology",
+  "name": "Exploratory Math, Physical Sciences, Engineering and Technology"
+ },
+ {
+  "code": "UCEMTPEXPL",
+  "slug": "exploratory-math-physical-sciences-engineering-and-technology",
+  "name": "Exploratory Math, Physical Sciences, Engineering and Technology"
+ },
+ {
+  "code": "UCSBSEXPL",
+  "slug": "exploratory-social-and-behavioral-sciences",
+  "name": "Exploratory Social and Behavioral Sciences"
+ },
+ {
+  "code": "ASSBSEXPL",
+  "slug": "exploratory-social-and-behavioral-sciences",
+  "name": "Exploratory Social and Behavioral Sciences"
+ },
+ {
+  "code": "LAFASBS",
+  "slug": "family-and-human-development",
+  "name": "Family and Human Development,BS"
+ },
+ {
+  "code": "HIFSHAPDBA",
+  "slug": "fashion-apparel-product-development",
+  "name": "Fashion (Apparel Product Development),BA"
+ },
+ {
+  "code": "HIFSHATDBA",
+  "slug": "fashion-apparel-technical-design",
+  "name": "Fashion (Apparel Technical Design),BA"
+ },
+ {
+  "code": "HIFSHDBA",
+  "slug": "fashion-design",
+  "name": "Fashion (Design),BA"
+ },
+ {
+  "code": "HIFSHMBA",
+  "slug": "fashion-merchandising",
+  "name": "Fashion (Merchandising),BA"
+ },
+ {
+  "code": "HIFSHAA",
+  "slug": "fashion-styling",
+  "name": "Fashion Styling,AA"
+ },
+ {
+  "code": "HIFSHBA",
+  "slug": "fashion",
+  "name": "Fashion,BA"
+ },
+ {
+  "code": "FAFLMBA",
+  "slug": "film-film-and-media-production",
+  "name": "Film (Film and Media Production),BA"
+ },
+ {
+  "code": "LAFMSBA",
+  "slug": "film-film-and-media-studies",
+  "name": "Film (Film and Media Studies),BA"
+ },
+ {
+  "code": "FAFPRBA",
+  "slug": "film-filmmaking-practices",
+  "name": "Film (Filmmaking Practices),BA"
+ },
+ {
+  "code": "HIFMPCBFA",
+  "slug": "film-and-media-production-cinematography",
+  "name": "Film and Media Production (Cinematography),BFA"
+ },
+ {
+  "code": "HIFMPDBFA",
+  "slug": "film-and-media-production-directing",
+  "name": "Film and Media Production (Directing),BFA"
+ },
+ {
+  "code": "HIFMPPBFA",
+  "slug": "film-and-media-production-post-production",
+  "name": "Film and Media Production (Post-Production),BFA"
+ },
+ {
+  "code": "HIFMPSBFA",
+  "slug": "film-and-media-production-screenwriting",
+  "name": "Film and Media Production (Screenwriting),BFA"
+ },
+ {
+  "code": "HIFMPBFA",
+  "slug": "film-and-media-production",
+  "name": "Film and Media Production,BFA"
+ },
+ {
+  "code": "BAFINBS",
+  "slug": "finance",
+  "name": "Finance,BS"
+ },
+ {
+  "code": "BAFINTBS",
+  "slug": "financial-technology",
+  "name": "Financial Technology,BS"
+ },
+ {
+  "code": "ASFOREDIBS",
+  "slug": "forensic-science-death-investigations",
+  "name": "Forensic Science (Death Investigations),BS"
+ },
+ {
+  "code": "ASFOREBS",
+  "slug": "forensic-science",
+  "name": "Forensic Science,BS"
+ },
+ {
+  "code": "LAFREBA",
+  "slug": "french",
+  "name": "French,BA"
+ },
+ {
+  "code": "HIGMDESBS",
+  "slug": "game-design",
+  "name": "Game Design,BS"
+ },
+ {
+  "code": "LAWSTBA",
+  "slug": "gender-women-and-sexuality-studies",
+  "name": "Gender, Women and Sexuality Studies,BA"
+ },
+ {
+  "code": "ASWSTBS",
+  "slug": "gender-women-and-sexuality-studies",
+  "name": "Gender, Women and Sexuality Studies,BS"
+ },
+ {
+  "code": "LSGNSBGS",
+  "slug": "general-studies",
+  "name": "General Studies,BA"
+ },
+ {
+  "code": "LAGISBS",
+  "slug": "geographic-information-science",
+  "name": "Geographic Information Science,BS"
+ },
+ {
+  "code": "LAGCUMBS",
+  "slug": "geography-meteorology-climatology",
+  "name": "Geography (Meteorology-Climatology),BS"
+ },
+ {
+  "code": "LAGCUBA",
+  "slug": "geography",
+  "name": "Geography,BA"
+ },
+ {
+  "code": "LAGCUBS",
+  "slug": "geography",
+  "name": "Geography,BS"
+ },
+ {
+  "code": "LAGERBA",
+  "slug": "german",
+  "name": "German,BA"
+ },
+ {
+  "code": "LAASIABA",
+  "slug": "global-asia-studies",
+  "name": "Global Asia Studies,BA"
+ },
+ {
+  "code": "LAGCZBA",
+  "slug": "global-citizenship",
+  "name": "Global Citizenship,BA"
+ },
+ {
+  "code": "LASSHBA",
+  "slug": "global-health",
+  "name": "Global Health,BA"
+ },
+ {
+  "code": "LASSHBS",
+  "slug": "global-health",
+  "name": "Global Health,BS"
+ },
+ {
+  "code": "TBTGMBGM",
+  "slug": "global-management",
+  "name": "Global Management,BGM"
+ },
+ {
+  "code": "LASGSBA",
+  "slug": "global-studies",
+  "name": "Global Studies,BA"
+ },
+ {
+  "code": "ARGRABSD",
+  "slug": "graphic-design",
+  "name": "Graphic Design,BSD"
+ },
+ {
+  "code": "ESGITFSWBS",
+  "slug": "graphic-information-technology-full-stack-web-development",
+  "name": "Graphic Information Technology (Full-Stack Web Development),BS"
+ },
+ {
+  "code": "ESGITUEBS",
+  "slug": "graphic-information-technology-user-experience",
+  "name": "Graphic Information Technology (User Experience),BS"
+ },
+ {
+  "code": "TSGITBS",
+  "slug": "graphic-information-technology",
+  "name": "Graphic Information Technology,BS"
+ },
+ {
+  "code": "NHHCDBS",
+  "slug": "health-care-administration-and-policy",
+  "name": "Health Care Administration and Policy,BS"
+ },
+ {
+  "code": "NUHCCRBS",
+  "slug": "health-care-compliance-and-regulations",
+  "name": "Health Care Compliance and Regulations,BS"
+ },
+ {
+  "code": "NUHCCOBS",
+  "slug": "health-care-coordination",
+  "name": "Health Care Coordination,BS"
+ },
+ {
+  "code": "NHHEHPBS",
+  "slug": "health-education-and-health-promotion",
+  "name": "Health Education and Health Promotion,BS"
+ },
+ {
+  "code": "NUHCIBS",
+  "slug": "health-entrepreneurship-and-innovation",
+  "name": "Health Entrepreneurship and Innovation,BS"
+ },
+ {
+  "code": "NUHSCHLCBS",
+  "slug": "health-sciences-healthy-lifestyles-and-fitness-science",
+  "name": "Health Sciences (Healthy Lifestyles and Fitness Science),BS"
+ },
+ {
+  "code": "NHHSCBS",
+  "slug": "health-sciences",
+  "name": "Health Sciences,BS"
+ },
+ {
+  "code": "LSHISVSSBA",
+  "slug": "history-military-and-veterans-studies",
+  "name": "History (Military and Veterans Studies),BA"
+ },
+ {
+  "code": "LAHISSEBA",
+  "slug": "history-secondary-education",
+  "name": "History (Secondary Education),BA"
+ },
+ {
+  "code": "ASHISSEBA",
+  "slug": "history-secondary-education",
+  "name": "History (Secondary Education),BA"
+ },
+ {
+  "code": "LSHSIIBA",
+  "slug": "history-of-science-technology-and-innovation",
+  "name": "History of Science, Technology and Innovation,BA"
+ },
+ {
+  "code": "LAHISBA",
+  "slug": "history",
+  "name": "History,BA"
+ },
+ {
+  "code": "LSHISBA",
+  "slug": "history",
+  "name": "History,BA"
+ },
+ {
+  "code": "ASHISBA",
+  "slug": "history",
+  "name": "History,BA"
+ },
+ {
+  "code": "9HOHONALL",
+  "slug": "honors-college",
+  "name": "Honors College"
+ },
+ {
+  "code": "ESHSEUEBS",
+  "slug": "human-systems-engineering-user-experience",
+  "name": "Human Systems Engineering (User Experience),BS"
+ },
+ {
+  "code": "ESHSEBS",
+  "slug": "human-systems-engineering",
+  "name": "Human Systems Engineering,BS"
+ },
+ {
+  "code": "ARINDBSD",
+  "slug": "industrial-design",
+  "name": "Industrial Design,BSD"
+ },
+ {
+  "code": "ESIEEBSE",
+  "slug": "industrial-engineering",
+  "name": "Industrial Engineering,BSE"
+ },
+ {
+  "code": "ESCPIBS",
+  "slug": "informatics",
+  "name": "Informatics,BS"
+ },
+ {
+  "code": "ESIFTCSBS",
+  "slug": "information-technology-cybersecurity",
+  "name": "Information Technology (Cybersecurity),BS"
+ },
+ {
+  "code": "ESIFTNBS",
+  "slug": "information-technology-networking",
+  "name": "Information Technology (Networking),BS"
+ },
+ {
+  "code": "TSIFTBS",
+  "slug": "information-technology",
+  "name": "Information Technology,BS"
+ },
+ {
+  "code": "FIFISBA",
+  "slug": "innovation-in-society",
+  "name": "Innovation in Society,BA"
+ },
+ {
+  "code": "FIFISBS",
+  "slug": "innovation-in-society",
+  "name": "Innovation in Society,BS"
+ },
+ {
+  "code": "LAISTBA",
+  "slug": "integrated-studies",
+  "name": "Integrated Studies,BA"
+ },
+ {
+  "code": "LAISTBS",
+  "slug": "integrated-studies",
+  "name": "Integrated Studies,BS"
+ },
+ {
+  "code": "NUIHLTBS",
+  "slug": "integrative-health",
+  "name": "Integrative Health,BS"
+ },
+ {
+  "code": "LSISSBS",
+  "slug": "integrative-social-science",
+  "name": "Integrative Social Science,BS"
+ },
+ {
+  "code": "ASIAPBA",
+  "slug": "interdisciplinary-arts-and-performance",
+  "name": "Interdisciplinary Arts and Performance,BA"
+ },
+ {
+  "code": "ASIASBA",
+  "slug": "interdisciplinary-arts-and-sciences",
+  "name": "Interdisciplinary Arts and Sciences,BA"
+ },
+ {
+  "code": "LSORGBIS",
+  "slug": "interdisciplinary-studies-organizational-studies",
+  "name": "Interdisciplinary Studies (Organizational Studies),BA"
+ },
+ {
+  "code": "LSBISBIS",
+  "slug": "interdisciplinary-studies",
+  "name": "Interdisciplinary Studies,BA"
+ },
+ {
+  "code": "ARINTBSD",
+  "slug": "interior-design",
+  "name": "Interior Design,BSD"
+ },
+ {
+  "code": "LASLCASBA",
+  "slug": "international-letters-and-cultures-arabic-studies",
+  "name": "International Letters and Cultures (Arabic Studies),BA"
+ },
+ {
+  "code": "LASLCVBA",
+  "slug": "international-letters-and-cultures-classical-civilization",
+  "name": "International Letters and Cultures (Classical Civilization),BA"
+ },
+ {
+  "code": "LASLCCBA",
+  "slug": "international-letters-and-cultures-classics",
+  "name": "International Letters and Cultures (Classics),BA"
+ },
+ {
+  "code": "LASLCBA",
+  "slug": "international-letters-and-cultures",
+  "name": "International Letters and Cultures,BA"
+ },
+ {
+  "code": "NHIPHBIPH",
+  "slug": "international-public-health",
+  "name": "International Public Health,BIPH"
+ },
+ {
+  "code": "LAINRBA",
+  "slug": "international-relations",
+  "name": "International Relations,BA"
+ },
+ {
+  "code": "LAINRBS",
+  "slug": "international-relations",
+  "name": "International Relations,BS"
+ },
+ {
+  "code": "TBINTRABS",
+  "slug": "international-trade",
+  "name": "International Trade,BS"
+ },
+ {
+  "code": "LAITABA",
+  "slug": "italian",
+  "name": "Italian,BA"
+ },
+ {
+  "code": "LAJSTBA",
+  "slug": "jewish-studies",
+  "name": "Jewish Studies,BA"
+ },
+ {
+  "code": "CSJMCBA",
+  "slug": "journalism",
+  "name": "Journalism,BA"
+ },
+ {
+  "code": "LAJUSBA",
+  "slug": "justice-studies",
+  "name": "Justice Studies,BA"
+ },
+ {
+  "code": "LAJUSBS",
+  "slug": "justice-studies",
+  "name": "Justice Studies,BS"
+ },
+ {
+  "code": "NUKINBS",
+  "slug": "kinesiology",
+  "name": "Kinesiology,BS"
+ },
+ {
+  "code": "ARPLABSLA",
+  "slug": "landscape-architecture",
+  "name": "Landscape Architecture,BSLA"
+ },
+ {
+  "code": "ASLASBA",
+  "slug": "latin-american-studies",
+  "name": "Latin American Studies,BA"
+ },
+ {
+  "code": "LABLSBLS",
+  "slug": "liberal-studies",
+  "name": "Liberal Studies,BA"
+ },
+ {
+  "code": "BALGMARAS",
+  "slug": "logistics-maritime",
+  "name": "Logistics (Maritime),AS"
+ },
+ {
+  "code": "BAMGTBS",
+  "slug": "management",
+  "name": "Management,BS"
+ },
+ {
+  "code": "TSMEGRBS",
+  "slug": "manufacturing-engineering",
+  "name": "Manufacturing Engineering,BS"
+ },
+ {
+  "code": "ESMFGSYBAS",
+  "slug": "manufacturing-systems",
+  "name": "Manufacturing Systems,BAS"
+ },
+ {
+  "code": "BAMKDIMCBS",
+  "slug": "marketing-digital",
+  "name": "Marketing (Digital),BS"
+ },
+ {
+  "code": "BAMKTPSBS",
+  "slug": "marketing-professional-sales",
+  "name": "Marketing (Professional Sales),BS"
+ },
+ {
+  "code": "BAMKTBS",
+  "slug": "marketing",
+  "name": "Marketing,BS"
+ },
+ {
+  "code": "CSMCMSTBA",
+  "slug": "mass-communication-and-media-studies",
+  "name": "Mass Communication and Media Studies,BA"
+ },
+ {
+  "code": "ESMSEBSE",
+  "slug": "materials-science-and-engineering",
+  "name": "Materials Science and Engineering,BSE"
+ },
+ {
+  "code": "LAMATTBS",
+  "slug": "mathematics-statistics",
+  "name": "Mathematics (Statistics),BS"
+ },
+ {
+  "code": "LAMATBA",
+  "slug": "mathematics",
+  "name": "Mathematics,BA"
+ },
+ {
+  "code": "LAMATBS",
+  "slug": "mathematics",
+  "name": "Mathematics,BS"
+ },
+ {
+  "code": "ESMAECBSE",
+  "slug": "mechanical-engineering-computational-mechanics",
+  "name": "Mechanical Engineering (Computational Mechanics),BSE"
+ },
+ {
+  "code": "ESMAEEBSE",
+  "slug": "mechanical-engineering-energy-and-environment",
+  "name": "Mechanical Engineering (Energy and Environment),BSE"
+ },
+ {
+  "code": "ESMAEMBSE",
+  "slug": "mechanical-engineering",
+  "name": "Mechanical Engineering,BSE"
+ },
+ {
+  "code": "HIDGCABA",
+  "slug": "media-arts-and-sciences-art",
+  "name": "Media Arts and Sciences (Art),BA"
+ },
+ {
+  "code": "HIDGCDBA",
+  "slug": "media-arts-and-sciences-design",
+  "name": "Media Arts and Sciences (Design),BA"
+ },
+ {
+  "code": "HIMASEDBA",
+  "slug": "media-arts-and-sciences-education",
+  "name": "Media Arts and Sciences (Education),BA"
+ },
+ {
+  "code": "HIDGCFBA",
+  "slug": "media-arts-and-sciences-film",
+  "name": "Media Arts and Sciences (Film),BA"
+ },
+ {
+  "code": "HIMASGIMBS",
+  "slug": "media-arts-and-sciences-games-and-interactive-media",
+  "name": "Media Arts and Sciences (Games and Interactive Media),BS"
+ },
+ {
+  "code": "HIDGCTEBA",
+  "slug": "media-arts-and-sciences-graphic-information-technology",
+  "name": "Media Arts and Sciences (Graphic Information Technology),BA"
+ },
+ {
+  "code": "HIDCIAPBA",
+  "slug": "media-arts-and-sciences-interdisciplinary-arts-and-performance",
+  "name": "Media Arts and Sciences (Interdisciplinary Arts and Performance),BA"
+ },
+ {
+  "code": "HIDGCMPBS",
+  "slug": "media-arts-and-sciences-media-processing",
+  "name": "Media Arts and Sciences (Media Processing),BS"
+ },
+ {
+  "code": "HIDGCMBA",
+  "slug": "media-arts-and-sciences-music",
+  "name": "Media Arts and Sciences (Music),BA"
+ },
+ {
+  "code": "HIDGCBA",
+  "slug": "media-arts-and-sciences",
+  "name": "Media Arts and Sciences,BA"
+ },
+ {
+  "code": "CSDMLBA",
+  "slug": "media-literacy",
+  "name": "Media Literacy,BA"
+ },
+ {
+  "code": "NHMEDBS",
+  "slug": "medical-studies",
+  "name": "Medical Studies,BS"
+ },
+ {
+  "code": "HIMERCHAA",
+  "slug": "merchandising",
+  "name": "Merchandising,AA"
+ },
+ {
+  "code": "LAMICMBS",
+  "slug": "microbiology-medical-microbiology",
+  "name": "Microbiology (Medical Microbiology),BS"
+ },
+ {
+  "code": "TEMGEBAE",
+  "slug": "middle-grades-education",
+  "name": "Middle Grades Education,BAE"
+ },
+ {
+  "code": "LSMILSTAA",
+  "slug": "military-studies",
+  "name": "Military Studies,AA"
+ },
+ {
+  "code": "HIMUSMCBA",
+  "slug": "music-music-and-culture",
+  "name": "Music (Music and Culture),BA"
+ },
+ {
+  "code": "HIMUSPMBA",
+  "slug": "music-popular-music",
+  "name": "Music (Popular Music),BA"
+ },
+ {
+  "code": "FAMUSEBM",
+  "slug": "music-learning-and-teaching",
+  "name": "Music Learning and Teaching,BMUS"
+ },
+ {
+  "code": "FAMUSTHBM",
+  "slug": "music-therapy",
+  "name": "Music Therapy,BMUS"
+ },
+ {
+  "code": "FAMUSBA",
+  "slug": "music",
+  "name": "Music,BA"
+ },
+ {
+  "code": "LABMENBS",
+  "slug": "neuroscience",
+  "name": "Neuroscience,BS"
+ },
+ {
+  "code": "PPNLMAIBS",
+  "slug": "nonprofit-leadership-and-management-american-indian-studies",
+  "name": "Nonprofit Leadership and Management (American Indian Studies),BS"
+ },
+ {
+  "code": "PPNLMBS",
+  "slug": "nonprofit-leadership-and-management",
+  "name": "Nonprofit Leadership and Management,BS"
+ },
+ {
+  "code": "NUNURDBSN",
+  "slug": "nursing",
+  "name": "Nursing,BSN"
+ },
+ {
+  "code": "NHNUSCIBS",
+  "slug": "nutritional-science",
+  "name": "Nutritional Science,BS"
+ },
+ {
+  "code": "LSORGLVSBA",
+  "slug": "organizational-leadership-military-and-veterans-studies",
+  "name": "Organizational Leadership (Military and Veterans Studies),BA"
+ },
+ {
+  "code": "LSORGLPMBA",
+  "slug": "organizational-leadership-project-management",
+  "name": "Organizational Leadership (Project Management),BA"
+ },
+ {
+  "code": "LSORGLAA",
+  "slug": "organizational-leadership",
+  "name": "Organizational Leadership,AA"
+ },
+ {
+  "code": "LSORGLBA",
+  "slug": "organizational-leadership",
+  "name": "Organizational Leadership,BA"
+ },
+ {
+  "code": "PPPRMBS",
+  "slug": "parks-recreation-and-sport-management",
+  "name": "Parks, Recreation and Sport Management,BS"
+ },
+ {
+  "code": "FAMUSPPBM",
+  "slug": "performance-collaborative-piano",
+  "name": "Performance (Collaborative Piano),BMUS"
+ },
+ {
+  "code": "FAMUSPGBM",
+  "slug": "performance-guitar",
+  "name": "Performance (Guitar),BMUS"
+ },
+ {
+  "code": "FAMUSPJBM",
+  "slug": "performance-jazz",
+  "name": "Performance (Jazz),BMUS"
+ },
+ {
+  "code": "FAMUSPKBM",
+  "slug": "performance-keyboard",
+  "name": "Performance (Keyboard),BMUS"
+ },
+ {
+  "code": "FAMUSPMBM",
+  "slug": "performance-music-theatre",
+  "name": "Performance (Music Theatre),BMUS"
+ },
+ {
+  "code": "FAMUSPOBM",
+  "slug": "performance-orchestral-instrument",
+  "name": "Performance (Orchestral Instrument),BMUS"
+ },
+ {
+  "code": "FAMUSPVBM",
+  "slug": "performance-voice",
+  "name": "Performance (Voice),BMUS"
+ },
+ {
+  "code": "HIPERMVBA",
+  "slug": "performance-and-movement",
+  "name": "Performance and Movement,BA"
+ },
+ {
+  "code": "ASPTXEJBS",
+  "slug": "pharmacology-and-toxicology-environmental-studies",
+  "name": "Pharmacology and Toxicology (Environmental Studies),BS"
+ },
+ {
+  "code": "ASPTXBS",
+  "slug": "pharmacology-and-toxicology",
+  "name": "Pharmacology and Toxicology,BS"
+ },
+ {
+  "code": "LAPHIMPBA",
+  "slug": "philosophy-morality-politics-and-law",
+  "name": "Philosophy (Morality, Politics and Law),BA"
+ },
+ {
+  "code": "LAPHISNMBA",
+  "slug": "philosophy-science-nature-and-mind",
+  "name": "Philosophy (Science, Nature and Mind),BA"
+ },
+ {
+  "code": "ASRELBA",
+  "slug": "philosophy-religion-and-society",
+  "name": "Philosophy, Religion and Society,BA"
+ },
+ {
+  "code": "LAPHIBA",
+  "slug": "philosophy",
+  "name": "Philosophy,BA"
+ },
+ {
+  "code": "TEPPEBAE",
+  "slug": "physical-education",
+  "name": "Physical Education,BAE"
+ },
+ {
+  "code": "LAPOSBA",
+  "slug": "political-science",
+  "name": "Political Science,BA"
+ },
+ {
+  "code": "ASPOLBA",
+  "slug": "political-science",
+  "name": "Political Science,BA"
+ },
+ {
+  "code": "LSPOLBS",
+  "slug": "political-science",
+  "name": "Political Science,BS"
+ },
+ {
+  "code": "LAPOSBS",
+  "slug": "political-science",
+  "name": "Political Science,BS"
+ },
+ {
+  "code": "ASPOLBS",
+  "slug": "political-science",
+  "name": "Political Science,BS"
+ },
+ {
+  "code": "LAPECBS",
+  "slug": "politics-and-the-economy",
+  "name": "Politics and the Economy,BS"
+ },
+ {
+  "code": "NHPOPHLBS",
+  "slug": "population-health",
+  "name": "Population Health,BS"
+ },
+ {
+  "code": "LALAWPRE",
+  "slug": "prelaw",
+  "name": "Prelaw"
+ },
+ {
+  "code": "LSPRFSTAA",
+  "slug": "professional-studies",
+  "name": "Professional Studies,AA"
+ },
+ {
+  "code": "LSPMGBS",
+  "slug": "project-management",
+  "name": "Project Management,BS"
+ },
+ {
+  "code": "ASPGSFPBA",
+  "slug": "psychology-forensic-psychology",
+  "name": "Psychology (Forensic Psychology),BA"
+ },
+ {
+  "code": "ASPGSFPBS",
+  "slug": "psychology-forensic-psychology",
+  "name": "Psychology (Forensic Psychology),BS"
+ },
+ {
+  "code": "ASPGSIOPBA",
+  "slug": "psychology-industrial-and-organizational-psychology",
+  "name": "Psychology (Industrial and Organizational Psychology),BA"
+ },
+ {
+  "code": "ASPGSIOPBS",
+  "slug": "psychology-industrial-and-organizational-psychology",
+  "name": "Psychology (Industrial and Organizational Psychology),BS"
+ },
+ {
+  "code": "ASPGSPPBA",
+  "slug": "psychology-positive-psychology",
+  "name": "Psychology (Positive Psychology),BA"
+ },
+ {
+  "code": "ASPGSPPBS",
+  "slug": "psychology-positive-psychology",
+  "name": "Psychology (Positive Psychology),BS"
+ },
+ {
+  "code": "LAPGSPSBS",
+  "slug": "psychology-psychological-science",
+  "name": "Psychology (Psychological Science),BS"
+ },
+ {
+  "code": "LSPGSBA",
+  "slug": "psychology",
+  "name": "Psychology,BA"
+ },
+ {
+  "code": "ASPGSBA",
+  "slug": "psychology",
+  "name": "Psychology,BA"
+ },
+ {
+  "code": "LAPGSBA",
+  "slug": "psychology",
+  "name": "Psychology,BA"
+ },
+ {
+  "code": "LSPGSBS",
+  "slug": "psychology",
+  "name": "Psychology,BS"
+ },
+ {
+  "code": "ASPGSBS",
+  "slug": "psychology",
+  "name": "Psychology,BS"
+ },
+ {
+  "code": "LAPGSBS",
+  "slug": "psychology",
+  "name": "Psychology,BS"
+ },
+ {
+  "code": "NHPBHBS",
+  "slug": "public-health",
+  "name": "Public Health,BS"
+ },
+ {
+  "code": "PPPAFBUBS",
+  "slug": "public-service-and-public-policy-business",
+  "name": "Public Service and Public Policy (Business),BS"
+ },
+ {
+  "code": "PPPAFCBS",
+  "slug": "public-service-and-public-policy-criminology",
+  "name": "Public Service and Public Policy (Criminology),BS"
+ },
+ {
+  "code": "PPPAFEHBS",
+  "slug": "public-service-and-public-policy-emergency-management-and-homeland-security",
+  "name": "Public Service and Public Policy (Emergency Management and Homeland Security),BS"
+ },
+ {
+  "code": "PPPAFHPBS",
+  "slug": "public-service-and-public-policy-health-policy",
+  "name": "Public Service and Public Policy (Health Policy),BS"
+ },
+ {
+  "code": "PPPAFLPBS",
+  "slug": "public-service-and-public-policy-law-and-policy",
+  "name": "Public Service and Public Policy (Law and Policy),BS"
+ },
+ {
+  "code": "PPPANLMBS",
+  "slug": "public-service-and-public-policy-nonprofit-leadership-and-management",
+  "name": "Public Service and Public Policy (Nonprofit Leadership and Management),BS"
+ },
+ {
+  "code": "PPPAPRMBS",
+  "slug": "public-service-and-public-policy-parks-and-recreation-management",
+  "name": "Public Service and Public Policy (Parks and Recreation Management),BS"
+ },
+ {
+  "code": "PPPAFSSBS",
+  "slug": "public-service-and-public-policy-social-services-delivery",
+  "name": "Public Service and Public Policy (Social Services Delivery),BS"
+ },
+ {
+  "code": "PPPAFSBS",
+  "slug": "public-service-and-public-policy-sustainability",
+  "name": "Public Service and Public Policy (Sustainability),BS"
+ },
+ {
+  "code": "PPPAFBS",
+  "slug": "public-service-and-public-policy",
+  "name": "Public Service and Public Policy,BS"
+ },
+ {
+  "code": "BAREAFBS",
+  "slug": "real-estate-and-applied-finance",
+  "name": "Real Estate and Applied Finance,BS"
+ },
+ {
+  "code": "PPRECTBS",
+  "slug": "recreational-therapy",
+  "name": "Recreational Therapy,BS"
+ },
+ {
+  "code": "LARELCPBA",
+  "slug": "religious-studies-religion-culture-and-public-life",
+  "name": "Religious Studies (Religion, Culture and Public Life),BA"
+ },
+ {
+  "code": "LARELPGBA",
+  "slug": "religious-studies-religion-politics-and-global-affairs",
+  "name": "Religious Studies (Religion, Politics and Global Affairs),BA"
+ },
+ {
+  "code": "ESRASBSE",
+  "slug": "robotics-and-autonomous-systems",
+  "name": "Robotics and Autonomous Systems,BSE"
+ },
+ {
+  "code": "LARUSBA",
+  "slug": "russian",
+  "name": "Russian,BA"
+ },
+ {
+  "code": "CSSCOMBA",
+  "slug": "science-communication",
+  "name": "Science Communication,BA"
+ },
+ {
+  "code": "ECSTSBS",
+  "slug": "science-technology-and-society",
+  "name": "Science, Technology and Society,BS"
+ },
+ {
+  "code": "TEBIOBAE",
+  "slug": "secondary-education-biological-sciences",
+  "name": "Secondary Education (Biological Sciences),BAE"
+ },
+ {
+  "code": "EDESSBAE",
+  "slug": "secondary-education-earth-and-space-sciences",
+  "name": "Secondary Education (Earth and Space Sciences),BAE"
+ },
+ {
+  "code": "TEENGBAE",
+  "slug": "secondary-education-english",
+  "name": "Secondary Education (English),BAE"
+ },
+ {
+  "code": "TEHISBAE",
+  "slug": "secondary-education-history",
+  "name": "Secondary Education (History),BAE"
+ },
+ {
+  "code": "TEMATBAE",
+  "slug": "secondary-education-mathematics",
+  "name": "Secondary Education (Mathematics),BAE"
+ },
+ {
+  "code": "TESEDBAE",
+  "slug": "secondary-education",
+  "name": "Secondary Education,BAE"
+ },
+ {
+  "code": "ASJHRBA",
+  "slug": "social-justice-and-human-rights",
+  "name": "Social Justice and Human Rights,BA"
+ },
+ {
+  "code": "PPSWUSWU",
+  "slug": "social-work",
+  "name": "Social Work,BSW"
+ },
+ {
+  "code": "ASSBSBA",
+  "slug": "social-and-behavioral-sciences",
+  "name": "Social and Behavioral Sciences,BA"
+ },
+ {
+  "code": "ASSBSBS",
+  "slug": "social-and-behavioral-sciences",
+  "name": "Social and Behavioral Sciences,BS"
+ },
+ {
+  "code": "ASSCAASBA",
+  "slug": "social-and-cultural-analysis-american-studies",
+  "name": "Social and Cultural Analysis (American Studies),BA"
+ },
+ {
+  "code": "ASSCAERBA",
+  "slug": "social-and-cultural-analysis-ethnicity-race-and-indigenous-studies",
+  "name": "Social and Cultural Analysis (Ethnicity, Race and Indigenous Studies),BA"
+ },
+ {
+  "code": "ASSCAPSBA",
+  "slug": "social-and-cultural-analysis-peace-studies",
+  "name": "Social and Cultural Analysis (Peace Studies),BA"
+ },
+ {
+  "code": "ASSCAQSBA",
+  "slug": "social-and-cultural-analysis-queer-and-sexuality-studies",
+  "name": "Social and Cultural Analysis (Queer and Sexuality Studies),BA"
+ },
+ {
+  "code": "ASSCAWSBA",
+  "slug": "social-and-cultural-analysis-women-and-gender-studies",
+  "name": "Social and Cultural Analysis (Women and Gender Studies),BA"
+ },
+ {
+  "code": "ASSOCBA",
+  "slug": "sociology",
+  "name": "Sociology,BA"
+ },
+ {
+  "code": "ASSOCBS",
+  "slug": "sociology",
+  "name": "Sociology,BS"
+ },
+ {
+  "code": "LASOCBS",
+  "slug": "sociology",
+  "name": "Sociology,BS"
+ },
+ {
+  "code": "TSSERBS",
+  "slug": "software-engineering",
+  "name": "Software Engineering,BS"
+ },
+ {
+  "code": "ASSPABA",
+  "slug": "spanish",
+  "name": "Spanish,BA"
+ },
+ {
+  "code": "LASPABA",
+  "slug": "spanish",
+  "name": "Spanish,BA"
+ },
+ {
+  "code": "TESPCEDBAE",
+  "slug": "special-education",
+  "name": "Special Education,BAE"
+ },
+ {
+  "code": "LASHSBS",
+  "slug": "speech-and-hearing-science",
+  "name": "Speech and Hearing Science,BS"
+ },
+ {
+  "code": "PPTRMBS",
+  "slug": "sport-and-recreation-management",
+  "name": "Sport and Recreation Management,BS"
+ },
+ {
+  "code": "CSSPJBA",
+  "slug": "sports-journalism",
+  "name": "Sports Journalism,BA"
+ },
+ {
+  "code": "NHSSPPSCBS",
+  "slug": "sports-science-and-performance-programming-strength-and-conditioning",
+  "name": "Sports Science and Performance Programming (Strength and Conditioning),BS"
+ },
+ {
+  "code": "NHSPTSPPBS",
+  "slug": "sports-science-and-performance-programming",
+  "name": "Sports Science and Performance Programming,BS"
+ },
+ {
+  "code": "CSSPSTCOBA",
+  "slug": "sports-strategic-communication",
+  "name": "Sports Strategic Communication,BA"
+ },
+ {
+  "code": "ASSTABS",
+  "slug": "statistics",
+  "name": "Statistics,BS"
+ },
+ {
+  "code": "CSSTRCOMBA",
+  "slug": "strategic-communication",
+  "name": "Strategic Communication,BA"
+ },
+ {
+  "code": "BASCMBS",
+  "slug": "supply-chain-management",
+  "name": "Supply Chain Management,BS"
+ },
+ {
+  "code": "SUSUSTBA",
+  "slug": "sustainability",
+  "name": "Sustainability,BA"
+ },
+ {
+  "code": "SUSUSTBS",
+  "slug": "sustainability",
+  "name": "Sustainability,BS"
+ },
+ {
+  "code": "SUSFOSYSBS",
+  "slug": "sustainable-food-systems",
+  "name": "Sustainable Food Systems,BS"
+ },
+ {
+  "code": "LSTECDVBS",
+  "slug": "technical-communication-data-visualization",
+  "name": "Technical Communication (Data Visualization),BS"
+ },
+ {
+  "code": "LSTECMHBS",
+  "slug": "technical-communication-medical-and-health",
+  "name": "Technical Communication (Medical and Health),BS"
+ },
+ {
+  "code": "LSTECSMMBS",
+  "slug": "technical-communication-social-media-management",
+  "name": "Technical Communication (Social Media Management),BS"
+ },
+ {
+  "code": "LSTECUBS",
+  "slug": "technical-communication-user-experience",
+  "name": "Technical Communication (User Experience),BS"
+ },
+ {
+  "code": "LSTECBS",
+  "slug": "technical-communication",
+  "name": "Technical Communication,BS"
+ },
+ {
+  "code": "TSTEMBS",
+  "slug": "technological-entrepreneurship-and-management",
+  "name": "Technological Entrepreneurship and Management,BS"
+ },
+ {
+  "code": "LATECLDRBS",
+  "slug": "technological-leadership",
+  "name": "Technological Leadership,BS"
+ },
+ {
+  "code": "FATHEABA",
+  "slug": "theatre-acting",
+  "name": "Theatre (Acting),BA"
+ },
+ {
+  "code": "FADSNPRBA",
+  "slug": "theatre-design-and-production",
+  "name": "Theatre (Design and Production),BA"
+ },
+ {
+  "code": "FATHEBA",
+  "slug": "theatre",
+  "name": "Theatre,BA"
+ },
+ {
+  "code": "FAMUSTCBM",
+  "slug": "theory-and-composition-composition",
+  "name": "Theory and Composition (Composition),BMUS"
+ },
+ {
+  "code": "FAMUSTTBM",
+  "slug": "theory-and-composition-theory",
+  "name": "Theory and Composition (Theory),BMUS"
+ },
+ {
+  "code": "PPTDMMEBS",
+  "slug": "tourism-development-and-management-meetings-and-events",
+  "name": "Tourism Development and Management (Meetings and Events),BS"
+ },
+ {
+  "code": "PPTDMRBS",
+  "slug": "tourism-development-and-management-resort-and-hotel-leadership",
+  "name": "Tourism Development and Management (Resort and Hotel Leadership),BS"
+ },
+ {
+  "code": "PPTDMSBS",
+  "slug": "tourism-development-and-management-sustainable-tourism",
+  "name": "Tourism Development and Management (Sustainable Tourism),BS"
+ },
+ {
+  "code": "PPTDMBS",
+  "slug": "tourism-development-and-management",
+  "name": "Tourism Development and Management,BS"
+ },
+ {
+  "code": "LATCLBA",
+  "slug": "transborder-chicana-o-and-latina-o-studies",
+  "name": "Transborder Chicana/o and Latina/o Studies,BA"
+ },
+ {
+  "code": "ARPUPBSP",
+  "slug": "urban-planning",
+  "name": "Urban Planning,BSP"
+ },
+ {
+  "code": "LSUSEXBS",
+  "slug": "user-experience",
+  "name": "User Experience,BS"
+ }
+]

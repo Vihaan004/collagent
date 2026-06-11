@@ -1,0 +1,371 @@
+Academic programs / Undergraduate degrees / Computer Science / Major Map
+Sign in to save your search results for later use.
+
+
+Major Map
+2024 - 2025 Catalog Year General Studies Gold
+Degree: BS
+College/School: Ira A. Fulton Schools of Engineering
+
+ESCSEBS
+Apply now
+Request info
+
+
+Hide Course List(s)/Track Group(s)
+  
+Click to save to my favorites
+Term 1 0 - 15 Credit Hours Critical course signified by 	Hours	Minimum Grade	Notes
+
+	
+CSE 110: Principles of Programming (QTRS OR CS)
+	3  	C 
+ 	
+ASU 101-CAI: The ASU Experience
+	1  	 
+ 	
+ENG 101 or ENG 102: First-Year Composition OR
+ENG 105: Advanced First-Year Composition OR
+ENG 107 or ENG 108: First-Year Composition
+	3  	C 
+ 	
+FSE 100: Introduction to Engineering
+	2  	C 
+ 	
+MAT 265: Calculus for Engineers I (MATH OR MA)
+	3  	C 
+ 	
+Humanities, Arts and Design (HUAD)
+	3  	 
+	
+Complete Mathematics (MATH) requirement.
+	 	 
+	
+Minimum 2.00 GPA ASU Cumulative.
+	 	 
+	Term hours subtotal:	15	
+	
+ASU 101 or college-specific equivalent First-Year Seminar required of all first-year students and should be taken in the first semester.
+If ENG 105 is taken, a three credit hour elective must also be taken prior to graduation.
+Prep for success using the First-Year Student Guide.
+Join a Fulton community.
+Explore engineering and technical professions.
+Term 2 15 - 30 Credit Hours Critical course signified by 	Hours	Minimum Grade	Notes
+
+	
+CSE 205: Object-Oriented Programming and Data Structures (QTRS OR CS)
+	3  	C 
+ 	
+ENG 101 or ENG 102: First-Year Composition OR
+ENG 105: Advanced First-Year Composition OR
+ENG 107 or ENG 108: First-Year Composition
+	3  	C 
+ 	
+MAT 266: Calculus for Engineers II (MATH OR MA)
+	3  	C 
+ 	
+Humanities, Arts and Design (HUAD)
+	3  	 
+ 	
+Additional Scientific Thinking in Natural Sciences (SCIT) Course
+	3  	 
+	
+Complete ENG 101 OR ENG 105 OR ENG 107 course(s).
+	 	 
+	
+Complete MAT 170 OR MAT 171 OR MAT 265 OR MAT 270 course(s).
+	 	 
+	
+Minimum 2.00 GPA ASU Cumulative.
+	 	 
+	Term hours subtotal:	15	
+	
+Create a Handshake profile.
+Get involved with EPICS, the Generator Labs, and the Fulton Start-Up Center.
+Term 3 30 - 46 Credit Hours Critical course signified by 	Hours	Minimum Grade	Notes
+
+	
+EEE 120: Digital Design Fundamentals
+	3  	C 
+	
+CSE 240: Introduction to Programming Languages
+	3  	C 
+	
+MAT 243: Discrete Mathematical Structures
+	3  	C 
+ 	
+MAT 267: Calculus for Engineers III (MATH OR MA) OR
+CSE 259: Logic in Computer Science
+	3  	C 
+ 	
+Scientific Thinking in Natural Sciences (SCIT)
+	4  	 
+	
+Complete MAT 266 OR MAT 271 course(s).
+	 	 
+	
+Minimum 2.00 GPA ASU Cumulative.
+	 	 
+ 	
+Complete Mathematics (MATH) requirement.
+	 	 
+	Term hours subtotal:	16	
+	
+Prep for success using the Sophomore Guide.
+Term 4 46 - 62 Credit Hours Critical course signified by 	Hours	Minimum Grade	Notes
+
+	
+CSE 230: Computer Organization and Assembly Language Programming
+	3  	C 
+	
+CSE 310: Data Structures and Algorithms
+	3  	C 
+ 	
+IEE 380: Probability and Statistics for Engineering Problem Solving (QTRS OR CS)
+	3  	C 
+ 	
+Scientific Thinking in Natural Sciences (SCIT)
+	4  	 
+ 	
+Social and Behavioral Sciences (SOBE)
+	3  	 
+	
+Complete CSE 259 OR MAT 267 OR MAT 272 course(s).
+	 	 
+	
+Minimum 2.00 GPA ASU Cumulative.
+	 	 
+	Term hours subtotal:	16	
+	
+Pursue an undergraduate research experience.
+Apply for internships.
+Attend career fairs and events.
+Term 5 62 - 78 Credit Hours Necessary course signified by 	Hours	Minimum Grade	Notes
+
+	
+CSE 355: Introduction to Theoretical Computer Science
+	3  	C 
+ 	
+CSE 301: Computing Ethics
+	1  	C 
+ 	
+CSE 360: Introduction to Software Engineering
+	3  	C 
+ 	
+CSE 365: Information Assurance
+	3  	C 
+ 	
+MAT 343: Applied Linear Algebra
+	3  	C 
+ 	
+American Institutions (AMIT)
+	3  	 
+	Term hours subtotal:	16	
+	
+Plan for success using the Junior Guide.
+Network at student organization competitions or professional societies.
+Term 6 78 - 93 Credit Hours Necessary course signified by 	Hours	Minimum Grade	Notes
+
+	
+CSE 340: Principles of Programming Languages
+	3  	C 
+ 	
+CSE 330: Operating Systems
+	3  	C 
+ 	
+CSE 412: Database Management OR
+CSE 434: Computer Networks OR
+CSE 445: Distributed Software Development
+	3  	C 
+ 	
+Global Communities, Societies and Individuals (GCSI)
+	3  	 
+ 	
+Governance and Civic Engagement (CIVI)
+	3  	 
+	Term hours subtotal:	15	
+	
+Research and prepare for graduate school.
+Apply for an engineering accelerated program.
+Develop a professional profile online.
+Term 7 93 - 108 Credit Hours Necessary course signified by 	Hours	Minimum Grade	Notes
+
+	
+CSE 485: Computer Science Capstone Project I (L)
+	3  	C 
+ 	
+Upper Division Technical Elective
+	3  	C 
+ 	
+Complete 2 courses:
+CSE 4** Elective
+	6  	C 
+ 	
+Sustainability (SUST)
+	3  	 
+	Term hours subtotal:	15	
+	
+Please see course lists below for Technical Electives. Contact SCAI Advising or visit the SCAI website for additional information.
+Plan for success using the Senior Guide.
+Use Handshake to apply for full-time positions.
+Complete an in person or virtual practice interview.
+Term 8 108 - 120 Credit Hours Necessary course signified by 	Hours	Minimum Grade	Notes
+
+	
+CSE 486: Computer Science Capstone Project II (L)
+	3  	C 
+ 	
+Upper Division Technical Elective
+	3  	C 
+ 	
+Complete 2 courses:
+CSE 4** Elective
+	6  	C 
+	Term hours subtotal:	12	
+	
+Please see course lists below for Technical Electives. Contact SCAI Advising or visit the SCAI website for additional information.
+
+
+
+
+Maximum three hours of FSE 301 or FSE 404 can be applied towards major requirements.
+Maximum six hours of CSE 484, CSE 492, CSE 493, CSE 499, FSE 301, and FSE 404 can be applied towards major requirements.
+CSE 475 or DAT 402 can be applied towards major requirements but not both.
+Technical Electives may require additional prerequisites.
+For additional information on major curriculum, please visit the Computer Science Degree Requirements website.
+
+Hide Course List(s)/Track Group(s)
+Technical Electives
+AEE 415: Vibration Analysis
+AEE 426: Design of Aerospace Structures
+AEE 462: Space Vehicle Dynamics and Control
+AEE 463: Aircraft Propulsion
+AEE 465: Rocket Propulsion
+AEE 468: Aircraft Systems Design
+AEE 471: Computational Fluid Dynamics
+AME 430: Mac Development for Media Arts
+AME 435: Mobile Development
+BCH 361: Advanced Principles of Biochemistry
+BCH 461: General Biochemistry
+BCH 462: General Biochemistry
+BIO 340: General Genetics
+BIO 343: Genetic Engineering and Society (L)
+BIO 345: Evolution
+BME 350: Signals and Systems for Bioengineers
+BME 413: Biomedical Instrumentation (L)
+BME 416: Advanced Biomechanics
+BME 494: Applied Computational Behavioral Science
+CEE 412: Pavement Analysis and Design
+CEE 432: Developing Software for Engineering Applications
+CEE 440: Hydrology
+CEE 441: Water Resources Engineering
+CEE 452: Foundations
+CEE 462: Unit Operations in Environmental Engineering
+CEE 466: Urban Water System Design
+CEE 467: Environmental Microbiology
+CEE 474: Transportation Systems Planning
+CEE 475: Highway Geometric Design
+CEE 481: Civil Engineering Project Management
+CEE 483: Highway Materials, Construction, and Quality
+CEE 486: Integrated Civil Engineering Design (L)
+CHE 342: Introduction to Applied Chemical Thermodynamics
+CHE 432: Principles of Chemical Engineering Design
+CHE 442: Introduction to Chemical Reactor Design
+CHE 461: Process Dynamic Control (QTRS OR CS)
+CHE 462: Process Design (L)
+CHE 469: Air Quality Engineering
+CHE 475: Biochemical Engineering
+CIS 415: Big Data Analytics in Business
+CPI 311: Game Engine Development
+CPI 350: Evaluation of Informatics Systems
+CPI 360: Decision Making and Problem Solving
+CPI 411: Graphics for Games
+CPI 460: Intelligent Interactive Instructional Systems
+CPI 462: Design for Learning in Virtual Worlds
+CSE 320: Design and Synthesis of Digital Hardware
+CSE 325: Embedded Microprocessor Systems
+CSE 335: Principles of Mobile Application Development
+CSE 4** Elective
+DAT 300: Mathematical Tools for Data Science
+DAT 301: Exploring Data in R and Python
+DAT 401: Statistical Modeling and Inference for Data Science
+DAT 402: Machine Learning for Data Science
+EEE 304: Signals and Systems II
+EEE 333: Hardware Design Languages and Programmable Logic
+EEE 335: Analog and Digital Circuits
+EEE 350: Random Signal Analysis
+	
+Technical Electives continued
+EEE 360: Energy Systems and Power Electronics
+EEE 404: Real-Time DSP Systems
+EEE 407: Digital Signal Processing
+EEE 425: Digital Systems and Circuits
+EEE 433: Analog Integrated Circuits
+EEE 434: Quantum Mechanics for Engineers
+EEE 435: Fundamentals of CMOS and MEMS
+EEE 436: Fundamentals of Solid-State Devices
+EEE 437: Optoelectronics
+EEE 439: Semiconductor Facilities and Cleanroom Practices
+EEE 443: Antennas for Wireless Communications
+EEE 445: Microwaves
+EEE 448: Fiber Optics
+EEE 455: Communication Systems
+EEE 459: Communication Networks
+EEE 460: Nuclear Power Engineering
+EEE 463: Electrical Power Plants
+EEE 470: Electric Power Devices
+EEE 471: Power System Analysis
+EEE 473: Electrical Machinery
+EEE 480: Feedback Systems
+EEE 481: Computer-Controlled Systems
+FSE 301: Entrepreneurship and Value Creation
+FSE 394: Engineering for Humanity
+FSE 404: EPICS Gold: EPICS in Action
+IEE 376: Operations Research Deterministic Techniques/Applications
+IEE 381: Lean Six Sigma Methodology
+IEE 385: Engineering Statistics: Probability
+IEE 412: Introduction to Financial Engineering
+IEE 426: Operations Research in Healthcare
+IEE 431: Engineering Administration (L)
+IEE 456: Introduction to Systems Engineering
+IEE 458: Project Management
+IEE 461: Production Control
+IEE 470: Stochastic Operations Research
+IEE 474: Quality Control
+IEE 475: Simulating Stochastic Systems (QTRS OR CS)
+MAE 341: Mechanism Analysis and Design
+MAE 404: Finite Elements in Engineering
+MAE 417: System Dynamics and Control II
+MAE 436: Combustion
+MAE 455: Polymers and Composites
+MAT Upper Division Elective
+Except for: MAT 300, MAT 340, MAT 342, MAT 343 and MAT 485
+MEE 351: Manufacturing Processes
+MEE 434: Internal Combustion Engines
+MEE 446: Energy Systems Design II
+MSE 335: Materials Kinetics
+MSE 415: Mathematical and Computer Methods in Materials (CS)
+PHY 302: Mathematical Methods in Physics II
+PHY 361: Introductory Modern Physics
+PHY 462: Particle and Nuclear Physics
+SER 421: Web-Based Applications
+SER 422: Web Application Programming
+SER 423: Mobile Systems
+STP 421: Probability
+STP 425: Stochastic Processes
+STP 427: Mathematical Statistics
+STP 429: Applied Regression (QTRS OR CS)
+	
+
+
+
+Total Hours: 120
+Upper Division Hours: 45 minimum
+University Undergraduate Graduation Requirements
+
+
+Notes:
+Mathematics Placement Assessment score determines placement in first mathematics course.
+
+
+General Studies designations listed next to courses on the major map were valid for the 2024 - 2025 academic year. Please refer to the course catalog for current General Studies designations at time of class registration. General Studies credit is applied according to the designation the course carries at the time the class is taken.

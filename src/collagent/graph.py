@@ -31,38 +31,39 @@ def _env(name: str, *aliases: str, default: str | None = None) -> str | None:
     return default
 
 
-model = ChatOpenAI(
-    api_key=_env("OPENAI_API_KEY", "LLM_API_KEY"),
-    base_url=_env("OPENAI_BASE_URL", default="https://openai.rc.asu.edu/v1"),
-    model=_env("MODEL_NAME", default="qwen3-30b-a3b-instruct-2507"),
-    temperature=float(_env("TEMPERATURE", default="0.0")),
-    streaming=True,
-)
-model_with_tools = model.bind_tools(_tools)
-
-
-# ==================== nodes ====================
-def llm_node(state: AgentState) -> AgentState:
-    response = model_with_tools.invoke(
-        [SystemMessage(content=_SYSTEM_PROMPT)] + state["messages"]
+def get_model() -> ChatOpenAI:
+    return ChatOpenAI(
+        api_key=_env("OPENAI_API_KEY", "LLM_API_KEY"),
+        base_url=_env("OPENAI_BASE_URL", default="https://openai.rc.asu.edu/v1"),
+        model=_env("MODEL_NAME", default="qwen3-30b-a3b-instruct-2507"),
+        temperature=float(_env("TEMPERATURE", default="0.0")),
+        streaming=True,
     )
-    return {
-        "messages": [response],
-        "llm_calls": state.get("llm_calls", 0) + 1,
-    }
 
 
-def route_after_llm(state: AgentState) -> Literal["tool_node", "__end__"]:
-    if state["messages"][-1].tool_calls:
-        return "tool_node"
-    return END
+model = get_model()
 
 
 # ==================== graph ====================
-def create_graph(checkpointer=None):
+def create_graph(checkpointer=None, system_prompt: str = _SYSTEM_PROMPT, extra_tools: tuple = ()):
+    tools = [*_tools, *extra_tools]
+    bound = get_model().bind_tools(tools)
+
+    def llm_node(state: AgentState) -> AgentState:
+        response = bound.invoke([SystemMessage(content=system_prompt)] + state["messages"])
+        return {
+            "messages": [response],
+            "llm_calls": state.get("llm_calls", 0) + 1,
+        }
+
+    def route_after_llm(state: AgentState) -> Literal["tool_node", "__end__"]:
+        if state["messages"][-1].tool_calls:
+            return "tool_node"
+        return END
+
     graph = StateGraph(AgentState)
     graph.add_node("llm_node", llm_node)
-    graph.add_node("tool_node", ToolNode(_tools))
+    graph.add_node("tool_node", ToolNode(tools))
     graph.add_edge(START, "llm_node")
     graph.add_conditional_edges("llm_node", route_after_llm, ["tool_node", END])
     graph.add_edge("tool_node", "llm_node")
@@ -70,9 +71,8 @@ def create_graph(checkpointer=None):
 
 
 # ==================== streaming ====================
-def stream_turn(graph, user_input: str, config: dict) -> None:
-    in_model_text = False
-
+def stream_events(graph, user_input: str, config: dict):
+    """Yield {'type': 'token'|'tool'|'tool_result', ...} events for one turn."""
     for chunk in graph.stream(
         {"messages": [HumanMessage(content=user_input)], "llm_calls": 0},
         config=config,
@@ -86,31 +86,43 @@ def stream_turn(graph, user_input: str, config: dict) -> None:
         tool_calls = getattr(message_chunk, "tool_calls", None) or []
         message_type = getattr(message_chunk, "type", None)
 
-        if tool_calls:
-            if in_model_text:
-                print()
-                in_model_text = False
-            for call in tool_calls:
-                name = call.get("name", "") if isinstance(call, dict) else ""
-                args = call.get("args", {}) if isinstance(call, dict) else {}
-                if name:  # skip partial chunks that only carry args
-                    print(f"  [tool] {name} {args}")
+        for call in tool_calls:
+            name = call.get("name", "") if isinstance(call, dict) else ""
+            args = call.get("args", {}) if isinstance(call, dict) else {}
+            if name:  # skip partial chunks that only carry args
+                yield {"type": "tool", "name": name, "args": args}
 
         if message_type == "tool":
-            if in_model_text:
-                print()
-                in_model_text = False
-            name = getattr(message_chunk, "name", "tool")
-            content = message_chunk.content or ""
-            print(f"  [result] {name}: {content}")
+            yield {
+                "type": "tool_result",
+                "name": getattr(message_chunk, "name", "tool"),
+                "content": message_chunk.content or "",
+            }
             continue
 
         content = message_chunk.content
         if content and not content.isspace():  # skip whitespace-only chunks (e.g. trailing \n\n before a tool call)
+            yield {"type": "token", "content": content}
+
+
+def stream_turn(graph, user_input: str, config: dict) -> None:
+    """CLI printer over stream_events (keeps `collagent run` behavior)."""
+    in_model_text = False
+    for event in stream_events(graph, user_input, config):
+        if event["type"] == "tool":
+            if in_model_text:
+                print()
+                in_model_text = False
+            print(f"  [tool] {event['name']} {event['args']}")
+        elif event["type"] == "tool_result":
+            if in_model_text:
+                print()
+                in_model_text = False
+            print(f"  [result] {event['name']}: {event['content']}")
+        else:
             if not in_model_text:
                 print("COLLAGENT: ", end="", flush=True)
-            print(content, end="", flush=True)
+            print(event["content"], end="", flush=True)
             in_model_text = True
-
     if in_model_text:
         print()
