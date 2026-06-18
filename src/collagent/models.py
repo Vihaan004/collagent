@@ -48,3 +48,20 @@ class MajorMapCourse(BaseModel):
     requirement_note: str | None = None
     status: CourseStatus = "remaining"
     sort_order: int = 0
+
+
+class EventRecommendation(BaseModel):
+    """Flattened view of an event_recommendations row joined to its event."""
+
+    model_config = {"extra": "ignore"}
+
+    id: str            # recommendation row id
+    event_id: str
+    title: str
+    description: str | None = None
+    starts_at: str | None = None
+    ends_at: str | None = None
+    location: str | None = None
+    url: str
+    why_note: str
+    rank: int

@@ -1,5 +1,6 @@
 "use client";
-import { useRef, useState } from "react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { apiFetch } from "@/lib/api";
 
 interface Msg {
@@ -7,24 +8,25 @@ interface Msg {
   content: string;
 }
 
-export default function ChatPage() {
+function ChatInner() {
+  const searchParams = useSearchParams();
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const busyRef = useRef(false);
 
-  async function send(e: React.FormEvent) {
-    e.preventDefault();
-    const text = input.trim();
-    if (!text || busy) return;
-    setInput("");
+  const sendMessage = useCallback(async (text: string) => {
+    const trimmed = text.trim();
+    if (!trimmed || busyRef.current) return;
+    busyRef.current = true;
     setBusy(true);
-    setMessages((m) => [...m, { role: "user", content: text }, { role: "assistant", content: "" }]);
+    setMessages((m) => [...m, { role: "user", content: trimmed }, { role: "assistant", content: "" }]);
 
     try {
       const res = await apiFetch("/api/chat", {
         method: "POST",
-        body: JSON.stringify({ message: text, thread_id: "web" }),
+        body: JSON.stringify({ message: trimmed, thread_id: "web" }),
       });
       const reader = res.body!.getReader();
       const decoder = new TextDecoder();
@@ -62,8 +64,28 @@ export default function ChatPage() {
     } catch {
       setMessages((m) => [...m, { role: "assistant", content: "Something went wrong — try again." }]);
     } finally {
+      busyRef.current = false;
       setBusy(false);
     }
+  }, []);
+
+  // Run once on mount: consume a prefilled ?ask= transferred from another surface
+  // (e.g. an event card). searchParams holds the mount-time value, and we strip the
+  // param immediately, so this must not re-fire on searchParams identity change.
+  useEffect(() => {
+    const ask = searchParams.get("ask");
+    if (ask) {
+      sendMessage(ask);
+      window.history.replaceState(null, "", "/chat");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const text = input;
+    setInput("");
+    void sendMessage(text);
   }
 
   return (
@@ -88,7 +110,7 @@ export default function ChatPage() {
         )}
         <div ref={bottomRef} />
       </div>
-      <form onSubmit={send} className="flex gap-2">
+      <form onSubmit={onSubmit} className="flex gap-2">
         <input value={input} onChange={(e) => setInput(e.target.value)}
           placeholder="Message Collagent…" className="flex-1 rounded-md border px-3 py-2 text-sm" />
         <button type="submit" disabled={busy}
@@ -97,5 +119,13 @@ export default function ChatPage() {
         </button>
       </form>
     </main>
+  );
+}
+
+export default function ChatPage() {
+  return (
+    <Suspense fallback={<main className="p-4 text-sm text-gray-400">Loading…</main>}>
+      <ChatInner />
+    </Suspense>
   );
 }
