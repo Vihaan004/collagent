@@ -48,3 +48,19 @@ def test_parse_gcal_link_handles_all_day():
 
 def test_parse_gcal_link_missing_returns_empty():
     assert events.parse_gcal_link("<html><body>no link</body></html>") == {}
+
+
+def test_parse_gcal_link_unknown_timezone_falls_back_to_phoenix():
+    html = (
+        '<a href="https://calendar.google.com/calendar/render'
+        '?dates=20260620T140000/20260620T160000&ctz=Not/AZone&text=X">x</a>'
+    )
+    g = events.parse_gcal_link(html)
+    assert g["starts_at"] == "2026-06-20T14:00:00-07:00"  # fell back to America/Phoenix
+
+
+def test_parse_gcal_link_empty_dates_yields_none():
+    html = '<a href="https://calendar.google.com/calendar/render?dates=&text=X">x</a>'
+    g = events.parse_gcal_link(html)
+    assert g["title"] == "X"
+    assert g["starts_at"] is None and g["ends_at"] is None

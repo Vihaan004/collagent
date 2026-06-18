@@ -33,19 +33,26 @@ def _parse_gcal_dt(value: str, tz: ZoneInfo) -> str:
     return datetime.strptime(value, fmt).replace(tzinfo=tz).isoformat()
 
 
-def parse_gcal_link(html: str) -> dict:
+def parse_gcal_link(html: str) -> dict[str, str | None]:
     soup = BeautifulSoup(html, "html.parser")
     a = soup.find("a", href=_GCAL_HREF)
     if not a:
         return {}
     q = parse_qs(urlparse(a["href"]).query)  # parse_qs URL-decodes and maps + -> space
-    tz = ZoneInfo((q.get("ctz") or ["America/Phoenix"])[0])
+    try:
+        tz = ZoneInfo((q.get("ctz") or ["America/Phoenix"])[0])
+    except KeyError:  # ZoneInfoNotFoundError subclasses KeyError
+        tz = ZoneInfo("America/Phoenix")
     starts_at = ends_at = None
-    if q.get("dates"):
-        parts = q["dates"][0].split("/")
-        starts_at = _parse_gcal_dt(parts[0], tz)
-        if len(parts) > 1:
-            ends_at = _parse_gcal_dt(parts[1], tz)
+    dates = (q.get("dates") or [""])[0]
+    if dates:
+        parts = dates.split("/")
+        try:
+            starts_at = _parse_gcal_dt(parts[0], tz)
+            if len(parts) > 1:
+                ends_at = _parse_gcal_dt(parts[1], tz)
+        except ValueError:  # malformed/empty date token
+            starts_at = ends_at = None
     details_html = (q.get("details") or [""])[0]
     description = BeautifulSoup(details_html, "html.parser").get_text(" ", strip=True) or None
     return {
