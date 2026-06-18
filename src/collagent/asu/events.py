@@ -66,13 +66,17 @@ def parse_gcal_link(html: str) -> dict[str, str | None]:
 
 def fetch_upcoming_events(max_events: int = 40) -> list[dict]:
     """Crawl listing pages, then fetch each detail page and parse its gcal link.
-    Network-bound; pure parsing logic lives in parse_event_links/parse_gcal_link."""
+    Network-bound; pure parsing logic lives in parse_event_links/parse_gcal_link.
+    Resilient: a single failing page is skipped rather than aborting the crawl."""
     rows: list[dict] = []
     seen: set[str] = set()
-    with httpx.Client(headers=UA, timeout=30, follow_redirects=True) as client:
+    with httpx.Client(headers=UA, timeout=15, follow_redirects=True) as client:
         links: list[dict] = []
         for page in range(0, 5):
-            resp = client.get(LIST_URL.format(page=page))
+            try:
+                resp = client.get(LIST_URL.format(page=page))
+            except httpx.HTTPError:
+                break
             if resp.status_code != 200:
                 break
             page_links = parse_event_links(resp.text)
@@ -86,7 +90,10 @@ def fetch_upcoming_events(max_events: int = 40) -> list[dict]:
             if key in seen:
                 continue
             seen.add(key)
-            detail = client.get(link["url"])
+            try:
+                detail = client.get(link["url"])
+            except httpx.HTTPError:
+                continue
             if detail.status_code != 200:
                 continue
             g = parse_gcal_link(detail.text)

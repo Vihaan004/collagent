@@ -3,7 +3,8 @@ from collagent import event_tools
 from collagent.models import EventRecommendation
 
 REC = EventRecommendation(
-    id="r1", event_id="e1", title="Intro to FPGAs", url="u",
+    id="r1", event_id="e1", title="Intro to FPGAs", url="https://asuevents.asu.edu/e1",
+    description="A hands-on workshop on FPGA design.",
     starts_at="2026-06-20T14:00:00-07:00", location="Tempe",
     why_note="Matches your FPGA interest.", rank=0,
 )
@@ -16,6 +17,8 @@ def test_get_event_recommendations_renders_list(monkeypatch):
     assert "Intro to FPGAs" in out
     assert "Matches your FPGA interest." in out
     assert "Tempe" in out
+    assert "A hands-on workshop on FPGA design." in out  # description included
+    assert "https://asuevents.asu.edu/e1" in out  # link included
 
 
 def test_get_event_recommendations_empty(monkeypatch):

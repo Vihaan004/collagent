@@ -1,7 +1,6 @@
 # tests/test_api_events.py
 from collagent.api.routes import events as ev_routes
 from collagent.models import EventRecommendation
-from tests.conftest import TEST_USER
 
 REC = EventRecommendation(
     id="r1", event_id="e1", title="Intro to FPGAs",
