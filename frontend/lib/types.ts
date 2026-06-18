@@ -31,3 +31,16 @@ export interface ProgramHit {
   slug: string;
   name: string;
 }
+
+export interface EventRecommendation {
+  id: string;
+  event_id: string;
+  title: string;
+  description: string | null;
+  starts_at: string | null;
+  ends_at: string | null;
+  location: string | null;
+  url: string;
+  why_note: string;
+  rank: number;
+}
