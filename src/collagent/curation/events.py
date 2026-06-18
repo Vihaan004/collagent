@@ -4,6 +4,7 @@ A pure function with one structured-output LLM call (spec: 'pipeline, not agent'
 from pydantic import BaseModel, Field
 
 from collagent import db
+from collagent.curation.student import student_summary
 from collagent.graph import get_model
 from collagent.models import EventRecommendation, MajorMapCourse, Profile
 
@@ -22,30 +23,6 @@ From the candidate events below, choose the 5-10 that best fit this student and 
 best-first. For each pick, write a 1-2 sentence why_note grounded in the student's specific
 interests, major, goals, clubs, or coursework — not generic praise.
 Only choose from the candidates and copy each event_id exactly. Do not invent events."""
-
-
-def _student_summary(profile: Profile | None, courses: list[MajorMapCourse]) -> str:
-    if profile is None:
-        return "No profile on file; recommend broadly appealing, high-signal events."
-    parts: list[str] = []
-    if profile.full_name:
-        parts.append(f"Name: {profile.full_name}")
-    if profile.major_name:
-        parts.append(f"Major: {profile.major_name}")
-    if profile.academic_year:
-        parts.append(f"Year: {profile.academic_year}")
-    if profile.interests:
-        parts.append(f"Interests: {', '.join(profile.interests)}")
-    if profile.goals:
-        parts.append(f"Goals: {profile.goals}")
-    if profile.clubs:
-        parts.append(f"Clubs: {', '.join(profile.clubs)}")
-    if profile.projects:
-        parts.append(f"Projects: {profile.projects}")
-    if courses:
-        taken = sum(1 for c in courses if c.status == "taken")
-        parts.append(f"Major-map progress: {taken} of {len(courses)} courses taken")
-    return "\n".join(parts) or "Profile is sparse; recommend broadly relevant events."
 
 
 def _candidate_block(candidates: list[dict]) -> str:
@@ -67,7 +44,7 @@ def _rank(
 ) -> EventRanking:
     llm = get_model().with_structured_output(EventRanking)
     user = (
-        f"STUDENT:\n{_student_summary(profile, courses)}\n\n"
+        f"STUDENT:\n{student_summary(profile, courses)}\n\n"
         f"CANDIDATE EVENTS:\n{_candidate_block(candidates)}"
     )
     return llm.invoke([("system", _RANK_PROMPT), ("user", user)])
