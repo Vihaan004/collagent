@@ -62,3 +62,44 @@ def parse_gcal_link(html: str) -> dict[str, str | None]:
         "description": description,
         "location": (q.get("location") or [None])[0],
     }
+
+
+def fetch_upcoming_events(max_events: int = 40) -> list[dict]:
+    """Crawl listing pages, then fetch each detail page and parse its gcal link.
+    Network-bound; pure parsing logic lives in parse_event_links/parse_gcal_link."""
+    rows: list[dict] = []
+    seen: set[str] = set()
+    with httpx.Client(headers=UA, timeout=30, follow_redirects=True) as client:
+        links: list[dict] = []
+        for page in range(0, 5):
+            resp = client.get(LIST_URL.format(page=page))
+            if resp.status_code != 200:
+                break
+            page_links = parse_event_links(resp.text)
+            if not page_links:
+                break
+            links.extend(page_links)
+            if len(links) >= max_events:
+                break
+        for link in links[:max_events]:
+            key = f"{link['slug']}:{link['event_date']}"
+            if key in seen:
+                continue
+            seen.add(key)
+            detail = client.get(link["url"])
+            if detail.status_code != 200:
+                continue
+            g = parse_gcal_link(detail.text)
+            if not g.get("title"):
+                continue
+            rows.append({
+                "source": "asu_events",
+                "source_event_key": key,
+                "title": g["title"],
+                "description": g.get("description"),
+                "starts_at": g.get("starts_at"),
+                "ends_at": g.get("ends_at"),
+                "location": g.get("location"),
+                "url": link["url"],
+            })
+    return rows
