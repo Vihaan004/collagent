@@ -1,9 +1,16 @@
+from datetime import datetime, timezone
 from functools import lru_cache
 
 from supabase import Client, create_client
 
 from collagent.config import settings
-from collagent.models import CourseStatus, MajorMapCourse, Profile, ProfileUpdate
+from collagent.models import (
+    CourseStatus,
+    EventRecommendation,
+    MajorMapCourse,
+    Profile,
+    ProfileUpdate,
+)
 
 
 @lru_cache(maxsize=1)
@@ -54,3 +61,64 @@ def update_course_statuses(user_id: str, updates: list[tuple[str, CourseStatus]]
             .eq("id", course_id).eq("user_id", user_id)
             .execute()
         )
+
+
+def upsert_events(rows: list[dict]) -> list[dict]:
+    if not rows:
+        return []
+    res = (
+        get_client().table("events")
+        .upsert(rows, on_conflict="source,source_event_key")
+        .execute()
+    )
+    return res.data
+
+
+def get_upcoming_events(limit: int = 40, since: str | None = None) -> list[dict]:
+    since = since or datetime.now(timezone.utc).isoformat()
+    res = (
+        get_client().table("events").select("*")
+        .gte("starts_at", since)
+        .order("starts_at")
+        .limit(limit)
+        .execute()
+    )
+    return res.data
+
+
+def _flatten_rec(row: dict) -> EventRecommendation:
+    ev = row.get("events") or {}
+    return EventRecommendation(
+        id=row["id"],
+        event_id=row["event_id"],
+        why_note=row["why_note"],
+        rank=row["rank"],
+        title=ev.get("title", ""),
+        description=ev.get("description"),
+        starts_at=ev.get("starts_at"),
+        ends_at=ev.get("ends_at"),
+        location=ev.get("location"),
+        url=ev.get("url", ""),
+    )
+
+
+def get_event_recommendations(user_id: str) -> list[EventRecommendation]:
+    res = (
+        get_client().table("event_recommendations")
+        .select("id, event_id, why_note, rank, events(*)")
+        .eq("user_id", user_id)
+        .order("rank")
+        .execute()
+    )
+    return [_flatten_rec(row) for row in res.data]
+
+
+def replace_event_recommendations(
+    user_id: str, rows: list[dict]
+) -> list[EventRecommendation]:
+    client = get_client()
+    client.table("event_recommendations").delete().eq("user_id", user_id).execute()
+    if rows:
+        payload = [{**r, "user_id": user_id} for r in rows]
+        client.table("event_recommendations").insert(payload).execute()
+    return get_event_recommendations(user_id)
