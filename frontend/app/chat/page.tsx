@@ -69,14 +69,17 @@ function ChatInner() {
     }
   }, []);
 
-  // Auto-send a prefilled question transferred from another surface (e.g. an event card).
+  // Run once on mount: consume a prefilled ?ask= transferred from another surface
+  // (e.g. an event card). searchParams holds the mount-time value, and we strip the
+  // param immediately, so this must not re-fire on searchParams identity change.
   useEffect(() => {
     const ask = searchParams.get("ask");
     if (ask) {
       sendMessage(ask);
       window.history.replaceState(null, "", "/chat");
     }
-  }, [searchParams, sendMessage]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
