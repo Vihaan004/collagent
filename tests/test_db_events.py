@@ -37,6 +37,7 @@ def test_get_upcoming_events_filters_future(monkeypatch):
     rows = db.get_upcoming_events(limit=5)
     assert rows == [{"id": "e1", "title": "X"}]
     client.table.return_value.select.return_value.gte.assert_called_once()
+    client.table.return_value.select.return_value.gte.return_value.order.return_value.limit.assert_called_once_with(5)
 
 
 def test_get_event_recommendations_flattens_join(monkeypatch):
@@ -51,7 +52,8 @@ def test_get_event_recommendations_flattens_join(monkeypatch):
 def test_replace_event_recommendations_deletes_then_inserts(monkeypatch):
     client = _client()
     monkeypatch.setattr(db, "get_client", lambda: client)
-    db.replace_event_recommendations("u1", [{"event_id": "e1", "why_note": "w", "rank": 0}])
+    recs = db.replace_event_recommendations("u1", [{"event_id": "e1", "why_note": "w", "rank": 0}])
     client.table.return_value.delete.assert_called_once()
     inserted = client.table.return_value.insert.call_args.args[0]
     assert inserted[0]["user_id"] == "u1" and inserted[0]["event_id"] == "e1"
+    assert recs[0].title == "Intro to FPGAs"  # return value round-trips through get_event_recommendations
