@@ -65,3 +65,23 @@ class EventRecommendation(BaseModel):
     url: str
     why_note: str
     rank: int
+
+
+class PersonRecommendation(BaseModel):
+    """Flattened view of a person_recommendations row joined to its person."""
+
+    model_config = {"extra": "ignore"}
+
+    id: str            # recommendation row id
+    person_id: str
+    name: str
+    title: str | None = None
+    departments: list[str] = []
+    expertise_areas: list[str] = []
+    email: str | None = None
+    profile_url: str
+    photo_url: str | None = None
+    research_interests: str | None = None
+    short_bio: str | None = None
+    why_note: str
+    rank: int
