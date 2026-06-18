@@ -18,7 +18,7 @@ class EventRanking(BaseModel):
 
 
 _RANK_PROMPT = """You are an executive assistant curating ASU campus events for one student.
-From the numbered candidate events, choose the 5-10 that best fit this student and rank them
+From the candidate events below, choose the 5-10 that best fit this student and rank them
 best-first. For each pick, write a 1-2 sentence why_note grounded in the student's specific
 interests, major, goals, clubs, or coursework — not generic praise.
 Only choose from the candidates and copy each event_id exactly. Do not invent events."""
@@ -48,27 +48,27 @@ def _student_summary(profile: Profile | None, courses: list[MajorMapCourse]) -> 
     return "\n".join(parts) or "Profile is sparse; recommend broadly relevant events."
 
 
-def _candidate_block(events: list[dict]) -> str:
+def _candidate_block(candidates: list[dict]) -> str:
     blocks = []
-    for e in events:
+    for e in candidates:
         about = (e.get("description") or "")[:300]
         blocks.append(
             f"event_id: {e['id']}\n"
-            f"Title: {e.get('title')}\n"
-            f"When: {e.get('starts_at')}\n"
-            f"Where: {e.get('location')}\n"
+            f"Title: {e.get('title') or '(untitled)'}\n"
+            f"When: {e.get('starts_at') or 'TBD'}\n"
+            f"Where: {e.get('location') or 'TBD'}\n"
             f"About: {about}"
         )
     return "\n\n".join(blocks)
 
 
 def _rank(
-    profile: Profile | None, courses: list[MajorMapCourse], events: list[dict]
+    profile: Profile | None, courses: list[MajorMapCourse], candidates: list[dict]
 ) -> EventRanking:
     llm = get_model().with_structured_output(EventRanking)
     user = (
         f"STUDENT:\n{_student_summary(profile, courses)}\n\n"
-        f"CANDIDATE EVENTS:\n{_candidate_block(events)}"
+        f"CANDIDATE EVENTS:\n{_candidate_block(candidates)}"
     )
     return llm.invoke([("system", _RANK_PROMPT), ("user", user)])
 

@@ -33,6 +33,10 @@ def test_curate_with_no_events_clears_recs(monkeypatch):
     monkeypatch.setattr(curation.db, "get_profile", lambda uid: None)
     monkeypatch.setattr(curation.db, "get_major_map_courses", lambda uid: [])
     monkeypatch.setattr(curation.db, "get_upcoming_events", lambda limit=40: [])
+    monkeypatch.setattr(
+        curation, "_rank",
+        lambda *a: (_ for _ in ()).throw(AssertionError("_rank must not run when events is empty")),
+    )
     captured = {}
     monkeypatch.setattr(
         curation.db, "replace_event_recommendations",
