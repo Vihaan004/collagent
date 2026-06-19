@@ -44,9 +44,11 @@ def _looks_like_faculty(empl_classes: list[str], title: str | None, expertise: l
     return bool(expertise)
 
 
-def parse_people(payload: dict) -> list[dict]:
-    """Map the iSearch response to the `people` row shape, filtering to likely faculty/
-    mentors and deduping by asurite_id. Pure: no network."""
+def parse_people(payload: dict, faculty_only: bool = True) -> list[dict]:
+    """Map the iSearch response to the `people` row shape, deduping by asurite_id.
+    Pure: no network. When faculty_only is True (ingestion, for mentor curation) rows
+    that don't look like faculty/mentors are dropped; live name/topic lookups pass
+    faculty_only=False so a directly-named person is never hidden by the filter."""
     rows: dict[str, dict] = {}
     for item in payload.get("results", []):
         def g(key):
@@ -59,7 +61,7 @@ def parse_people(payload: dict) -> list[dict]:
         empl = _as_list(g("simplified_empl_classes"))
         title = _first(g("primary_title")) or _first(g("working_title"))
         expertise = _as_list(g("expertise_areas"))
-        if not _looks_like_faculty(empl, title, expertise):
+        if faculty_only and not _looks_like_faculty(empl, title, expertise):
             continue
         eid = g("eid")
         profile_url = (
@@ -101,14 +103,16 @@ def query_terms(profile: Profile | None) -> list[str]:
     return out
 
 
-def _get_profiles(client: httpx.Client, query: str, size: int) -> list[dict]:
+def _get_profiles(
+    client: httpx.Client, query: str, size: int, faculty_only: bool = True
+) -> list[dict]:
     resp = client.get(
         API_URL,
         params={"sort-by": "", "query": query, "page": 1, "size": size, "client": "asuis"},
     )
     if resp.status_code != 200:
         return []
-    return parse_people(resp.json())
+    return parse_people(resp.json(), faculty_only=faculty_only)
 
 
 def fetch_faculty(query_list: list[str], per_term: int = 10) -> list[dict]:
@@ -145,16 +149,18 @@ def _clean_query(query: str) -> str:
 
 
 def search_faculty(query: str, size: int = 8) -> list[dict]:
-    """Single live directory query for the chat search_people tool. The iSearch API
-    AND-matches query tokens, so a natural-language question ("who is Aman Arora")
-    returns nothing; if the raw query is empty we retry with filler words stripped."""
+    """Single live directory query for the chat search_people tool. Returns whoever the
+    directory matches (faculty_only=False) — a directly-named person must never be hidden
+    by the mentor filter. The iSearch API AND-matches query tokens, so a natural-language
+    question ("who is Aman Arora") returns nothing; if the raw query is empty we retry
+    with filler words stripped."""
     with httpx.Client(headers=UA, timeout=15, follow_redirects=True) as client:
         try:
-            results = _get_profiles(client, query, size)
+            results = _get_profiles(client, query, size, faculty_only=False)
             if not results:
                 cleaned = _clean_query(query)
                 if cleaned and cleaned.lower() != query.strip().lower():
-                    results = _get_profiles(client, cleaned, size)
+                    results = _get_profiles(client, cleaned, size, faculty_only=False)
             return results
         except httpx.HTTPError:
             return []

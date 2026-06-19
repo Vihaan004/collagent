@@ -82,3 +82,28 @@ def test_clean_query_strips_filler_words():
     # a bare name/topic is left intact
     assert people._clean_query("robotics") == "robotics"
     assert people._clean_query("Aman Arora") == "Aman Arora"
+
+
+NON_FACULTY = {
+    "results": [
+        {  # courtesy affiliate, no title/empl-class/expertise -> dropped by default,
+           # kept when faculty_only=False (direct name lookup)
+            "asurite_id": {"raw": "vpatel"},
+            "eid": {"raw": "777"},
+            "display_name": {"raw": "Vihaan Patel"},
+            "email_address": {"raw": "vihaan.patel@asu.edu"},
+            "primary_title": {"raw": None},
+            "departments": {"raw": None},
+            "expertise_areas": {"raw": None},
+            "primary_affiliation": {"raw": "COURTESY_AFFILIATE"},
+        },
+    ]
+}
+
+
+def test_parse_people_faculty_only_false_keeps_non_faculty():
+    assert people.parse_people(NON_FACULTY) == []  # default drops the courtesy affiliate
+    rows = people.parse_people(NON_FACULTY, faculty_only=False)
+    assert len(rows) == 1
+    assert rows[0]["name"] == "Vihaan Patel"
+    assert rows[0]["profile_url"] == "https://search.asu.edu/profile/777"
