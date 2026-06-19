@@ -8,6 +8,7 @@ from collagent.models import (
     CourseStatus,
     EventRecommendation,
     MajorMapCourse,
+    PersonRecommendation,
     Profile,
     ProfileUpdate,
 )
@@ -122,3 +123,65 @@ def replace_event_recommendations(
         payload = [{**r, "user_id": user_id} for r in rows]
         client.table("event_recommendations").insert(payload).execute()
     return get_event_recommendations(user_id)
+
+
+def upsert_people(rows: list[dict]) -> list[dict]:
+    if not rows:
+        return []
+    res = (
+        get_client().table("people")
+        .upsert(rows, on_conflict="source,source_person_key")
+        .execute()
+    )
+    return res.data
+
+
+def get_people(limit: int = 60) -> list[dict]:
+    res = (
+        get_client().table("people").select("*")
+        .order("fetched_at", desc=True)
+        .limit(limit)
+        .execute()
+    )
+    return res.data
+
+
+def _flatten_person_rec(row: dict) -> PersonRecommendation:
+    p = row.get("people") or {}
+    return PersonRecommendation(
+        id=row["id"],
+        person_id=row["person_id"],
+        why_note=row["why_note"],
+        rank=row["rank"],
+        name=p.get("name", ""),
+        title=p.get("title"),
+        departments=p.get("departments") or [],
+        expertise_areas=p.get("expertise_areas") or [],
+        email=p.get("email"),
+        profile_url=p.get("profile_url", ""),
+        photo_url=p.get("photo_url"),
+        research_interests=p.get("research_interests"),
+        short_bio=p.get("short_bio"),
+    )
+
+
+def get_person_recommendations(user_id: str) -> list[PersonRecommendation]:
+    res = (
+        get_client().table("person_recommendations")
+        .select("id, person_id, why_note, rank, people(*)")
+        .eq("user_id", user_id)
+        .order("rank")
+        .execute()
+    )
+    return [_flatten_person_rec(row) for row in res.data]
+
+
+def replace_person_recommendations(
+    user_id: str, rows: list[dict]
+) -> list[PersonRecommendation]:
+    client = get_client()
+    client.table("person_recommendations").delete().eq("user_id", user_id).execute()
+    if rows:
+        payload = [{**r, "user_id": user_id} for r in rows]
+        client.table("person_recommendations").insert(payload).execute()
+    return get_person_recommendations(user_id)

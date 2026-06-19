@@ -50,9 +50,20 @@ function ChatInner() {
               return copy;
             });
           } else if (event.type === "tool") {
+            const args =
+              event.args && Object.keys(event.args).length
+                ? `(${JSON.stringify(event.args)})`
+                : "";
             setMessages((m) => [
               ...m.slice(0, -1),
-              { role: "tool", content: `Using ${event.name}…` },
+              { role: "tool", content: `Using ${event.name}${args}` },
+              m[m.length - 1],
+            ]);
+          } else if (event.type === "tool_result") {
+            const preview = String(event.content ?? "").replace(/\s+/g, " ").slice(0, 300);
+            setMessages((m) => [
+              ...m.slice(0, -1),
+              { role: "tool", content: `↳ ${event.name}: ${preview || "(no result)"}` },
               m[m.length - 1],
             ]);
           } else if (event.type === "error") {

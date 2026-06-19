@@ -43,3 +43,17 @@ def test_event_recommendation_ignores_extra_columns():
         created_at="2026-06-12T00:00:00Z",
     )
     assert rec.id == "r1"
+
+
+def test_person_recommendation_ignores_extra_fields():
+    from collagent.models import PersonRecommendation
+
+    rec = PersonRecommendation(
+        id="r1", person_id="p1", name="Bing Si", title="Associate Professor",
+        departments=["SCAI"], expertise_areas=["Machine Learning"],
+        email="bing.si@asu.edu", profile_url="https://search.asu.edu/profile/123",
+        why_note="Matches your ML interest.", rank=0, unexpected="x",
+    )
+    assert rec.name == "Bing Si"
+    assert rec.expertise_areas == ["Machine Learning"]
+    assert not hasattr(rec, "unexpected")

@@ -44,3 +44,19 @@ export interface EventRecommendation {
   why_note: string;
   rank: number;
 }
+
+export interface PersonRecommendation {
+  id: string;
+  person_id: string;
+  name: string;
+  title: string | null;
+  departments: string[];
+  expertise_areas: string[];
+  email: string | null;
+  profile_url: string;
+  photo_url: string | null;
+  research_interests: string | null;
+  short_bio: string | null;
+  why_note: string;
+  rank: number;
+}
