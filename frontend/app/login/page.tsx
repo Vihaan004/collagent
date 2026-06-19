@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
+import Button from "@/components/ui/Button";
+import { Input } from "@/components/ui/Field";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -21,34 +23,32 @@ export default function LoginPage() {
 
   return (
     <main className="flex min-h-screen items-center justify-center p-6">
-      <div className="w-full max-w-sm space-y-6">
-        <div>
-          <h1 className="text-2xl font-semibold">Collagent</h1>
-          <p className="text-sm text-gray-500">Your personal interface to ASU.</p>
+      <div className="w-full max-w-sm">
+        <div className="mb-8 text-center">
+          <h1 className="font-display text-4xl tracking-tight text-naval">collagent</h1>
+          <p className="mt-2 text-sm text-muted">Your personal interface to ASU.</p>
         </div>
-        {sent ? (
-          <p className="rounded-md bg-green-50 p-4 text-sm text-green-800">
-            Check your email for a sign-in link.
-          </p>
-        ) : (
-          <form onSubmit={sendLink} className="space-y-3">
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@asu.edu"
-              className="w-full rounded-md border px-3 py-2 text-sm"
-            />
-            <button
-              type="submit"
-              className="w-full rounded-md bg-black px-3 py-2 text-sm font-medium text-white"
-            >
-              Send sign-in link
-            </button>
-            {error && <p className="text-sm text-red-600">{error}</p>}
-          </form>
-        )}
+        <div className="rounded-2xl border border-line bg-surface p-6">
+          {sent ? (
+            <div className="rounded-lg border border-line bg-cream-200 p-4 text-center text-sm text-ink">
+              Check your email for a sign-in link.
+            </div>
+          ) : (
+            <form onSubmit={sendLink} className="space-y-3">
+              <Input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@asu.edu"
+              />
+              <Button type="submit" className="w-full">
+                Send sign-in link
+              </Button>
+              {error && <p className="text-sm text-orange-700">{error}</p>}
+            </form>
+          )}
+        </div>
       </div>
     </main>
   );

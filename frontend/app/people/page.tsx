@@ -4,6 +4,16 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { api } from "@/lib/api";
 import type { PersonRecommendation } from "@/lib/types";
+import Button from "@/components/ui/Button";
+import Card from "@/components/ui/Card";
+import Badge from "@/components/ui/Badge";
+import PageHeader from "@/components/ui/PageHeader";
+import { EmptyState, Spinner } from "@/components/ui/States";
+
+function initials(name: string): string {
+  const parts = name.trim().split(/\s+/);
+  return ((parts[0]?.[0] ?? "") + (parts[parts.length - 1]?.[0] ?? "")).toUpperCase();
+}
 
 export default function PeoplePage() {
   const router = useRouter();
@@ -36,55 +46,71 @@ export default function PeoplePage() {
   }
 
   return (
-    <main className="mx-auto w-full max-w-2xl p-4">
-      <div className="mb-4 flex items-center justify-between">
-        <h1 className="text-lg font-semibold">People to connect with</h1>
-        <button onClick={refresh} disabled={refreshing}
-          className="rounded-md bg-black px-4 py-2 text-sm font-medium text-white disabled:opacity-50">
-          {refreshing ? "Finding people…" : "Refresh"}
-        </button>
-      </div>
+    <main className="mx-auto w-full max-w-2xl p-6">
+      <PageHeader
+        title="People to connect with"
+        subtitle="Faculty and mentors worth reaching out to, matched to your path."
+        action={
+          <Button onClick={refresh} disabled={refreshing}>
+            {refreshing ? "Finding people…" : "Refresh"}
+          </Button>
+        }
+      />
 
       {loading ? (
-        <p className="pt-12 text-center text-sm text-gray-400">Loading…</p>
+        <Spinner />
       ) : recs.length === 0 ? (
-        <p className="pt-12 text-center text-sm text-gray-400">
-          No recommendations yet — hit Refresh to generate them.
-        </p>
+        <EmptyState
+          title="No recommendations yet"
+          hint="Hit Refresh and Collagent will find ASU faculty aligned with your interests."
+          action={<Button onClick={refresh} disabled={refreshing}>Refresh</Button>}
+        />
       ) : (
-        <ul className="space-y-3">
+        <ul className="space-y-4">
           {recs.map((rec) => (
-            <li key={rec.id} className="rounded-lg border p-4">
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <a href={rec.profile_url} target="_blank" rel="noopener noreferrer"
-                    className="font-medium hover:underline">
-                    {rec.name}
-                  </a>
-                  <p className="text-xs text-gray-500">
-                    {rec.title ?? "ASU"}{rec.departments.length ? ` · ${rec.departments.join(", ")}` : ""}
-                  </p>
+            <Card as="li" key={rec.id}>
+              <div className="flex items-start gap-3">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-cream text-sm font-medium text-naval">
+                  {initials(rec.name)}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0">
+                      <a href={rec.profile_url} target="_blank" rel="noopener noreferrer"
+                        className="font-medium text-ink hover:text-naval hover:underline">
+                        {rec.name}
+                      </a>
+                      <p className="mt-0.5 text-xs text-muted">
+                        {rec.title ?? "ASU"}{rec.departments.length ? ` · ${rec.departments.join(", ")}` : ""}
+                      </p>
+                    </div>
+                    <Button variant="secondary" onClick={() => discuss(rec)}
+                      className="shrink-0 px-3 py-1.5 text-xs">
+                      Discuss in chat
+                    </Button>
+                  </div>
+
                   {rec.expertise_areas.length > 0 && (
-                    <p className="mt-1 text-xs text-gray-500">
-                      Expertise: {rec.expertise_areas.join(", ")}
-                    </p>
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {rec.expertise_areas.slice(0, 5).map((area) => (
+                        <Badge key={area}>{area}</Badge>
+                      ))}
+                    </div>
+                  )}
+
+                  <p className="mt-3 rounded-r-md border-l-[3px] border-orange bg-cream-200 px-3 py-2 text-sm leading-relaxed text-ink/90">
+                    {rec.why_note}
+                  </p>
+
+                  {rec.email && (
+                    <a href={`mailto:${rec.email}`}
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-naval hover:underline">
+                      {rec.email}
+                    </a>
                   )}
                 </div>
-                <button onClick={() => discuss(rec)}
-                  className="shrink-0 rounded-md border px-3 py-1 text-xs font-medium hover:bg-gray-50">
-                  Discuss in chat
-                </button>
               </div>
-              <p className="mt-2 rounded bg-gray-50 px-3 py-2 text-sm text-gray-700">
-                {rec.why_note}
-              </p>
-              {rec.email && (
-                <a href={`mailto:${rec.email}`}
-                  className="mt-2 inline-block text-xs font-medium text-blue-600 hover:underline">
-                  {rec.email}
-                </a>
-              )}
-            </li>
+            </Card>
           ))}
         </ul>
       )}

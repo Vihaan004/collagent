@@ -4,8 +4,12 @@ import { useRouter } from "next/navigation";
 import { api } from "@/lib/api";
 import type { CourseStatus, MajorMapCourse, ProgramHit } from "@/lib/types";
 import MajorMapEditor from "@/components/MajorMapEditor";
+import Button from "@/components/ui/Button";
+import Card from "@/components/ui/Card";
+import { Field, Input, Textarea, Select } from "@/components/ui/Field";
 
 const YEARS = ["freshman", "sophomore", "junior", "senior", "graduate"];
+const STEPS = ["About you", "Major map", "Your courses"];
 
 // 2025 major maps are CAS-walled; 2024 (the 2024-25 catalog) is the latest public year.
 const CATALOG_YEAR = "2024";
@@ -91,81 +95,123 @@ export default function OnboardingPage() {
 
   return (
     <main className="mx-auto max-w-2xl space-y-6 p-6">
-      <h1 className="text-2xl font-semibold">Set up Collagent</h1>
-      <p className="text-sm text-gray-500">Step {step} of 3</p>
-      {error && <p className="rounded-md bg-red-50 p-3 text-sm text-red-700">{error}</p>}
+      <header className="pt-2 text-center">
+        <h1 className="font-display text-3xl text-naval">collagent</h1>
+        <p className="mt-1 text-sm text-muted">Let&apos;s set up your personal interface to ASU.</p>
+      </header>
+
+      <Stepper current={step} />
+
+      {error && (
+        <p className="rounded-lg border border-orange/40 bg-orange/5 p-3 text-sm text-orange-700">
+          {error}
+        </p>
+      )}
 
       {step === 1 && (
-        <form onSubmit={saveBasics} className="space-y-4">
-          <input value={fullName} onChange={(e) => setFullName(e.target.value)} required
-            placeholder="Full name" className="w-full rounded-md border px-3 py-2 text-sm" />
-          <select value={year} onChange={(e) => setYear(e.target.value)}
-            className="w-full rounded-md border px-3 py-2 text-sm">
-            {YEARS.map((y) => <option key={y} value={y}>{y}</option>)}
-          </select>
-          <div className="relative">
-            <input
-              value={program ? program.name : query}
-              onChange={(e) => { setProgram(null); setQuery(e.target.value); }}
-              required placeholder="Search your major (e.g. Computer Science)"
-              className="w-full rounded-md border px-3 py-2 text-sm"
-            />
-            {!program && hits.length > 0 && (
-              <ul className="absolute z-10 mt-1 w-full rounded-md border bg-white shadow">
-                {hits.map((h) => (
-                  <li key={h.code}>
-                    <button type="button" onClick={() => { setProgram(h); setHits([]); }}
-                      className="w-full px-3 py-2 text-left text-sm hover:bg-gray-50">
-                      {h.name}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-          <input value={interests} onChange={(e) => setInterests(e.target.value)}
-            placeholder="Interests, comma-separated (e.g. FPGAs, robotics)"
-            className="w-full rounded-md border px-3 py-2 text-sm" />
-          <input value={clubs} onChange={(e) => setClubs(e.target.value)}
-            placeholder="Clubs you're in, comma-separated (optional)"
-            className="w-full rounded-md border px-3 py-2 text-sm" />
-          <textarea value={goals} onChange={(e) => setGoals(e.target.value)}
-            placeholder="What are your goals? (e.g. research, internships, grad school)"
-            className="w-full rounded-md border px-3 py-2 text-sm" rows={3} />
-          <button type="submit" className="rounded-md bg-black px-4 py-2 text-sm font-medium text-white">
-            Continue
-          </button>
-        </form>
+        <Card>
+          <form onSubmit={saveBasics} className="space-y-4">
+            <Field label="Full name">
+              <Input value={fullName} onChange={(e) => setFullName(e.target.value)} required
+                placeholder="Your name" />
+            </Field>
+            <Field label="Academic year">
+              <Select value={year} onChange={(e) => setYear(e.target.value)}>
+                {YEARS.map((y) => <option key={y} value={y}>{y}</option>)}
+              </Select>
+            </Field>
+            <div className="relative">
+              <Field label="Major">
+                <Input
+                  value={program ? program.name : query}
+                  onChange={(e) => { setProgram(null); setQuery(e.target.value); }}
+                  required placeholder="Search your major (e.g. Computer Science)"
+                />
+              </Field>
+              {!program && hits.length > 0 && (
+                <ul className="absolute z-10 mt-1 w-full overflow-hidden rounded-lg border border-line bg-surface shadow-sm">
+                  {hits.map((h) => (
+                    <li key={h.code}>
+                      <button type="button" onClick={() => { setProgram(h); setHits([]); }}
+                        className="w-full px-3 py-2 text-left text-sm text-ink hover:bg-cream-200">
+                        {h.name}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+            <Field label="Interests">
+              <Input value={interests} onChange={(e) => setInterests(e.target.value)}
+                placeholder="Comma-separated (e.g. FPGAs, robotics)" />
+            </Field>
+            <Field label="Clubs (optional)">
+              <Input value={clubs} onChange={(e) => setClubs(e.target.value)}
+                placeholder="Comma-separated" />
+            </Field>
+            <Field label="Goals">
+              <Textarea value={goals} onChange={(e) => setGoals(e.target.value)} rows={3}
+                placeholder="What are you aiming for? (e.g. research, internships, grad school)" />
+            </Field>
+            <Button type="submit">Continue</Button>
+          </form>
+        </Card>
       )}
 
       {step === 2 && (
-        <div className="space-y-4">
-          <p className="text-sm">
+        <Card className="space-y-4">
+          <p className="text-sm leading-relaxed text-ink">
             Collagent will now read ASU&apos;s official major map for{" "}
-            <span className="font-medium">{program?.name}</span> and build your personal
+            <span className="font-medium text-naval">{program?.name}</span> and build your personal
             degree map. Takes about a minute.
           </p>
-          <button onClick={generateMap} disabled={generating}
-            className="rounded-md bg-black px-4 py-2 text-sm font-medium text-white disabled:opacity-50">
-            {generating ? "Building your major map…" : "Build my major map"}
-          </button>
-          <button onClick={finish} className="ml-3 text-sm text-gray-500 underline">
-            Skip for now
-          </button>
-        </div>
+          <div className="flex items-center gap-3">
+            <Button onClick={generateMap} disabled={generating}>
+              {generating ? "Building your major map…" : "Build my major map"}
+            </Button>
+            <button onClick={finish} className="text-sm text-muted underline hover:text-ink">
+              Skip for now
+            </button>
+          </div>
+        </Card>
       )}
 
       {step === 3 && (
-        <div className="space-y-4">
-          <p className="text-sm">
+        <Card className="space-y-4">
+          <p className="text-sm leading-relaxed text-ink">
             Here&apos;s your major map. Mark what you&apos;ve already taken or are taking now.
           </p>
           <MajorMapEditor courses={courses} onToggle={toggleStatus} />
-          <button onClick={finish} className="rounded-md bg-black px-4 py-2 text-sm font-medium text-white">
-            Finish setup
-          </button>
-        </div>
+          <Button onClick={finish}>Finish setup</Button>
+        </Card>
       )}
     </main>
+  );
+}
+
+function Stepper({ current }: { current: number }) {
+  return (
+    <div className="flex items-center gap-2">
+      {STEPS.map((label, i) => {
+        const n = i + 1;
+        const active = n === current;
+        const done = n < current;
+        return (
+          <div key={label} className="flex flex-1 items-center gap-2">
+            <span
+              className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-medium ${
+                done ? "bg-naval text-paper" : active ? "bg-orange text-paper" : "bg-cream text-muted"
+              }`}
+            >
+              {done ? "✓" : n}
+            </span>
+            <span className={`text-xs ${active ? "font-medium text-ink" : "text-muted"}`}>
+              {label}
+            </span>
+            {n < STEPS.length && <span className="h-px flex-1 bg-line" />}
+          </div>
+        );
+      })}
+    </div>
   );
 }
