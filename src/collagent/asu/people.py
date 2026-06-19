@@ -138,29 +138,54 @@ _QUERY_STOPWORDS = frozenset({
     "who", "whos", "is", "are", "was", "the", "a", "an", "me", "my", "about", "tell",
     "find", "what", "whats", "search", "for", "please", "can", "could", "you", "show",
     "of", "to", "do", "does", "know", "any", "someone", "person", "people", "professor",
+    # Org words: the directory is ASU-only, so these never narrow a match — they only
+    # break the conjunctive token search when the agent appends them to a name.
+    "asu", "arizona", "state", "university",
 })
 
 
 def _clean_query(query: str) -> str:
-    """Drop filler/question words and punctuation, leaving likely name/topic tokens."""
+    """Drop filler/question/org words and punctuation, leaving likely name/topic tokens."""
     tokens = re.findall(r"[A-Za-z0-9'-]+", query)
     kept = [t for t in tokens if t.lower() not in _QUERY_STOPWORDS]
     return " ".join(kept)
 
 
+def _query_candidates(query: str) -> list[str]:
+    """Ordered, deduped query variants to try against the AND-matching iSearch API.
+    The chat agent often appends the org name or a guessed topic to a person's name;
+    since iSearch matches every token conjunctively, a single noisy token yields zero
+    rows. We progressively relax: raw -> filler/org-stripped -> the first two tokens
+    (a directed person lookup puts the name first), stopping at the first non-empty hit."""
+    candidates = [query.strip()]
+    cleaned = _clean_query(query)
+    if cleaned:
+        candidates.append(cleaned)
+        tokens = cleaned.split()
+        if len(tokens) > 2:
+            candidates.append(" ".join(tokens[:2]))
+    seen: set[str] = set()
+    out: list[str] = []
+    for c in candidates:
+        key = c.lower()
+        if c and key not in seen:
+            seen.add(key)
+            out.append(c)
+    return out
+
+
 def search_faculty(query: str, size: int = 8) -> list[dict]:
     """Single live directory query for the chat search_people tool. Returns whoever the
     directory matches (faculty_only=False) — a directly-named person must never be hidden
-    by the mentor filter. The iSearch API AND-matches query tokens, so a natural-language
-    question ("who is Aman Arora") returns nothing; if the raw query is empty we retry
-    with filler words stripped."""
+    by the mentor filter. The iSearch API AND-matches query tokens, so a noisy query
+    ("Aman Arora cybersecurity ASU") returns nothing; we try progressively relaxed
+    variants (see _query_candidates) and return the first non-empty result."""
     with httpx.Client(headers=UA, timeout=15, follow_redirects=True) as client:
         try:
-            results = _get_profiles(client, query, size, faculty_only=False)
-            if not results:
-                cleaned = _clean_query(query)
-                if cleaned and cleaned.lower() != query.strip().lower():
-                    results = _get_profiles(client, cleaned, size, faculty_only=False)
-            return results
+            for candidate in _query_candidates(query):
+                results = _get_profiles(client, candidate, size, faculty_only=False)
+                if results:
+                    return results
+            return []
         except httpx.HTTPError:
             return []

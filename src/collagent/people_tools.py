@@ -44,8 +44,11 @@ def make_people_tools(user_id: str) -> list:
     def search_people(query: str) -> str:
         """Search the ASU directory live for faculty/staff by name or topic. Use for
         ad-hoc lookups not already in the student's saved recommendations. Pass ONLY
-        the person's name or a topic keyword as `query` (e.g. 'Aman Arora', 'robotics')
-        — not a full sentence or question, which returns no matches."""
+        the person's name OR a single topic keyword as `query` (e.g. 'Aman Arora',
+        'robotics'). Do NOT pass a full sentence or question, and do NOT append 'ASU',
+        the university name, or a guessed research topic to a person's name — the
+        directory matches every word, so extra words make a real person return zero
+        matches. To look someone up, search their name alone."""
         found = search_faculty(query)
         if not found:
             return f"No ASU directory matches found for '{query}'."

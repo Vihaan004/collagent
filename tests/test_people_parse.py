@@ -84,6 +84,27 @@ def test_clean_query_strips_filler_words():
     assert people._clean_query("Aman Arora") == "Aman Arora"
 
 
+def test_clean_query_strips_org_words():
+    # the iSearch directory is ASU-only, so org words are noise that break the
+    # conjunctive token match — strip them like other filler.
+    assert people._clean_query("Aman Arora ASU") == "Aman Arora"
+    assert people._clean_query("Aman Arora Arizona State University") == "Aman Arora"
+
+
+def test_query_candidates_relaxes_to_bare_name():
+    # The agent appends org/topic words to a name; iSearch AND-matches every token,
+    # so we progressively relax raw -> filler-stripped -> first-two-tokens (the name).
+    assert people._query_candidates("Aman Arora") == ["Aman Arora"]
+    assert people._query_candidates("Aman Arora ASU") == ["Aman Arora ASU", "Aman Arora"]
+    assert people._query_candidates("Aman Arora cybersecurity ASU") == [
+        "Aman Arora cybersecurity ASU",
+        "Aman Arora cybersecurity",
+        "Aman Arora",
+    ]
+    # a single topic keyword has nothing to relax
+    assert people._query_candidates("robotics") == ["robotics"]
+
+
 NON_FACULTY = {
     "results": [
         {  # courtesy affiliate, no title/empl-class/expertise -> dropped by default,
