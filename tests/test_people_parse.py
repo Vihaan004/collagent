@@ -72,3 +72,13 @@ def test_query_terms_from_interests_and_major():
 
 def test_query_terms_no_profile_is_empty():
     assert people.query_terms(None) == []
+
+
+def test_clean_query_strips_filler_words():
+    # natural-language questions the LLM may forward -> just the name/topic tokens
+    assert people._clean_query("who is Aman Arora") == "Aman Arora"
+    assert people._clean_query("tell me about Aman Arora") == "Aman Arora"
+    assert people._clean_query("Aman Arora?") == "Aman Arora"
+    # a bare name/topic is left intact
+    assert people._clean_query("robotics") == "robotics"
+    assert people._clean_query("Aman Arora") == "Aman Arora"

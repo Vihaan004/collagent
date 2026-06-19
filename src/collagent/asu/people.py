@@ -126,10 +126,35 @@ def fetch_faculty(query_list: list[str], per_term: int = 10) -> list[dict]:
     return list(rows.values())
 
 
+# Filler/question words the LLM tends to forward from the user's phrasing. The iSearch
+# API matches query tokens conjunctively, so a stray "who"/"is" yields zero rows even
+# for a valid name — we strip these and retry. Domain words (professor, robotics) are
+# intentionally kept; they often match a title/expertise field.
+_QUERY_STOPWORDS = frozenset({
+    "who", "whos", "is", "are", "was", "the", "a", "an", "me", "my", "about", "tell",
+    "find", "what", "whats", "search", "for", "please", "can", "could", "you", "show",
+    "of", "to", "do", "does", "know", "any", "someone", "person", "people", "professor",
+})
+
+
+def _clean_query(query: str) -> str:
+    """Drop filler/question words and punctuation, leaving likely name/topic tokens."""
+    tokens = re.findall(r"[A-Za-z0-9'-]+", query)
+    kept = [t for t in tokens if t.lower() not in _QUERY_STOPWORDS]
+    return " ".join(kept)
+
+
 def search_faculty(query: str, size: int = 8) -> list[dict]:
-    """Single live directory query for the chat search_people tool."""
+    """Single live directory query for the chat search_people tool. The iSearch API
+    AND-matches query tokens, so a natural-language question ("who is Aman Arora")
+    returns nothing; if the raw query is empty we retry with filler words stripped."""
     with httpx.Client(headers=UA, timeout=15, follow_redirects=True) as client:
         try:
-            return _get_profiles(client, query, size)
+            results = _get_profiles(client, query, size)
+            if not results:
+                cleaned = _clean_query(query)
+                if cleaned and cleaned.lower() != query.strip().lower():
+                    results = _get_profiles(client, cleaned, size)
+            return results
         except httpx.HTTPError:
             return []

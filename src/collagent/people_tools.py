@@ -42,9 +42,10 @@ def make_people_tools(user_id: str) -> list:
 
     @tool("search_people")
     def search_people(query: str) -> str:
-        """Search the ASU directory live for faculty/staff by name or topic
-        (e.g. 'robotics', 'Professor Smith'). Use for ad-hoc lookups that are not
-        already in the student's saved recommendations."""
+        """Search the ASU directory live for faculty/staff by name or topic. Use for
+        ad-hoc lookups not already in the student's saved recommendations. Pass ONLY
+        the person's name or a topic keyword as `query` (e.g. 'Aman Arora', 'robotics')
+        — not a full sentence or question, which returns no matches."""
         found = search_faculty(query)
         if not found:
             return f"No ASU directory matches found for '{query}'."
