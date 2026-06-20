@@ -50,3 +50,59 @@ def categorize(title: str) -> str:
     if any(w in t for w in ("classes begin", "classes end", "commencement", "final exam", "convocation")):
         return "academic"
     return "other"
+
+
+def _mdy(text: str) -> str:
+    return datetime.strptime(text, "%m/%d/%Y").date().isoformat()
+
+
+def parse_session_spans(text: str) -> dict[str, tuple[str, str]]:
+    """From a term's session-summary text, map 'A'/'B'/'C' -> (start_iso, end_iso)."""
+    out: dict[str, tuple[str, str]] = {}
+    for sess, start, end in _SESSION_SPAN.findall(text or ""):
+        out[sess] = (_mdy(start), _mdy(end))
+    return out
+
+
+def parse_terms(html: str) -> list[dict]:
+    """Each term -> {term, term_id, span (start_iso, end_iso), table (bs4 Tag|None)}.
+    `span` is the earliest session start .. latest session end (used to pick the
+    current term). Terms with no parseable session dates get span (None, None)."""
+    soup = BeautifulSoup(html, "html.parser")
+    terms: list[dict] = []
+    for h2 in soup.select("h2.calhd"):
+        anchor = h2.find("a")
+        term_id = anchor.get("id") if anchor else None
+        term_name = h2.get_text(" ", strip=True)
+        sessions_text = ""
+        table = None
+        for sib in h2.next_siblings:
+            name = getattr(sib, "name", None)
+            if name == "h2" and "calhd" in (sib.get("class") or []):
+                break
+            if name == "div" and "Session" in sib.get_text():
+                sessions_text += " " + sib.get_text(" ", strip=True)
+            if name == "table" and "acad" in (sib.get("class") or []):
+                table = sib
+                break
+        spans = parse_session_spans(sessions_text)
+        if spans:
+            starts = [s for s, _ in spans.values()]
+            ends = [e for _, e in spans.values()]
+            span = (min(starts), max(ends))
+        else:
+            span = (None, None)
+        terms.append({"term": term_name, "term_id": term_id, "span": span, "table": table})
+    return terms
+
+
+def select_current_term(spans: dict[str, tuple[str, str]], today: str) -> str:
+    """Pick the term whose span contains `today`; else the earliest upcoming term;
+    else the last listed term. `spans` preserves page order."""
+    for term, (start, end) in spans.items():
+        if start and end and start <= today <= end:
+            return term
+    upcoming = sorted((start, term) for term, (start, _e) in spans.items() if start and start > today)
+    if upcoming:
+        return upcoming[0][1]
+    return list(spans)[-1]
