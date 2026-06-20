@@ -7,6 +7,7 @@ from collagent.api.routes import (
     events,
     majormap,
     memory,
+    news,
     people,
     profile,
     programs,
@@ -29,6 +30,7 @@ app.include_router(events.router)
 app.include_router(people.router)
 app.include_router(memory.router)
 app.include_router(calendar.router)
+app.include_router(news.router)
 
 
 @app.get("/api/health")
