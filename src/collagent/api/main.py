@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from collagent.api.routes import chat, events, majormap, people, profile, programs
+from collagent.api.routes import chat, events, majormap, memory, people, profile, programs
 from collagent.config import settings
 
 app = FastAPI(title="collagent api")
@@ -18,6 +18,7 @@ app.include_router(majormap.router)
 app.include_router(chat.router)
 app.include_router(events.router)
 app.include_router(people.router)
+app.include_router(memory.router)
 
 
 @app.get("/api/health")

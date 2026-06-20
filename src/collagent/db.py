@@ -8,6 +8,7 @@ from collagent.models import (
     CourseStatus,
     EventRecommendation,
     MajorMapCourse,
+    Memory,
     PersonRecommendation,
     Profile,
     ProfileUpdate,
@@ -174,6 +175,45 @@ def get_person_recommendations(user_id: str) -> list[PersonRecommendation]:
         .execute()
     )
     return [_flatten_person_rec(row) for row in res.data]
+
+
+def get_memories(user_id: str) -> list[Memory]:
+    res = (
+        get_client().table("user_memories").select("*")
+        .eq("user_id", user_id)
+        .order("created_at")
+        .execute()
+    )
+    return [Memory(**row) for row in res.data]
+
+
+def create_memory(user_id: str, content: str, kind: str = "fact") -> Memory:
+    res = (
+        get_client().table("user_memories")
+        .insert({"user_id": user_id, "content": content, "kind": kind})
+        .execute()
+    )
+    return Memory(**res.data[0])
+
+
+def update_memory(user_id: str, memory_id: str, content: str) -> Memory:
+    res = (
+        get_client().table("user_memories")
+        .update({"content": content, "updated_at": datetime.now(timezone.utc).isoformat()})
+        .eq("id", memory_id).eq("user_id", user_id)
+        .execute()
+    )
+    if not res.data:
+        raise ValueError(f"Memory {memory_id} not found for user")
+    return Memory(**res.data[0])
+
+
+def delete_memory(user_id: str, memory_id: str) -> None:
+    (
+        get_client().table("user_memories").delete()
+        .eq("id", memory_id).eq("user_id", user_id)
+        .execute()
+    )
 
 
 def replace_person_recommendations(

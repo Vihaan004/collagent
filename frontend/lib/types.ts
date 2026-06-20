@@ -60,3 +60,11 @@ export interface PersonRecommendation {
   why_note: string;
   rank: number;
 }
+
+export interface Memory {
+  id: string;
+  content: string;
+  kind: string;
+  created_at: string | null;
+  updated_at: string | null;
+}

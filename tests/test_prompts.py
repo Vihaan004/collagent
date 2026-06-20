@@ -28,3 +28,23 @@ def test_prompt_summarizes_major_map():
 def test_prompt_handles_empty_profile():
     prompt = build_system_prompt(Profile(id="u1", email="a@asu.edu"), [])
     assert "has not completed onboarding" in prompt
+
+
+def test_prompt_includes_memories_when_present():
+    from collagent.models import Memory
+    mems = [Memory(id="m1", user_id="u1", content="Prefers FPGA research")]
+    prompt = build_system_prompt(PROFILE, COURSES, mems)
+    assert "Prefers FPGA research" in prompt
+
+
+def test_prompt_memories_block_injected_for_empty_profile():
+    from collagent.models import Memory
+    mems = [Memory(id="m1", user_id="u1", content="Wants a research internship")]
+    prompt = build_system_prompt(Profile(id="u1", email="a@asu.edu"), [], mems)
+    assert "has not completed onboarding" in prompt  # base path preserved
+    assert "Wants a research internship" in prompt    # memories still injected
+
+
+def test_prompt_no_memory_block_when_none():
+    prompt = build_system_prompt(PROFILE, COURSES)  # memories defaults to None
+    assert "remember about this student" not in prompt
