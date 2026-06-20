@@ -63,3 +63,50 @@ def test_select_current_term_between_picks_next():
 def test_select_current_term_after_all_picks_last():
     spans = {"Summer 2026": ("2026-05-18", "2026-08-11")}
     assert cal.select_current_term(spans, "2027-01-01") == "Summer 2026"
+
+
+def test_parse_term_items_from_fixture():
+    terms = cal.parse_terms(FIXTURE.read_text(encoding="utf-8"))
+    summer = next(t for t in terms if t["term"] == "Summer 2026")
+    items = cal.parse_term_items(summer)
+    by_title = {}
+    for it in items:
+        by_title.setdefault(it["title"], []).append(it)
+
+    # single-date row -> one 'whole' item
+    sched = by_title["Schedule of Classes Available"]
+    assert len(sched) == 1
+    assert sched[0]["session"] == "whole" and sched[0]["date_start"] == "2026-02-05"
+
+    # per-session row -> one item per session with its own date
+    begins = {it["session"]: it["date_start"] for it in by_title["Classes Begin"]}
+    assert begins["A"] == "2026-05-18"
+    assert begins["B"] == "2026-07-01"
+    assert begins["C"] == "2026-05-18"
+
+    # every item carries term + a category
+    assert all(it["term"] == "Summer 2026" for it in items)
+    assert all(it["category"] for it in items)
+
+
+def test_fetch_calendar_assembles_current_term(monkeypatch):
+    html = FIXTURE.read_text(encoding="utf-8")
+
+    class _Resp:
+        status_code = 200
+        text = html
+        encoding = "utf-8"
+
+    class _Client:
+        def __init__(self, *a, **k): pass
+        def __enter__(self): return self
+        def __exit__(self, *a): return False
+        def get(self, *a, **k): return _Resp()
+
+    monkeypatch.setattr(cal.httpx, "Client", _Client)
+    rows = cal.fetch_calendar(today="2026-06-20")
+    assert rows, "should return current-term items"
+    assert {r["term"] for r in rows} == {"Summer 2026"}  # only the current term
+    titles = {r["title"] for r in rows}
+    assert "Classes Begin" in titles
+    assert all("session" in r and "title" in r and "category" in r for r in rows)

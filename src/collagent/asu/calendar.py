@@ -106,3 +106,76 @@ def select_current_term(spans: dict[str, tuple[str, str]], today: str) -> str:
     if upcoming:
         return upcoming[0][1]
     return list(spans)[-1]
+
+
+def parse_term_items(term: dict) -> list[dict]:
+    """Turn a term's table into item dicts. Single-date rows -> one 'whole' item;
+    per-session rows -> one item per Session A/B/C cell. Skips rows with no date."""
+    table = term.get("table")
+    if table is None:
+        return []
+    items: list[dict] = []
+    for tr in table.select("tr"):
+        th = tr.find("th")
+        if th is None:
+            continue
+        title = re.sub(r"\s+", " ", th.get_text(" ", strip=True)).strip()
+        if not title:
+            continue
+        tds = tr.find_all("td")
+        session_cells = [td for td in tds if "three-cols" in (td.get("class") or [])]
+        if session_cells:
+            for td in session_cells:
+                txt = td.get_text(" ", strip=True)
+                start, end = cell_dates(txt)
+                if not start:
+                    continue
+                sess = _SESSION.search(txt)
+                items.append({
+                    "term": term["term"],
+                    "session": sess.group(1) if sess else "whole",
+                    "title": title,
+                    "date_start": start,
+                    "date_end": end,
+                    "category": categorize(title),
+                })
+        else:
+            txt = " ".join(td.get_text(" ", strip=True) for td in tds)
+            start, end = cell_dates(txt)
+            if not start:
+                continue
+            items.append({
+                "term": term["term"],
+                "session": "whole",
+                "title": title,
+                "date_start": start,
+                "date_end": end,
+                "category": categorize(title),
+            })
+    return items
+
+
+def fetch_calendar(today: str | None = None) -> list[dict]:
+    """Fetch the registrar page, select the current term, return its item dicts.
+    Network-bound; resilient — returns [] on HTTP error. `today` is an ISO date
+    string (defaults to the real current date)."""
+    from datetime import date
+
+    today = today or date.today().isoformat()
+    try:
+        with httpx.Client(headers=UA, timeout=20, follow_redirects=True) as client:
+            resp = client.get(URL)
+            if resp.status_code != 200:
+                return []
+            resp.encoding = "utf-8"
+            html = resp.text
+    except httpx.HTTPError:
+        return []
+
+    terms = parse_terms(html)
+    if not terms:
+        return []
+    spans = {t["term"]: t["span"] for t in terms}
+    current_name = select_current_term(spans, today)
+    current = next((t for t in terms if t["term"] == current_name), None)
+    return parse_term_items(current) if current else []
