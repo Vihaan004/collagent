@@ -85,3 +85,16 @@ class PersonRecommendation(BaseModel):
     short_bio: str | None = None
     why_note: str
     rank: int
+
+
+class Memory(BaseModel):
+    """A durable, user-owned fact the chat agent curates. Mirrors a user_memories row."""
+
+    model_config = {"extra": "ignore"}
+
+    id: str
+    user_id: str
+    content: str
+    kind: str = "fact"
+    created_at: str | None = None
+    updated_at: str | None = None

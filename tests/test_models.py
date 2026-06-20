@@ -57,3 +57,15 @@ def test_person_recommendation_ignores_extra_fields():
     assert rec.name == "Bing Si"
     assert rec.expertise_areas == ["Machine Learning"]
     assert not hasattr(rec, "unexpected")
+
+
+def test_memory_model_parses_row_and_defaults():
+    from collagent.models import Memory
+    m = Memory(id="m1", user_id="u1", content="Prefers FPGA research")
+    assert m.kind == "fact"
+    assert m.created_at is None
+    # tolerates extra DB columns + populated timestamps
+    full = Memory(id="m1", user_id="u1", content="x", kind="goal",
+                  created_at="2026-06-20T00:00:00Z", updated_at="2026-06-20T00:00:00Z",
+                  extra="ignored")
+    assert full.kind == "goal" and full.updated_at == "2026-06-20T00:00:00Z"
