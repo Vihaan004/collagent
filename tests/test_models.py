@@ -80,3 +80,13 @@ def test_calendar_item_defaults_and_extra_ignored():
                         date_start="2026-05-18", date_end="2026-05-19", category="deadline",
                         fetched_at="2026-06-20T00:00:00Z", extra="ignored")
     assert full.category == "deadline" and full.date_end == "2026-05-19"
+
+
+def test_news_item_defaults_and_extra_ignored():
+    from collagent.models import NewsItem
+    n = NewsItem(id="n1", title="ASU lands grant", url="https://asu.edu/x")
+    assert n.source == "tavily" and n.summary is None and n.published_at is None
+    full = NewsItem(id="n1", title="X", url="u", source="tavily", source_key="u",
+                    summary="snippet", published_at="2026-06-17T00:00:00Z",
+                    fetched_at="2026-06-20T00:00:00Z", extra="ignored")
+    assert full.summary == "snippet"

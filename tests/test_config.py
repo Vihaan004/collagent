@@ -10,3 +10,9 @@ def test_settings_reads_env(monkeypatch):
     assert s.supabase_service_role_key == "svc"
     assert s.supabase_jwt_secret == "jwt"
     assert s.frontend_origin == "http://localhost:3000"  # default
+
+
+def test_settings_has_tavily_key_default_empty():
+    from collagent.config import Settings
+    s = Settings(_env_file=None)
+    assert s.tavily_api_key == ""

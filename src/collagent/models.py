@@ -113,3 +113,18 @@ class CalendarItem(BaseModel):
     date_end: str | None = None
     category: str | None = None
     fetched_at: str | None = None
+
+
+class NewsItem(BaseModel):
+    """A cached open-web news article (Tavily). Global, not per-user. Mirrors a news_items row."""
+
+    model_config = {"extra": "ignore"}
+
+    id: str
+    source: str = "tavily"
+    source_key: str | None = None
+    title: str
+    url: str
+    summary: str | None = None
+    published_at: str | None = None
+    fetched_at: str | None = None
