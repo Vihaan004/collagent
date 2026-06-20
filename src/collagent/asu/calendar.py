@@ -12,7 +12,6 @@ URL = "https://registrar.asu.edu/academic-calendar"
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
 _FULL_DATE = re.compile(r"[A-Z][a-z]+ \d{1,2}, \d{4}")
-_MDY = re.compile(r"\d{1,2}/\d{1,2}/\d{4}")
 _SESSION = re.compile(r"Session ([ABC])")
 _SESSION_SPAN = re.compile(r"Session ([ABC]):\D*?(\d{1,2}/\d{1,2}/\d{4})\D+?(\d{1,2}/\d{1,2}/\d{4})")
 
