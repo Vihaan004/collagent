@@ -69,3 +69,14 @@ def test_memory_model_parses_row_and_defaults():
                   created_at="2026-06-20T00:00:00Z", updated_at="2026-06-20T00:00:00Z",
                   extra="ignored")
     assert full.kind == "goal" and full.updated_at == "2026-06-20T00:00:00Z"
+
+
+def test_calendar_item_defaults_and_extra_ignored():
+    from collagent.models import CalendarItem
+    c = CalendarItem(id="c1", term="Summer 2026", session="A", title="Classes Begin",
+                     date_start="2026-05-18")
+    assert c.session == "A" and c.date_end is None and c.category is None
+    full = CalendarItem(id="c1", term="Summer 2026", session="whole", title="X",
+                        date_start="2026-05-18", date_end="2026-05-19", category="deadline",
+                        fetched_at="2026-06-20T00:00:00Z", extra="ignored")
+    assert full.category == "deadline" and full.date_end == "2026-05-19"

@@ -98,3 +98,18 @@ class Memory(BaseModel):
     kind: str = "fact"
     created_at: str | None = None
     updated_at: str | None = None
+
+
+class CalendarItem(BaseModel):
+    """A single academic-calendar entry for the current term. Mirrors a calendar_items row."""
+
+    model_config = {"extra": "ignore"}
+
+    id: str
+    term: str
+    session: str = "whole"
+    title: str
+    date_start: str | None = None
+    date_end: str | None = None
+    category: str | None = None
+    fetched_at: str | None = None
