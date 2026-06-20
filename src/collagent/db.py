@@ -10,6 +10,7 @@ from collagent.models import (
     EventRecommendation,
     MajorMapCourse,
     Memory,
+    NewsItem,
     PersonRecommendation,
     Profile,
     ProfileUpdate,
@@ -240,6 +241,27 @@ def get_upcoming_calendar_items(
         .execute()
     )
     return [CalendarItem(**row) for row in res.data]
+
+
+def upsert_news_items(rows: list[dict]) -> list[dict]:
+    if not rows:
+        return []
+    res = (
+        get_client().table("news_items")
+        .upsert(rows, on_conflict="source,source_key")
+        .execute()
+    )
+    return res.data
+
+
+def get_recent_news(limit: int = 12) -> list[NewsItem]:
+    res = (
+        get_client().table("news_items").select("*")
+        .order("fetched_at", desc=True)
+        .limit(limit)
+        .execute()
+    )
+    return [NewsItem(**row) for row in res.data]
 
 
 def replace_person_recommendations(
