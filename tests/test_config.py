@@ -12,7 +12,10 @@ def test_settings_reads_env(monkeypatch):
     assert s.frontend_origin == "http://localhost:3000"  # default
 
 
-def test_settings_has_tavily_key_default_empty():
+def test_settings_has_tavily_key_default_empty(monkeypatch):
+    # graph.py's load_dotenv may have populated os.environ from the real .env;
+    # isolate the var so we're testing the field's declared default, not the dev's key.
+    monkeypatch.delenv("TAVILY_API_KEY", raising=False)
     from collagent.config import Settings
     s = Settings(_env_file=None)
     assert s.tavily_api_key == ""
