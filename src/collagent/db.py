@@ -5,6 +5,7 @@ from supabase import Client, create_client
 
 from collagent.config import settings
 from collagent.models import (
+    CalendarItem,
     CourseStatus,
     EventRecommendation,
     MajorMapCourse,
@@ -214,6 +215,31 @@ def delete_memory(user_id: str, memory_id: str) -> None:
         .eq("id", memory_id).eq("user_id", user_id)
         .execute()
     )
+
+
+def upsert_calendar_items(rows: list[dict]) -> list[dict]:
+    if not rows:
+        return []
+    res = (
+        get_client().table("calendar_items")
+        .upsert(rows, on_conflict="term,session,title")
+        .execute()
+    )
+    return res.data
+
+
+def get_upcoming_calendar_items(
+    since: str | None = None, limit: int = 50
+) -> list[CalendarItem]:
+    since = since or datetime.now(timezone.utc).date().isoformat()
+    res = (
+        get_client().table("calendar_items").select("*")
+        .gte("date_start", since)
+        .order("date_start")
+        .limit(limit)
+        .execute()
+    )
+    return [CalendarItem(**row) for row in res.data]
 
 
 def replace_person_recommendations(
