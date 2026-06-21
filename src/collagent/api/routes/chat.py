@@ -8,6 +8,7 @@ from pydantic import BaseModel
 from collagent import db
 from collagent.api.auth import get_current_user_id
 from collagent.graph import create_graph, stream_events
+from collagent.dashboard_tools import make_dashboard_tools
 from collagent.event_tools import make_event_tools
 from collagent.memory_tools import make_memory_tools
 from collagent.people_tools import make_people_tools
@@ -44,6 +45,7 @@ def chat(req: ChatRequest, user_id: str = Depends(get_current_user_id)):
             + tuple(make_event_tools(user_id))
             + tuple(make_people_tools(user_id))
             + tuple(make_memory_tools(user_id))
+            + tuple(make_dashboard_tools(user_id))
         ),
     )
     config = {"configurable": {"thread_id": f"{user_id}:{req.thread_id}"}}
