@@ -20,10 +20,13 @@ refresh in order:
 3. Call save_dashboard_brief with a concise markdown Brief tying together what matters most
    to THIS student (surface any imminent deadline) plus about 5 tuned news picks (each a
    news id from get_news with a one-line why_note).
-To refresh a single section, call just that one tool. If the student dislikes a
-recommendation, remove it (remove_event_recommendation / remove_person_recommendation) and
-remember the preference. Keep the Brief lightweight, informative, and suggestive — never a
-wall of text.
+To refresh a single section, call just that one tool. For a one-off refresh aimed at a
+specific topic WITHOUT changing the student's saved interests, pass it as focus, e.g.
+refresh_people(focus=["quantum computing"]). When the student tells you about a durable new
+interest, update their profile (update_profile) instead so it sticks for future refreshes.
+If the student dislikes a recommendation, remove it (remove_event_recommendation /
+remove_person_recommendation) and remember the preference. Keep the Brief lightweight,
+informative, and suggestive — never a wall of text.
 """
 
 

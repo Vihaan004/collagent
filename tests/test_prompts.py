@@ -56,5 +56,7 @@ def test_prompt_includes_orchestrator_full_refresh_flow():
     low = out.lower()
     assert "dashboard" in low and "refresh" in low
     assert "save_dashboard_brief" in out  # names the persistence step
+    assert "focus" in low  # one-off topical refresh guidance
+    assert "update_profile" in out  # vs persistent-interest path
     # still present when the student is fully onboarded
     assert "save_dashboard_brief" in build_system_prompt(PROFILE, COURSES)

@@ -10,7 +10,7 @@ def test_refresh_events_runs_pipeline_user_scoped(monkeypatch):
     calls = []
     monkeypatch.setattr(dashboard_tools, "fetch_upcoming_events", lambda: [{"id": "e1"}])
     monkeypatch.setattr(dashboard_tools.db, "upsert_events", lambda rows: calls.append("upsert"))
-    monkeypatch.setattr(dashboard_tools, "curate_events", lambda uid: calls.append(uid) or [1, 2])
+    monkeypatch.setattr(dashboard_tools, "curate_events", lambda uid, focus=None: calls.append(uid) or [1, 2])
     out = _tools()["refresh_events"].invoke({})
     assert calls == ["upsert", "u1"]
     assert "2" in out
@@ -22,10 +22,42 @@ def test_refresh_people_runs_pipeline_user_scoped(monkeypatch):
     monkeypatch.setattr(dashboard_tools, "query_terms", lambda p: ["x"])
     monkeypatch.setattr(dashboard_tools, "fetch_faculty", lambda terms: [{"id": "p1"}])
     monkeypatch.setattr(dashboard_tools.db, "upsert_people", lambda rows: calls.append("upsert"))
-    monkeypatch.setattr(dashboard_tools, "curate_people", lambda uid: calls.append(uid) or [1])
+    monkeypatch.setattr(dashboard_tools, "curate_people", lambda uid, focus=None: calls.append(uid) or [1])
     out = _tools()["refresh_people"].invoke({})
     assert calls == ["upsert", "u1"]
     assert "1" in out
+
+
+def test_merge_focus_prepends_dedupes_caps():
+    out = dashboard_tools._merge_focus(["a", "b", "c"], ["c", "z"], cap=3)
+    assert out == ["c", "z", "a"]
+
+
+def test_refresh_people_with_focus_merges_terms_and_forwards(monkeypatch):
+    captured = {}
+    monkeypatch.setattr(dashboard_tools.db, "get_profile", lambda uid: None)
+    monkeypatch.setattr(dashboard_tools, "query_terms", lambda p: ["robotics"])
+    monkeypatch.setattr(dashboard_tools, "fetch_faculty",
+                        lambda terms: captured.update(terms=terms) or [{"id": "p1"}])
+    monkeypatch.setattr(dashboard_tools.db, "upsert_people", lambda rows: None)
+    monkeypatch.setattr(dashboard_tools, "curate_people",
+                        lambda uid, focus=None: captured.update(focus=focus) or [1])
+    out = _tools()["refresh_people"].invoke({"focus": ["quantum computing"]})
+    assert captured["terms"][0] == "quantum computing"  # focus prepended into search
+    assert "robotics" in captured["terms"]
+    assert captured["focus"] == ["quantum computing"]   # forwarded to ranking
+    assert "quantum computing" in out                    # status mentions the focus
+
+
+def test_refresh_events_with_focus_forwards_to_curate(monkeypatch):
+    captured = {}
+    monkeypatch.setattr(dashboard_tools, "fetch_upcoming_events", lambda: [{"id": "e1"}])
+    monkeypatch.setattr(dashboard_tools.db, "upsert_events", lambda rows: None)
+    monkeypatch.setattr(dashboard_tools, "curate_events",
+                        lambda uid, focus=None: captured.update(focus=focus) or [1])
+    out = _tools()["refresh_events"].invoke({"focus": ["quantum computing"]})
+    assert captured["focus"] == ["quantum computing"]
+    assert "quantum computing" in out
 
 
 def test_refresh_news_fetches_then_upserts(monkeypatch):

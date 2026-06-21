@@ -16,26 +16,50 @@ from collagent.curation.events import curate_events
 from collagent.curation.people import curate_people
 
 
+def _merge_focus(terms: list[str], focus: list[str] | None, cap: int = 6) -> list[str]:
+    """Combine an ephemeral focus with the profile-derived search terms: focus first
+    (it's the explicit ask), then profile terms, deduped case-insensitively and capped."""
+    out: list[str] = []
+    seen: set[str] = set()
+    for t in [*(focus or []), *terms]:
+        t = (t or "").strip()
+        if t and t.lower() not in seen:
+            seen.add(t.lower())
+            out.append(t)
+        if len(out) >= cap:
+            break
+    return out
+
+
+def _focus_suffix(focus: list[str] | None) -> str:
+    return f" (focused on {', '.join(focus)})" if focus else ""
+
+
 def make_dashboard_tools(user_id: str) -> list:
     # ---- deterministic pipeline tools (write to DB, return only a status) ----
     @tool("refresh_events")
-    def refresh_events() -> str:
+    def refresh_events(focus: list[str] | None = None) -> str:
         """Re-ingest upcoming ASU events and regenerate this student's ranked event
         recommendations. Writes to the database (the dashboard's Events section reflects
-        it). Returns a short status, not the data."""
+        it). Returns a short status, not the data. Pass `focus` (a few keywords) for a
+        one-off refresh weighted toward those topics WITHOUT changing the saved profile;
+        focus re-ranks the upcoming-events feed toward those topics."""
         db.upsert_events(fetch_upcoming_events())
-        recs = curate_events(user_id)
-        return f"Events refreshed: {len(recs)} recommendations."
+        recs = curate_events(user_id, focus=focus)
+        return f"Events refreshed: {len(recs)} recommendations{_focus_suffix(focus)}."
 
     @tool("refresh_people")
-    def refresh_people() -> str:
+    def refresh_people(focus: list[str] | None = None) -> str:
         """Re-ingest ASU faculty/staff matched to this student and regenerate ranked
         people-to-contact recommendations. Writes to the database. Returns a short
-        status, not the data."""
+        status, not the data. Pass `focus` (a few keywords) for a one-off refresh aimed
+        at those topics WITHOUT changing the saved profile; focus both seeds the directory
+        search and weights the ranking."""
         profile = db.get_profile(user_id)
-        db.upsert_people(fetch_faculty(query_terms(profile)))
-        recs = curate_people(user_id)
-        return f"People refreshed: {len(recs)} recommendations."
+        terms = _merge_focus(query_terms(profile), focus)
+        db.upsert_people(fetch_faculty(terms))
+        recs = curate_people(user_id, focus=focus)
+        return f"People refreshed: {len(recs)} recommendations{_focus_suffix(focus)}."
 
     @tool("refresh_news")
     def refresh_news() -> str:
