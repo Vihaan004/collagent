@@ -9,7 +9,14 @@ import Card from "@/components/ui/Card";
 import { Field, Input, Textarea, Select } from "@/components/ui/Field";
 
 const YEARS = ["freshman", "sophomore", "junior", "senior", "graduate"];
-const STEPS = ["About you", "Major map", "Your courses"];
+
+// Major-map extraction (Playwright/Chromium on the backend) is disabled by default
+// for the demo deploy. Set NEXT_PUBLIC_MAJOR_MAP_ENABLED=true to restore the
+// "Build map" + course-editor steps; otherwise onboarding finishes after "About you".
+const MAJOR_MAP_ENABLED = process.env.NEXT_PUBLIC_MAJOR_MAP_ENABLED === "true";
+const STEPS = MAJOR_MAP_ENABLED
+  ? ["About you", "Major map", "Your courses"]
+  : ["About you"];
 
 // 2025 major maps are CAS-walled; 2024 (the 2024-25 catalog) is the latest public year.
 const CATALOG_YEAR = "2024";
@@ -55,6 +62,10 @@ export default function OnboardingPage() {
       goals,
       clubs: clubs.split(",").map((s) => s.trim()).filter(Boolean),
     });
+    if (!MAJOR_MAP_ENABLED) {
+      await finish(); // map extraction disabled on this host: complete onboarding now
+      return;
+    }
     setStep(2);
   }
 

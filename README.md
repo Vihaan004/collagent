@@ -32,9 +32,13 @@ Frontend:
 ```sh
 cd frontend
 npm install
-cp .env.local.example .env.local   # fill in Supabase URL + anon key
+cp .env.example .env.local   # fill in Supabase URL + anon key
 npm run dev
 ```
+
+> **Major-map onboarding is disabled by default** (`MAJOR_MAP_ENABLED` / `NEXT_PUBLIC_MAJOR_MAP_ENABLED`)
+> so the demo runs on RAM-light hosts without Playwright/Chromium. Set both to `true` in your
+> env to develop with it on. The `feat/majormap-enabled` branch keeps the enabled-by-default version.
 
 One-time data seed (already committed, rerun to refresh):
 
@@ -61,3 +65,10 @@ Fresh browser profile, both servers up:
 8. `uv run pytest` → all pass. `cd frontend && npm run build` → clean.
 
 Record any failures as issues; do not ship the milestone with a failing item.
+
+## Deploy
+
+Frontend → Vercel, backend → Render (Docker, free tier), DB/Auth → Supabase,
+news → Tavily, model → Groq. The backend `Dockerfile` and `render.yaml` are in the repo;
+push `main` and connect both hosts for CI/CD. Full step-by-step runbook (env vars, CORS,
+secrets, smoke test): [`docs/superpowers/plans/2026-06-21-collagent-v2-publish.md`](docs/superpowers/plans/2026-06-21-collagent-v2-publish.md).

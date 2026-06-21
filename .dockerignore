@@ -1,0 +1,19 @@
+# Keep the backend image lean: only pyproject/uv.lock/src/README are needed.
+.git
+.venv
+__pycache__
+**/__pycache__
+*.pyc
+.env
+.env.*
+.pytest_cache
+
+# Not part of the backend runtime
+frontend
+node_modules
+.next
+tests
+docs
+scripts
+supabase
+canvas-mcp
