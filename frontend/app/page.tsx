@@ -13,6 +13,10 @@ import EventCard from "@/components/EventCard";
 import PersonCard from "@/components/PersonCard";
 import { EmptyState, Spinner } from "@/components/ui/States";
 
+const EMPTY_VIEW: DashboardView = {
+  brief_md: "", generated_at: null, news: [], events: [], people: [], deadlines: [],
+};
+
 function formatDate(iso: string | null): string {
   if (!iso) return "TBD";
   const d = new Date(iso);
@@ -35,7 +39,7 @@ export default function HomePage() {
           return;
         }
         setProfile(p);
-        api.get("/api/dashboard").then(setView).catch(() => setView(null));
+        api.get("/api/dashboard").then(setView).catch(() => setView(EMPTY_VIEW));
       })
       .catch(() => router.replace("/login"));
   }, [router]);
