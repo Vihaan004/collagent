@@ -68,3 +68,32 @@ export interface Memory {
   created_at: string | null;
   updated_at: string | null;
 }
+
+export interface CalendarItem {
+  id: string;
+  term: string;
+  session: string;
+  title: string;
+  date_start: string | null;
+  date_end: string | null;
+  category: string | null;
+  fetched_at: string | null;
+}
+
+export interface DashboardNewsPick {
+  id: string | null;
+  title: string;
+  url: string;
+  summary: string | null;
+  published_at: string | null;
+  why_note: string | null;
+}
+
+export interface DashboardView {
+  brief_md: string;
+  generated_at: string | null;
+  news: DashboardNewsPick[];
+  events: EventRecommendation[];
+  people: PersonRecommendation[];
+  deadlines: CalendarItem[];
+}
