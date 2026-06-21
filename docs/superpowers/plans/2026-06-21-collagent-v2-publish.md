@@ -16,14 +16,17 @@ Browser ──> Vercel (Next.js frontend)
 
 ---
 
-## 0. The one constraint that drives everything: Playwright
+## 0. Major-map extraction is DISABLED for this deploy
 
-`src/collagent/asu/majormap.py` launches **headless Chromium** (`sync_playwright().chromium.launch()`) during onboarding to extract a student's major map. Everything else (events/people/news/calendar) is plain `httpx`. Consequences:
+`src/collagent/asu/majormap.py` launches **headless Chromium** (`sync_playwright().chromium.launch()`) during onboarding to extract a student's major map. Chromium needs ~500MB–1GB RAM to launch, which is too heavy for Render's 512MB free tier. Everything else (events/people/news/calendar) is plain `httpx` and lightweight.
 
-- The backend host must have **Chromium + its system libs** installed → use a **Docker image based on the official Playwright Python image** (`mcr.microsoft.com/playwright/python`), which ships the browser and deps. A bare `pip install` host will fail at `chromium.launch()`.
-- Chromium needs **~500MB–1GB RAM** to launch. **Render free = 512MB** → onboarding may OOM. **Hugging Face Spaces free Docker = up to 16GB** → comfortably handles the browser.
+**For this demo we disable major-map extraction via a feature flag**, so Chromium never launches and the backend stays RAM-light. This makes **Render free the clean primary host**.
 
-**Recommendation:** deploy the backend on **Hugging Face Spaces (Docker SDK)** as primary because of the Playwright memory need; keep **Render** as the fallback for a lighter footprint. (This refines the design doc's "Render primary, HF backup" — the browser workload flips the preference.) If you'd rather stay on Render free, see §6 "Playwright on a 512MB host" for the pre-seed mitigation.
+- Backend: `MAJOR_MAP_ENABLED=false` → `/api/major-map/generate` returns **503**; `build_major_map` (and Playwright) is never called.
+- Frontend: `NEXT_PUBLIC_MAJOR_MAP_ENABLED=false` → onboarding finishes right after "About you" (no "Build map" / course-editor steps).
+- The Playwright dependency and all extraction code stay in place — **re-enable later by flipping both env vars to `true`** on a host with enough RAM (e.g. Hugging Face Spaces Docker, up to 16GB free) and ensuring the browser is installed (`playwright install chromium`).
+
+**Recommendation:** backend on **Render free (Docker or native Python)**; because extraction is off, the host needs neither Chromium nor the Playwright base image. Revisit HF Spaces + the Playwright image when major-map extraction is turned back on (a future improvement, see §11).
 
 ---
 
@@ -60,9 +63,9 @@ Confirm `.gitignore` excludes `.env`, `.env.local`, `.next/`, `__pycache__/`, `.
 
 These files don't exist yet; add them in the prep slice (not in this runbook's scope, but specified here so the deploy is unblocked):
 
-**`Dockerfile`** (repo root) — backend image with browser + uv:
+**`Dockerfile`** (repo root) — slim Python image + uv. Because major-map extraction is disabled (§0), **no Chromium / Playwright base image is needed**; the `playwright` pip package installs fine without browsers.
 ```dockerfile
-FROM mcr.microsoft.com/playwright/python:v1.50.0-noble
+FROM python:3.12-slim
 
 WORKDIR /app
 # uv for fast, lockfile-faithful installs
@@ -72,20 +75,19 @@ RUN uv sync --no-dev --frozen || uv sync --no-dev
 COPY src ./src
 COPY README.md ./
 
-# Chromium already present in the base image; ensure it's the version Playwright expects
-RUN uv run playwright install chromium
-
 ENV PORT=8000
 EXPOSE 8000
 CMD ["sh", "-c", "uv run uvicorn collagent.api.main:app --host 0.0.0.0 --port ${PORT}"]
 ```
-> HF Spaces injects `PORT=7860`; the `${PORT}` indirection covers both hosts. Pin the base image tag to the Playwright version in `pyproject.toml` (`playwright>=1.50`).
+> `${PORT}` indirection covers hosts that inject their own port. When you re-enable major-map extraction (§11), switch the base to `mcr.microsoft.com/playwright/python:v1.50.0-noble` and add `RUN uv run playwright install chromium`.
 
-**`frontend/.env.example`** — mirror the three public vars the frontend reads:
+**`frontend/.env.example`** — the public vars the frontend reads:
 ```
 NEXT_PUBLIC_API_URL=http://localhost:8000
 NEXT_PUBLIC_SUPABASE_URL=https://YOUR-REF.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+# Set to false to skip the major-map onboarding steps (pair with backend MAJOR_MAP_ENABLED=false)
+NEXT_PUBLIC_MAJOR_MAP_ENABLED=true
 ```
 
 **`README.md`** — add a "Deploy" section pointing at this runbook.
@@ -94,10 +96,10 @@ Verify the build locally before pushing: `docker build -t collagent-api . && doc
 
 ---
 
-## 4. Backend → Hugging Face Spaces (Docker SDK)
+## 4. Backend → Render (free Web Service)
 
-1. Create a **new Space** → SDK: **Docker** → blank. Link it to the GitHub repo (or push the repo to the Space's git remote). HF builds from the root `Dockerfile`.
-2. **Space secrets** (Settings → Variables and secrets) — these map to `Settings` (`config.py`) and the model env (`graph.py`):
+1. New → **Web Service** → connect the GitHub repo → **Docker** runtime (builds from the root `Dockerfile`). Health Check Path: `/api/health`. Free instance type.
+2. **Environment** (Render dashboard → Environment) — these map to `Settings` (`config.py`) and the model env (`graph.py`):
 
    | Env var | Value | Source |
    |---|---|---|
@@ -109,12 +111,11 @@ Verify the build locally before pushing: `docker build -t collagent-api . && doc
    | `MODEL_NAME` | `llama-3.3-70b-versatile` | Groq (verify current) |
    | `TAVILY_API_KEY` | Tavily key | Tavily |
    | `FRONTEND_ORIGIN` | *(set in §6 after Vercel URL exists)* | Vercel |
+   | `MAJOR_MAP_ENABLED` | `false` | disables Playwright/Chromium for the demo (§0) |
    | `TEMPERATURE` | `0.2` | optional |
 
-   Do **not** set `CANVAS_*` (Canvas is unused by the web app). Leave `OPENAI_BASE_URL`/`MODEL_NAME` at Groq values — the ASU defaults in `graph.py` are dev-only.
-3. Wait for the build; confirm the Space URL responds at `/api/health` → `{"status":"ok"}`.
-
-**Render fallback:** New → Web Service → from repo → **Docker** runtime (so the Dockerfile/Playwright is honored), Health Check Path `/api/health`, same env vars. Mind the 512MB limit (§6).
+   Do **not** set `CANVAS_*` (Canvas is unused by the web app). Leave `OPENAI_BASE_URL`/`MODEL_NAME` at Groq values — the ASU defaults in `graph.py` are dev-only. `MAJOR_MAP_ENABLED=false` is what keeps this within Render's 512MB (§0).
+3. Wait for the build; confirm the service URL responds at `/api/health` → `{"status":"ok"}`.
 
 ---
 
@@ -125,9 +126,10 @@ Verify the build locally before pushing: `docker build -t collagent-api . && doc
 
    | Env var | Value |
    |---|---|
-   | `NEXT_PUBLIC_API_URL` | the backend URL from §4 (e.g. `https://<you>-collagent.hf.space`) |
+   | `NEXT_PUBLIC_API_URL` | the backend URL from §4 (e.g. `https://collagent-api.onrender.com`) |
    | `NEXT_PUBLIC_SUPABASE_URL` | `https://qepwzwitwjhklxscrugr.supabase.co` |
    | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anon (publishable) key |
+   | `NEXT_PUBLIC_MAJOR_MAP_ENABLED` | `false` — skips the major-map onboarding steps (§0) |
 
    These are `NEXT_PUBLIC_*` → compiled into the client bundle at build time; a value change requires a redeploy. The anon key is safe to expose (RLS-gated); the **service-role key must never** appear in the frontend.
 3. Deploy. Note the production URL (e.g. `https://collagent.vercel.app`).
@@ -144,7 +146,7 @@ There's a chicken-and-egg: each side needs the other's URL.
 
 **Preview deploys caveat:** Vercel preview URLs are per-commit and won't match the single `FRONTEND_ORIGIN` → their API calls will be CORS-blocked. Fine for the demo (use the prod URL). If you need previews, a follow-up makes `FRONTEND_ORIGIN` a comma-list or regex in `main.py`.
 
-**Playwright on a 512MB host (Render only):** if you stay on Render free and onboarding OOMs at `chromium.launch()`, mitigate by **pre-seeding major maps** — run the extraction locally (`uv run ...` against the registrar) and upsert the rows to Supabase, so prod onboarding reads existing data instead of launching a browser. HF Spaces' larger RAM avoids this entirely.
+**Playwright:** N/A for this deploy — major-map extraction is disabled (§0), so nothing launches Chromium. See §11 to re-enable.
 
 ---
 
@@ -165,10 +167,10 @@ With both deploys live, in a clean browser:
 
 1. **Health:** `GET <backend>/api/health` → `{"status":"ok"}`.
 2. **Auth:** sign up/in on the Vercel site; confirm redirect returns to the prod domain (not localhost).
-3. **Onboarding:** complete it; confirm the major map extracts (this exercises Playwright/Chromium on the host — the make-or-break for the backend image). Watch backend logs for `chromium.launch()` success.
+3. **Onboarding:** complete the "About you" step; confirm it finishes straight to Home with no major-map step (extraction disabled, §0). The backend should never log a `chromium.launch()`.
 4. **Dashboard:** Home loads, `GET /api/dashboard` returns; click **Refresh my dashboard** → progress streams (events → people → news → calendar → brief), feed re-renders. First hit may be slow if the backend cold-started.
 5. **Chat:** ask something; confirm SSE tokens stream and memory persists across a reload.
-6. **Network/CORS:** no CORS errors in the console; API calls hit the Render/HF origin with `Authorization: Bearer`.
+6. **Network/CORS:** no CORS errors in the console; API calls hit the Render origin with `Authorization: Bearer`.
 
 ---
 
@@ -178,7 +180,7 @@ With both deploys live, in a clean browser:
 - **Groq rate limits:** the orchestrator's bounded tool calls keep within free limits; a burst of refreshes could 429.
 - **Data training on free tiers:** acceptable for public events/news/calendar; a hard gate before any personal-data feature (per design §7 caveat).
 - **Single CORS origin:** prod only; preview deploys excluded (see §6).
-- **Playwright memory:** the one heavyweight; host choice (HF vs Render) hinges on it.
+- **No major map in the demo:** onboarding skips it (§0); a known, intentional limitation to mention, with the re-enable path ready (§11).
 
 ---
 
@@ -187,8 +189,20 @@ With both deploys live, in a clean browser:
 - [ ] Run the **Prep** slice (Dockerfile, `frontend/.env.example`, README, local `docker build` smoke)
 - [ ] §2 Push `main` to GitHub
 - [ ] §1 Obtain Groq + Tavily keys; gather Supabase keys
-- [ ] §4 Deploy backend (HF Spaces Docker), set env, verify `/api/health`
-- [ ] §5 Deploy frontend (Vercel), set `NEXT_PUBLIC_*`
+- [ ] §4 Deploy backend (Render Docker), set env incl. `MAJOR_MAP_ENABLED=false`, verify `/api/health`
+- [ ] §5 Deploy frontend (Vercel), set `NEXT_PUBLIC_*` incl. `NEXT_PUBLIC_MAJOR_MAP_ENABLED=false`
 - [ ] §6 Set `FRONTEND_ORIGIN`, Supabase redirect URLs; redeploy as needed
 - [ ] §8 Production smoke test
 - [ ] Re-run backend suite when the ASU endpoint is healthy (the major-map live test); deploy uses Groq regardless
+
+---
+
+## 11. Future: re-enable major-map extraction
+
+The feature is flag-gated, not removed — the Playwright dependency and all of `asu/majormap.py` + the onboarding steps stay in the codebase. To turn it back on:
+
+1. Host the backend where Chromium fits in RAM (Hugging Face Spaces Docker, up to 16GB free, is the natural target).
+2. Switch the `Dockerfile` base to `mcr.microsoft.com/playwright/python:v1.50.0-noble` and add `RUN uv run playwright install chromium`.
+3. Set `MAJOR_MAP_ENABLED=true` (backend) and `NEXT_PUBLIC_MAJOR_MAP_ENABLED=true` (frontend); redeploy both.
+
+Improvement ideas for that pass: cache/pre-seed extracted maps in Supabase so each onboarding doesn't relaunch a browser; or replace Playwright with a lighter fetch if the roadmap page exposes a JSON/API endpoint.
