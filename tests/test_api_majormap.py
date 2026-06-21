@@ -34,6 +34,19 @@ def test_generate_major_map(client, monkeypatch):
     assert captured["rows"][0]["sort_order"] == 0
 
 
+def test_generate_disabled_returns_503(client, monkeypatch):
+    # When the feature flag is off, the route must not invoke Playwright-backed
+    # extraction at all (keeps the demo host RAM-light; no Chromium launch).
+    monkeypatch.setattr(mm_routes.settings, "major_map_enabled", False)
+
+    def boom(code, year):
+        raise AssertionError("build_major_map must not run when the feature is disabled")
+
+    monkeypatch.setattr(mm_routes, "build_major_map", boom)
+    res = client.post("/api/major-map/generate", json={"acad_plan_code": "ESCSEBS", "catalog_year": "2024"})
+    assert res.status_code == 503
+
+
 def test_update_statuses(client, monkeypatch):
     captured = {}
     monkeypatch.setattr(

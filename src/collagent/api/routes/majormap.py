@@ -1,9 +1,10 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 
 from collagent import db
 from collagent.api.auth import get_current_user_id
 from collagent.asu.majormap import build_major_map
+from collagent.config import settings
 from collagent.models import CourseStatus, MajorMapCourse
 
 router = APIRouter(prefix="/api/major-map", tags=["major-map"])
@@ -31,6 +32,9 @@ def read_major_map(user_id: str = Depends(get_current_user_id)):
 # Plain `def` on purpose: build_major_map runs sync Playwright; FastAPI threadpools it.
 @router.post("/generate", response_model=list[MajorMapCourse])
 def generate(req: GenerateRequest, user_id: str = Depends(get_current_user_id)):
+    if not settings.major_map_enabled:
+        # Feature disabled on this host: never launch Chromium. Onboarding skips this step.
+        raise HTTPException(status_code=503, detail="Major-map extraction is disabled.")
     extracted = build_major_map(req.acad_plan_code, req.catalog_year)
     rows = [
         {

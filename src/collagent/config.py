@@ -7,6 +7,9 @@ class Settings(BaseSettings):
     supabase_jwt_secret: str = ""
     frontend_origin: str = "http://localhost:3000"
     tavily_api_key: str = ""
+    # Major-map extraction launches headless Chromium (Playwright) during onboarding.
+    # Disable it on RAM-light demo hosts; flip back on to restore the feature.
+    major_map_enabled: bool = True
 
     model_config = {"env_file": ".env", "extra": "ignore"}
 
