@@ -40,24 +40,35 @@ def _candidate_block(candidates: list[dict]) -> str:
 
 
 def _rank(
-    profile: Profile | None, courses: list[MajorMapCourse], candidates: list[dict]
+    profile: Profile | None,
+    courses: list[MajorMapCourse],
+    candidates: list[dict],
+    focus: list[str] | None = None,
 ) -> EventRanking:
     llm = get_model().with_structured_output(EventRanking)
+    focus_block = (
+        f"\n\nThe student is especially focused on {', '.join(focus)} right now; weight "
+        f"these topics heavily in your picks and why-notes."
+        if focus
+        else ""
+    )
     user = (
-        f"STUDENT:\n{student_summary(profile, courses)}\n\n"
+        f"STUDENT:\n{student_summary(profile, courses)}{focus_block}\n\n"
         f"CANDIDATE EVENTS:\n{_candidate_block(candidates)}"
     )
     return llm.invoke([("system", _RANK_PROMPT), ("user", user)])
 
 
-def curate_events(user_id: str) -> list[EventRecommendation]:
+def curate_events(
+    user_id: str, focus: list[str] | None = None
+) -> list[EventRecommendation]:
     profile = db.get_profile(user_id)
     courses = db.get_major_map_courses(user_id)
     events = db.get_upcoming_events(limit=40)
     if not events:
         return db.replace_event_recommendations(user_id, [])
 
-    ranking = _rank(profile, courses, events)
+    ranking = _rank(profile, courses, events, focus)
     valid_ids = {e["id"] for e in events}
     rows: list[dict] = []
     seen: set[str] = set()
