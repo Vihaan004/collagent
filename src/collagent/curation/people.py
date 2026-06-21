@@ -44,24 +44,35 @@ def _candidate_block(candidates: list[dict]) -> str:
 
 
 def _rank(
-    profile: Profile | None, courses: list[MajorMapCourse], candidates: list[dict]
+    profile: Profile | None,
+    courses: list[MajorMapCourse],
+    candidates: list[dict],
+    focus: list[str] | None = None,
 ) -> PersonRanking:
     llm = get_model().with_structured_output(PersonRanking)
+    focus_block = (
+        f"\n\nThe student is especially focused on {', '.join(focus)} right now; weight "
+        f"these topics heavily in your picks and why-notes."
+        if focus
+        else ""
+    )
     user = (
-        f"STUDENT:\n{student_summary(profile, courses)}\n\n"
+        f"STUDENT:\n{student_summary(profile, courses)}{focus_block}\n\n"
         f"CANDIDATE PEOPLE:\n{_candidate_block(candidates)}"
     )
     return llm.invoke([("system", _RANK_PROMPT), ("user", user)])
 
 
-def curate_people(user_id: str) -> list[PersonRecommendation]:
+def curate_people(
+    user_id: str, focus: list[str] | None = None
+) -> list[PersonRecommendation]:
     profile = db.get_profile(user_id)
     courses = db.get_major_map_courses(user_id)
     people = db.get_people(limit=60)
     if not people:
         return db.replace_person_recommendations(user_id, [])
 
-    ranking = _rank(profile, courses, people)
+    ranking = _rank(profile, courses, people, focus)
     valid_ids = {p["id"] for p in people}
     rows: list[dict] = []
     seen: set[str] = set()

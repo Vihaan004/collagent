@@ -48,3 +48,15 @@ def test_prompt_memories_block_injected_for_empty_profile():
 def test_prompt_no_memory_block_when_none():
     prompt = build_system_prompt(PROFILE, COURSES)  # memories defaults to None
     assert "remember about this student" not in prompt
+
+
+def test_prompt_includes_orchestrator_full_refresh_flow():
+    # orchestrator guidance is present on every prompt (one agent serves both surfaces)
+    out = build_system_prompt(None, [])
+    low = out.lower()
+    assert "dashboard" in low and "refresh" in low
+    assert "save_dashboard_brief" in out  # names the persistence step
+    assert "focus" in low  # one-off topical refresh guidance
+    assert "update_profile" in out  # vs persistent-interest path
+    # still present when the student is fully onboarded
+    assert "save_dashboard_brief" in build_system_prompt(PROFILE, COURSES)

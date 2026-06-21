@@ -9,6 +9,26 @@ conversations, save it with your memory tools (remember / update_memory / forget
 list_memories to review or correct what you've stored. Don't store transient chit-chat.
 """
 
+_ORCHESTRATOR = """
+You also maintain this student's dashboard, "The Daily Brief": a short Brief, ASU
+Happenings (news), upcoming Deadlines (academic calendar), and their top Events and People.
+When the student asks to refresh their dashboard (e.g. "refresh my dashboard"), run a FULL
+refresh in order:
+1. Call refresh_events, refresh_people, refresh_news, and update_calendar.
+2. Read the fresh data with get_event_recommendations, get_person_recommendations,
+   get_news, and get_deadlines.
+3. Call save_dashboard_brief with a concise markdown Brief tying together what matters most
+   to THIS student (surface any imminent deadline) plus about 5 tuned news picks (each a
+   news id from get_news with a one-line why_note).
+To refresh a single section, call just that one tool. For a one-off refresh aimed at a
+specific topic WITHOUT changing the student's saved interests, pass it as focus, e.g.
+refresh_people(focus=["quantum computing"]). When the student tells you about a durable new
+interest, update their profile (update_profile) instead so it sticks for future refreshes.
+If the student dislikes a recommendation, remove it (remove_event_recommendation /
+remove_person_recommendation) and remember the preference. Keep the Brief lightweight,
+informative, and suggestive — never a wall of text.
+"""
+
 
 def _format_major_map(courses: list[MajorMapCourse]) -> str:
     if not courses:
@@ -41,14 +61,15 @@ def build_system_prompt(
     memories: list[Memory] | None = None,
 ) -> str:
     mem_block = _format_memories(memories)
+    head = _BASE + _ORCHESTRATOR
     if profile is None or (not profile.onboarded and not profile.major_name):
         return (
-            _BASE
+            head
             + "\nThe student has not completed onboarding yet; encourage them to."
             + mem_block
         )
 
-    parts = [_BASE, "Student context:"]
+    parts = [head, "Student context:"]
     if profile.full_name:
         parts.append(f"- Name: {profile.full_name}")
     if profile.major_name:
