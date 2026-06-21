@@ -7,6 +7,7 @@ from collagent.config import settings
 from collagent.models import (
     CalendarItem,
     CourseStatus,
+    DashboardSnapshot,
     EventRecommendation,
     MajorMapCourse,
     Memory,
@@ -273,3 +274,49 @@ def replace_person_recommendations(
         payload = [{**r, "user_id": user_id} for r in rows]
         client.table("person_recommendations").insert(payload).execute()
     return get_person_recommendations(user_id)
+
+
+def get_dashboard_snapshot(user_id: str) -> DashboardSnapshot | None:
+    res = (
+        get_client().table("dashboard_snapshots").select("*")
+        .eq("user_id", user_id)
+        .execute()
+    )
+    if not res.data:
+        return None
+    return DashboardSnapshot(**res.data[0])
+
+
+def upsert_dashboard_snapshot(
+    user_id: str, brief_md: str, news: list[dict]
+) -> DashboardSnapshot:
+    res = (
+        get_client().table("dashboard_snapshots")
+        .upsert(
+            {
+                "user_id": user_id,
+                "brief_md": brief_md,
+                "news": news,
+                "generated_at": datetime.now(timezone.utc).isoformat(),
+            },
+            on_conflict="user_id",
+        )
+        .execute()
+    )
+    return DashboardSnapshot(**res.data[0])
+
+
+def delete_event_recommendation(user_id: str, recommendation_id: str) -> None:
+    (
+        get_client().table("event_recommendations").delete()
+        .eq("id", recommendation_id).eq("user_id", user_id)
+        .execute()
+    )
+
+
+def delete_person_recommendation(user_id: str, recommendation_id: str) -> None:
+    (
+        get_client().table("person_recommendations").delete()
+        .eq("id", recommendation_id).eq("user_id", user_id)
+        .execute()
+    )
