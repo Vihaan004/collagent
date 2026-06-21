@@ -51,3 +51,60 @@ def test_update_calendar_fetches_then_upserts(monkeypatch):
     monkeypatch.setattr(dashboard_tools.db, "upsert_calendar_items", lambda rows: calls.append("upsert"))
     out = _tools()["update_calendar"].invoke({})
     assert calls == ["upsert"] and "1" in out
+
+
+from collagent.models import CalendarItem, NewsItem
+
+
+def test_get_news_lists_ids_and_titles(monkeypatch):
+    item = NewsItem(id="n1", title="ASU grant", url="https://x", summary="big news")
+    monkeypatch.setattr(dashboard_tools.db, "get_recent_news", lambda **k: [item])
+    out = _tools()["get_news"].invoke({})
+    assert "n1" in out and "ASU grant" in out
+
+
+def test_get_news_empty(monkeypatch):
+    monkeypatch.setattr(dashboard_tools.db, "get_recent_news", lambda **k: [])
+    out = _tools()["get_news"].invoke({})
+    assert "refresh_news" in out
+
+
+def test_get_deadlines_lists_items(monkeypatch):
+    c = CalendarItem(id="c1", term="Summer 2026", title="Drop deadline",
+                     date_start="2026-07-01", category="deadline")
+    monkeypatch.setattr(dashboard_tools.db, "get_upcoming_calendar_items", lambda: [c])
+    out = _tools()["get_deadlines"].invoke({})
+    assert "Drop deadline" in out
+
+
+def test_remove_event_recommendation_scopes_to_user(monkeypatch):
+    captured = {}
+    monkeypatch.setattr(dashboard_tools.db, "delete_event_recommendation",
+                        lambda uid, rid: captured.update(uid=uid, rid=rid))
+    out = _tools()["remove_event_recommendation"].invoke({"recommendation_id": "r1"})
+    assert captured == {"uid": "u1", "rid": "r1"} and "r1" in out
+
+
+def test_remove_person_recommendation_scopes_to_user(monkeypatch):
+    captured = {}
+    monkeypatch.setattr(dashboard_tools.db, "delete_person_recommendation",
+                        lambda uid, rid: captured.update(uid=uid, rid=rid))
+    out = _tools()["remove_person_recommendation"].invoke({"recommendation_id": "r2"})
+    assert captured == {"uid": "u1", "rid": "r2"}
+
+
+def test_save_dashboard_brief_resolves_news_and_persists(monkeypatch):
+    item = NewsItem(id="n1", title="ASU grant", url="https://x", summary="s")
+    monkeypatch.setattr(dashboard_tools.db, "get_recent_news", lambda **k: [item])
+    captured = {}
+    monkeypatch.setattr(dashboard_tools.db, "upsert_dashboard_snapshot",
+                        lambda uid, brief, news: captured.update(uid=uid, brief=brief, news=news))
+    out = _tools()["save_dashboard_brief"].invoke({
+        "brief_md": "# Today",
+        "news": [{"id": "n1", "why_note": "relevant"}, {"id": "ghost", "why_note": "x"}],
+    })
+    assert captured["uid"] == "u1" and captured["brief"] == "# Today"
+    assert len(captured["news"]) == 1  # unknown id dropped
+    assert captured["news"][0]["url"] == "https://x"
+    assert captured["news"][0]["why_note"] == "relevant"
+    assert "1" in out

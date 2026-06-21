@@ -56,4 +56,77 @@ def make_dashboard_tools(user_id: str) -> list:
             db.upsert_calendar_items(rows)
         return f"Calendar updated: {len(rows)} items."
 
-    return [refresh_events, refresh_people, refresh_news, update_calendar]
+    # ---- read tools the agent uses to synthesize the Brief ----
+    @tool("get_news")
+    def get_news() -> str:
+        """List recent ASU news from the shared cache, each with its id, title, summary,
+        and link. Use the ids when calling save_dashboard_brief."""
+        items = db.get_recent_news()
+        if not items:
+            return "No news cached yet. Run refresh_news first."
+        return "\n\n".join(
+            f"- [{n.id}] {n.title}\n  {(n.summary or '')[:200]}\n  Link: {n.url}"
+            for n in items
+        )
+
+    @tool("get_deadlines")
+    def get_deadlines() -> str:
+        """List upcoming academic-calendar items for the current term (deadlines, breaks,
+        registration windows). Read-only."""
+        items = db.get_upcoming_calendar_items()
+        if not items:
+            return "No calendar items yet. Run update_calendar first."
+        return "\n".join(
+            f"- {c.date_start or 'TBD'}: {c.title}"
+            + (f" ({c.category})" if c.category else "")
+            for c in items
+        )
+
+    # ---- user-scoped CRUD over recommendations ----
+    @tool("remove_event_recommendation")
+    def remove_event_recommendation(recommendation_id: str) -> str:
+        """Remove one event from this student's recommendations (e.g. they said they're
+        not interested). Pass the recommendation id. Consider also remembering the
+        preference with your memory tools."""
+        db.delete_event_recommendation(user_id, recommendation_id)
+        return f"Removed event recommendation {recommendation_id}."
+
+    @tool("remove_person_recommendation")
+    def remove_person_recommendation(recommendation_id: str) -> str:
+        """Remove one person from this student's recommendations. Pass the recommendation
+        id. Consider also remembering the preference with your memory tools."""
+        db.delete_person_recommendation(user_id, recommendation_id)
+        return f"Removed person recommendation {recommendation_id}."
+
+    # ---- persist the synthesized Brief + tuned news subset ----
+    @tool("save_dashboard_brief")
+    def save_dashboard_brief(brief_md: str, news: list[dict]) -> str:
+        """Persist this student's dashboard Brief and tuned news subset. `brief_md` is a
+        concise markdown Brief (lightweight, informative, suggestive — surface any
+        imminent deadline). `news` is a list of picks, each
+        {"id": <a news id from get_news>, "why_note": <one line on why it matters to
+        them>}; choose about 5. Ids are resolved server-side, so copy them exactly;
+        unknown ids are ignored."""
+        by_id = {n.id: n for n in db.get_recent_news(limit=50)}
+        picks: list[dict] = []
+        for item in news:
+            n = by_id.get(item.get("id"))
+            if not n:
+                continue
+            picks.append({
+                "id": n.id,
+                "title": n.title,
+                "url": n.url,
+                "summary": n.summary,
+                "published_at": n.published_at,
+                "why_note": item.get("why_note", ""),
+            })
+        db.upsert_dashboard_snapshot(user_id, brief_md, picks)
+        return f"Saved dashboard brief with {len(picks)} news picks."
+
+    return [
+        refresh_events, refresh_people, refresh_news, update_calendar,
+        get_news, get_deadlines,
+        remove_event_recommendation, remove_person_recommendation,
+        save_dashboard_brief,
+    ]
