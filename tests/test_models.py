@@ -90,3 +90,19 @@ def test_news_item_defaults_and_extra_ignored():
                     summary="snippet", published_at="2026-06-17T00:00:00Z",
                     fetched_at="2026-06-20T00:00:00Z", extra="ignored")
     assert full.summary == "snippet"
+
+
+def test_dashboard_snapshot_parses_and_ignores_extra():
+    from collagent.models import DashboardSnapshot
+    snap = DashboardSnapshot(
+        brief_md="# Today",
+        news=[{"id": "n1", "title": "T", "url": "https://x", "why_note": "w", "junk": "drop"}],
+    )
+    assert snap.brief_md == "# Today"
+    assert snap.news[0].title == "T" and snap.news[0].why_note == "w"
+
+
+def test_dashboard_view_defaults_empty():
+    from collagent.models import DashboardView
+    view = DashboardView()
+    assert view.brief_md == "" and view.events == [] and view.deadlines == []

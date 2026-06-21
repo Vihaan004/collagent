@@ -128,3 +128,42 @@ class NewsItem(BaseModel):
     summary: str | None = None
     published_at: str | None = None
     fetched_at: str | None = None
+
+
+class DashboardNewsPick(BaseModel):
+    """A news article chosen for this student's dashboard, with a per-student why-note.
+    Stored in dashboard_snapshots.news (jsonb)."""
+
+    model_config = {"extra": "ignore"}
+
+    id: str | None = None
+    title: str
+    url: str
+    summary: str | None = None
+    published_at: str | None = None
+    why_note: str | None = None
+
+
+class DashboardSnapshot(BaseModel):
+    """The agent-written Brief + tuned news subset for one student. Mirrors a
+    dashboard_snapshots row."""
+
+    model_config = {"extra": "ignore"}
+
+    brief_md: str = ""
+    news: list[DashboardNewsPick] = []
+    generated_at: str | None = None
+
+
+class DashboardView(BaseModel):
+    """Aggregated last-stored dashboard the Home feed renders in one call: the snapshot's
+    Brief + tuned news, plus top recommendations and deadlines read live."""
+
+    model_config = {"extra": "ignore"}
+
+    brief_md: str = ""
+    generated_at: str | None = None
+    news: list[DashboardNewsPick] = []
+    events: list[EventRecommendation] = []
+    people: list[PersonRecommendation] = []
+    deadlines: list[CalendarItem] = []
