@@ -10,9 +10,10 @@ import { Field, Input, Textarea, Select } from "@/components/ui/Field";
 
 const YEARS = ["freshman", "sophomore", "junior", "senior", "graduate"];
 
-// Major-map extraction (Playwright/Chromium on the backend) can be disabled on
-// RAM-light demo hosts. When off, onboarding finishes after "About you".
-const MAJOR_MAP_ENABLED = process.env.NEXT_PUBLIC_MAJOR_MAP_ENABLED !== "false";
+// Major-map extraction (Playwright/Chromium on the backend) is disabled by default
+// for the demo deploy. Set NEXT_PUBLIC_MAJOR_MAP_ENABLED=true to restore the
+// "Build map" + course-editor steps; otherwise onboarding finishes after "About you".
+const MAJOR_MAP_ENABLED = process.env.NEXT_PUBLIC_MAJOR_MAP_ENABLED === "true";
 const STEPS = MAJOR_MAP_ENABLED
   ? ["About you", "Major map", "Your courses"]
   : ["About you"];

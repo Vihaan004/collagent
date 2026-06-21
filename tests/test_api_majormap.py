@@ -16,6 +16,7 @@ def test_get_major_map(client, monkeypatch):
 
 
 def test_generate_major_map(client, monkeypatch):
+    monkeypatch.setattr(mm_routes.settings, "major_map_enabled", True)  # default is off
     extracted = ExtractedMajorMap(
         program_name="Computer Science, BS",
         courses=[ExtractedCourse(term_number=1, course_code="CSE 110", title="Programming")],

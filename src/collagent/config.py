@@ -8,8 +8,9 @@ class Settings(BaseSettings):
     frontend_origin: str = "http://localhost:3000"
     tavily_api_key: str = ""
     # Major-map extraction launches headless Chromium (Playwright) during onboarding.
-    # Disable it on RAM-light demo hosts; flip back on to restore the feature.
-    major_map_enabled: bool = True
+    # Disabled by default for the RAM-light demo deploy; set MAJOR_MAP_ENABLED=true
+    # (on a host with enough RAM + Chromium installed) to restore the feature.
+    major_map_enabled: bool = False
 
     model_config = {"env_file": ".env", "extra": "ignore"}
 
