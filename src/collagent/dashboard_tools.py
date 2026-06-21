@@ -49,8 +49,8 @@ def make_dashboard_tools(user_id: str) -> list:
     @tool("update_calendar")
     def update_calendar() -> str:
         """Re-ingest the current term's ASU academic calendar (deadlines, breaks,
-        registration windows) from the registrar. Read-only afterward. Returns a short
-        status."""
+        registration windows) from the registrar and update the stored calendar. Returns
+        a short status. (The calendar can only be re-ingested, never hand-edited.)"""
         rows = fetch_calendar()
         if rows:
             db.upsert_calendar_items(rows)
@@ -107,6 +107,8 @@ def make_dashboard_tools(user_id: str) -> list:
         {"id": <a news id from get_news>, "why_note": <one line on why it matters to
         them>}; choose about 5. Ids are resolved server-side, so copy them exactly;
         unknown ids are ignored."""
+        # Resolve against a wide window (a superset of what get_news shows) so every id
+        # the agent could have picked resolves; titles/urls always come from the DB.
         by_id = {n.id: n for n in db.get_recent_news(limit=50)}
         picks: list[dict] = []
         for item in news:
