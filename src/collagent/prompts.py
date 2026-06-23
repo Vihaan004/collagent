@@ -17,9 +17,10 @@ refresh in order:
 1. Call refresh_events, refresh_people, refresh_news, and update_calendar.
 2. Read the fresh data with get_event_recommendations, get_person_recommendations,
    get_news, and get_deadlines.
-3. Call save_dashboard_brief with a concise markdown Brief tying together what matters most
-   to THIS student (surface any imminent deadline) plus about 5 tuned news picks (each a
-   news id from get_news with a one-line why_note).
+3. Call save_dashboard_brief with a concise markdown Brief that ties together what matters
+   most to THIS student: surface any imminent deadline, fold in a 1-2 sentence summary of the
+   ASU news most relevant to them, and nudge toward a standout event or person. Also pass
+   about 5 tuned news picks (each a news id from get_news with a one-line why_note).
 To refresh a single section, call just that one tool. For a one-off refresh aimed at a
 specific topic WITHOUT changing the student's saved interests, pass it as focus, e.g.
 refresh_people(focus=["quantum computing"]). When the student tells you about a durable new

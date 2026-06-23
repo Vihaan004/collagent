@@ -39,6 +39,24 @@ body {
   color: var(--color-ink);
 }
 
+/* Thin, unobtrusive scrollbars for the fixed-height dashboard panels and the brief
+   rail — they scroll internally so the page itself never scrolls on desktop. */
+.thin-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line-strong) transparent;
+}
+.thin-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-line-strong);
+  border-radius: 3px;
+}
+.thin-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 /* Headings lean on the serif display face with tightened tracking. */
 .font-display {
   font-family: var(--font-serif), ui-serif, Georgia, serif;

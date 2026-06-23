@@ -80,6 +80,17 @@ export interface CalendarItem {
   fetched_at: string | null;
 }
 
+export interface NewsItem {
+  id: string;
+  source: string;
+  source_key: string | null;
+  title: string;
+  url: string;
+  summary: string | null;
+  published_at: string | null;
+  fetched_at: string | null;
+}
+
 export interface DashboardNewsPick {
   id: string | null;
   title: string;
