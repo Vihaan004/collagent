@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import Button from "@/components/ui/Button";
 import { Input } from "@/components/ui/Field";
@@ -8,6 +8,18 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Surface an auth error handed back by /auth/callback (e.g. expired link,
+  // redirect not allow-listed), then strip it from the URL.
+  useEffect(() => {
+    const err = new URLSearchParams(window.location.search).get("error");
+    if (err) {
+      // Intentional one-shot on mount: surface the callback's error, then strip it.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setError(err);
+      window.history.replaceState(null, "", "/login");
+    }
+  }, []);
 
   async function sendLink(e: React.FormEvent) {
     e.preventDefault();
