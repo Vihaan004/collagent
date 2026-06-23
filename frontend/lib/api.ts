@@ -1,6 +1,8 @@
 import { createClient } from "@/lib/supabase/client";
 
-const API = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+// Strip any trailing slash so `${API}${path}` (path starts with "/") can't produce
+// a double slash like //api/profile, which FastAPI 404s.
+const API = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000").replace(/\/+$/, "");
 
 export async function getAccessToken(): Promise<string | null> {
   // getSession() reads the local session; supabase-js refreshes it automatically.
