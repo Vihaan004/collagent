@@ -59,3 +59,10 @@ def search_programs(query: str, limit: int = 10) -> list[dict]:
         return SequenceMatcher(None, q, name).ratio()
 
     return sorted(load_programs(), key=score, reverse=True)[:limit]
+
+
+def get_checksheet_url(code: str) -> str | None:
+    for p in load_programs():
+        if p.get("code") == code:
+            return p.get("checksheet_url")
+    return None

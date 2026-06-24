@@ -44,3 +44,19 @@ def test_search_endpoint(client, monkeypatch):
     )
     res = client.get("/api/programs/search?q=computer")
     assert res.status_code == 200 and res.json()[0]["code"] == "ESCSEBS"
+
+
+def test_get_checksheet_url(tmp_path, monkeypatch):
+    data = [
+        {"code": "BAACCBS", "slug": "accountancy", "name": "Accountancy,BS",
+         "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BAACCBS/null"},
+        {"code": "ZZZ", "slug": "z", "name": "Z"},  # no checksheet_url
+    ]
+    path = tmp_path / "programs.json"
+    path.write_text(json.dumps(data), encoding="utf-8")
+    monkeypatch.setattr(programs, "DATA_PATH", path)
+    programs._load_programs_cached.cache_clear()
+
+    assert programs.get_checksheet_url("BAACCBS").endswith("/BAACCBS/null")
+    assert programs.get_checksheet_url("ZZZ") is None    # present, no link
+    assert programs.get_checksheet_url("NOPE") is None    # absent
