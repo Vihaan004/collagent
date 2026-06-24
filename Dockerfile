@@ -15,6 +15,8 @@ COPY pyproject.toml uv.lock ./
 RUN uv sync --no-dev --frozen --no-install-project
 COPY src ./src
 COPY README.md ./
+# Program directory (read at runtime by /api/programs/search). Not code, but required.
+COPY data ./data
 RUN uv sync --no-dev --frozen
 
 # Hosts (Render) inject $PORT; default to 8000 locally
