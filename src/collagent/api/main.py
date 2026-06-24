@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from collagent.api.routes import (
     calendar,
     chat,
+    curriculum,
     dashboard,
     events,
     majormap,
@@ -25,6 +26,7 @@ app.add_middleware(
 )
 app.include_router(profile.router)
 app.include_router(programs.router)
+app.include_router(curriculum.router)
 app.include_router(majormap.router)
 app.include_router(chat.router)
 app.include_router(dashboard.router)
