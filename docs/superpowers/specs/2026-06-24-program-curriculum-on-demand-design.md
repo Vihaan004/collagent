@@ -62,8 +62,15 @@ Single responsibility: turn a checksheet URL into clean curriculum text.
 - Graceful failures: no profile major → "No major on file yet"; no `checksheet_url` → "No published curriculum for that program"; fetch error → short apology, no crash.
 - Registered alongside the other agent tools; same auth/user-context plumbing the existing tools use.
 
-### 6. Frontend — no changes
-Onboarding already finishes after "About you" with major map disabled. Curriculum is purely an agent capability surfaced through chat. (A profile-page curriculum view is possible later — out of scope here.)
+### 6. API — `GET /api/curriculum` (create)
+Authenticated route so the browser (profile page) can show curriculum without going through the agent.
+- Resolves the signed-in user's `profile.acad_plan_code` → `get_checksheet_url` → `fetch_curriculum` (shared cache with the tool).
+- Returns `{ program_name, checksheet_url, markdown }`; or `{ program_name, checksheet_url: null, markdown: null }` when there's no major/url (frontend shows an empty-state message instead of erroring).
+
+### 7. Frontend — profile page (`frontend/app/profile/page.tsx`, modify)
+- **Remove** the now-defunct per-user major-map: the `/api/major-map` fetch (line 27), the `toggle` handler + `/api/major-map/statuses` call, the `MajorMapEditor` import, and the `courses`/`MajorMapCourse`/`CourseStatus` state.
+- **Replace** the "Major map" `<section>` with a **read-only "Your curriculum"** section that fetches `GET /api/curriculum` and renders `markdown` with `react-markdown` + `remark-gfm` (already used by the dashboard brief). It loads independently with its own loading/empty state so a slow first fetch doesn't block the rest of the page.
+- `MajorMapEditor.tsx` stays in the repo (still imported by onboarding for the `majormap-enabled` branch) — just no longer used by the profile page on `main`.
 
 ## Data flow
 
@@ -82,14 +89,15 @@ chat: "what classes do I still need?"
 - `render_checksheet_markdown`: TDD against a captured fixture. Promote one probe HTML (e.g. `BAACCBS.html`) into `tests/fixtures/`; assert the output contains expected section headers and requirement lines, and excludes chrome ("Expand all"). Add a second fixture (an engineering program) for the OR-group / pool case.
 - `fetch_curriculum` cache: monkeypatch the HTTP client; assert a second call does not re-fetch.
 - `read_curriculum` tool: assert code→url resolution and graceful messages when major/url missing. No live network in tests.
-- Gate: `pytest` (mocked), plus the standard `tsc --noEmit` / lint / build are unaffected (no frontend change).
+- `GET /api/curriculum`: assert it returns markdown for a user with a linked program and a null-markdown empty state otherwise (mock `fetch_curriculum`).
+- Gate: `pytest` (mocked) for backend; `tsc --noEmit` / lint / build for the profile-page change.
 
 ## Out of scope / deliberately avoided
 
 - Programs DB table, migration, curriculum JSONB, structured AND/OR modeling, elective-pool modeling.
 - Pre-extraction batch pipeline (we fetch on demand instead).
 - Graduate programs (the masters-phd list); bachelor's only this round.
-- Per-user course-status tracking and the old `major_map_courses` table / `/api/major-map/*` routes / `MajorMapEditor` — left dormant, untouched.
+- Per-user course-status tracking and the old `major_map_courses` table / `/api/major-map/*` routes — left dormant, untouched. (`MajorMapEditor.tsx` stays for the `majormap-enabled` branch; the profile page just stops using it.)
 - Disk-persistent cache (in-memory is enough for a single-instance demo; trivial to upgrade later).
 
 ## Risks / notes
