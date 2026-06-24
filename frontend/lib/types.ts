@@ -108,3 +108,9 @@ export interface DashboardView {
   people: PersonRecommendation[];
   deadlines: CalendarItem[];
 }
+
+export interface CurriculumView {
+  program_name: string | null;
+  checksheet_url: string | null;
+  markdown: string | null;
+}

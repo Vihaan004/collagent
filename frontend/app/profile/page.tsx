@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
-import type { CourseStatus, MajorMapCourse, Memory, Profile } from "@/lib/types";
-import MajorMapEditor from "@/components/MajorMapEditor";
+import type { CurriculumView, Memory, Profile } from "@/lib/types";
+import Markdown from "@/components/ui/Markdown";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import { Field, Input, Textarea } from "@/components/ui/Field";
@@ -10,12 +10,13 @@ import { Spinner } from "@/components/ui/States";
 
 export default function ProfilePage() {
   const [profile, setProfile] = useState<Profile | null>(null);
-  const [courses, setCourses] = useState<MajorMapCourse[]>([]);
   const [interests, setInterests] = useState("");
   const [clubs, setClubs] = useState("");
   const [goals, setGoals] = useState("");
   const [saved, setSaved] = useState(false);
   const [memories, setMemories] = useState<Memory[]>([]);
+  const [curriculum, setCurriculum] = useState<CurriculumView | null>(null);
+  const [curriculumLoading, setCurriculumLoading] = useState(true);
 
   useEffect(() => {
     api.get("/api/profile").then((p: Profile) => {
@@ -24,8 +25,12 @@ export default function ProfilePage() {
       setClubs(p.clubs.join(", "));
       setGoals(p.goals ?? "");
     });
-    api.get("/api/major-map").then(setCourses);
     api.get("/api/memory").then(setMemories);
+    api
+      .get("/api/curriculum")
+      .then(setCurriculum)
+      .catch(() => setCurriculum(null))
+      .finally(() => setCurriculumLoading(false));
   }, []);
 
   async function save(e: React.FormEvent) {
@@ -37,11 +42,6 @@ export default function ProfilePage() {
     });
     setSaved(true);
     setTimeout(() => setSaved(false), 2000);
-  }
-
-  async function toggle(id: string, status: CourseStatus) {
-    setCourses((cs) => cs.map((c) => (c.id === id ? { ...c, status } : c)));
-    await api.put("/api/major-map/statuses", { updates: [{ id, status }] });
   }
 
   async function forget(id: string) {
@@ -80,8 +80,28 @@ export default function ProfilePage() {
       </Card>
 
       <section>
-        <h2 className="mb-3 font-display text-xl text-ink">Major map</h2>
-        <MajorMapEditor courses={courses} onToggle={toggle} />
+        <h2 className="mb-3 font-display text-xl text-ink">Your curriculum</h2>
+        {curriculumLoading ? (
+          <Spinner />
+        ) : curriculum?.markdown ? (
+          <Card>
+            <Markdown>{curriculum.markdown}</Markdown>
+            {curriculum.checksheet_url && (
+              <a
+                href={curriculum.checksheet_url}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-4 inline-block text-xs text-muted underline hover:text-ink"
+              >
+                View official ASU checksheet
+              </a>
+            )}
+          </Card>
+        ) : (
+          <p className="text-sm text-muted">
+            No curriculum on file for your program yet.
+          </p>
+        )}
       </section>
 
       <section>
