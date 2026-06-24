@@ -2,177 +2,212 @@
  {
   "code": "BAACCBS",
   "slug": "accountancy",
-  "name": "Accountancy,BS"
+  "name": "Accountancy,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BAACCBS/null"
  },
  {
   "code": "LAACTBS",
   "slug": "actuarial-science",
-  "name": "Actuarial Science,BS"
+  "name": "Actuarial Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAACTBS/null"
  },
  {
   "code": "ESAMTATBS",
   "slug": "aeronautical-management-technology-air-traffic-management",
-  "name": "Aeronautical Management Technology (Air Traffic Management),BS"
+  "name": "Aeronautical Management Technology (Air Traffic Management),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESAMTATBS/null"
  },
  {
   "code": "TSAMTMBS",
   "slug": "aeronautical-management-technology-air-transportation-management",
-  "name": "Aeronautical Management Technology (Air Transportation Management),BS"
+  "name": "Aeronautical Management Technology (Air Transportation Management),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSAMTMBS/null"
  },
  {
   "code": "TSAMTFBS",
   "slug": "aeronautical-management-technology-professional-flight",
-  "name": "Aeronautical Management Technology (Professional Flight),BS"
+  "name": "Aeronautical Management Technology (Professional Flight),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSAMTFBS/null"
  },
  {
   "code": "TSAMTUASBS",
   "slug": "aeronautical-management-technology-unmanned-aerial-systems",
-  "name": "Aeronautical Management Technology (Unmanned Aerial Systems),BS"
+  "name": "Aeronautical Management Technology (Unmanned Aerial Systems),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSAMTUASBS/null"
  },
  {
   "code": "ESAEROBSE",
   "slug": "aerospace-engineering-aeronautics",
-  "name": "Aerospace Engineering (Aeronautics),BSE"
+  "name": "Aerospace Engineering (Aeronautics),BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESAEROBSE/null"
  },
  {
   "code": "ESAEASBSE",
   "slug": "aerospace-engineering-astronautics",
-  "name": "Aerospace Engineering (Astronautics),BSE"
+  "name": "Aerospace Engineering (Astronautics),BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESAEASBSE/null"
  },
  {
   "code": "ESAEAVSBSE",
   "slug": "aerospace-engineering-autonomous-vehicle-systems",
-  "name": "Aerospace Engineering (Autonomous Vehicle Systems),BSE"
+  "name": "Aerospace Engineering (Autonomous Vehicle Systems),BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESAEAVSBSE/null"
  },
  {
   "code": "LAAFRBA",
   "slug": "african-and-african-american-studies",
-  "name": "African and African American Studies,BA"
+  "name": "African and African American Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAAFRBA/null"
  },
  {
   "code": "ASALDBS",
   "slug": "aging",
-  "name": "Aging,BS"
+  "name": "Aging,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASALDBS/null"
  },
  {
   "code": "LAAISBS",
   "slug": "american-indian-studies",
-  "name": "American Indian Studies,BS"
+  "name": "American Indian Studies,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAAISBS/null"
  },
  {
   "code": "LAAMRSTBA",
   "slug": "american-studies",
-  "name": "American Studies,BA"
+  "name": "American Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAAMRSTBA/null"
  },
  {
   "code": "LAASBBA",
   "slug": "anthropology",
-  "name": "Anthropology,BA"
+  "name": "Anthropology,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAASBBA/null"
  },
  {
   "code": "LAASBBS",
   "slug": "anthropology",
-  "name": "Anthropology,BS"
+  "name": "Anthropology,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAASBBS/null"
  },
  {
   "code": "HIATDAA",
   "slug": "apparel-technical-design",
-  "name": "Apparel Technical Design,AA"
+  "name": "Apparel Technical Design,AA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIATDAA/null"
  },
  {
   "code": "LSABSNRBS",
   "slug": "applied-biological-sciences-natural-resource-ecology",
-  "name": "Applied Biological Sciences (Natural Resource Ecology),BS"
+  "name": "Applied Biological Sciences (Natural Resource Ecology),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSABSNRBS/null"
  },
  {
   "code": "LSABSPDBS",
   "slug": "applied-biological-sciences-pre-dental",
-  "name": "Applied Biological Sciences (Pre-Dental),BS"
+  "name": "Applied Biological Sciences (Pre-Dental),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSABSPDBS/null"
  },
  {
   "code": "TSABSUBS",
   "slug": "applied-biological-sciences-sustainable-horticulture",
-  "name": "Applied Biological Sciences (Sustainable Horticulture),BS"
+  "name": "Applied Biological Sciences (Sustainable Horticulture),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/TSABSUBS/null"
  },
  {
   "code": "BAAPBTSBA",
   "slug": "applied-business-and-technology-solutions",
-  "name": "Applied Business and Technology Solutions,BA"
+  "name": "Applied Business and Technology Solutions,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BAAPBTSBA/null"
  },
  {
   "code": "LSMATBS",
   "slug": "applied-mathematics",
-  "name": "Applied Mathematics,BS"
+  "name": "Applied Mathematics,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSMATBS/null"
  },
  {
   "code": "ASMATBS",
   "slug": "applied-mathematics",
-  "name": "Applied Mathematics,BS"
+  "name": "Applied Mathematics,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASMATBS/null"
  },
  {
   "code": "LSAMVSBA",
   "slug": "applied-military-and-veterans-studies",
-  "name": "Applied Military and Veterans Studies,BA"
+  "name": "Applied Military and Veterans Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSAMVSBA/null"
  },
  {
   "code": "NHFNUENBS",
   "slug": "applied-nutrition-and-health",
-  "name": "Applied Nutrition and Health,BS"
+  "name": "Applied Nutrition and Health,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/NHFNUENBS/null"
  },
  {
   "code": "LSAPHYBS",
   "slug": "applied-physics",
-  "name": "Applied Physics,BS"
+  "name": "Applied Physics,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSAPHYBS/null"
  },
  {
   "code": "LSAQSBS",
   "slug": "applied-quantitative-science",
-  "name": "Applied Quantitative Science,BS"
+  "name": "Applied Quantitative Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSAQSBS/null"
  },
  {
   "code": "LSALSBAS",
   "slug": "applied-science-applied-leadership",
-  "name": "Applied Science (Applied Leadership),BAS"
+  "name": "Applied Science (Applied Leadership),BAS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSALSBAS/null"
  },
  {
   "code": "ECNTRBAS",
   "slug": "applied-science-applied-nutrition-and-health",
-  "name": "Applied Science (Applied Nutrition and Health),BAS"
+  "name": "Applied Science (Applied Nutrition and Health),BAS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/ECNTRBAS/null"
  },
  {
   "code": "TSAMTABAS",
   "slug": "applied-science-aviation",
-  "name": "Applied Science (Aviation),BAS"
+  "name": "Applied Science (Aviation),BAS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSAMTABAS/null"
  },
  {
   "code": "TEAPSECBAS",
   "slug": "applied-science-early-childhood-studies",
-  "name": "Applied Science (Early Childhood Studies),BAS"
+  "name": "Applied Science (Early Childhood Studies),BAS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/TEAPSECBAS/null"
  },
  {
   "code": "PPEMGBAS",
   "slug": "applied-science-emergency-management",
-  "name": "Applied Science (Emergency Management),BAS"
+  "name": "Applied Science (Emergency Management),BAS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPEMGBAS/null"
  },
  {
   "code": "TSGITBAS",
   "slug": "applied-science-graphic-information-technology",
-  "name": "Applied Science (Graphic Information Technology),BAS"
+  "name": "Applied Science (Graphic Information Technology),BAS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSGITBAS/null"
  },
  {
   "code": "NUHCIBAS",
   "slug": "applied-science-health-entrepreneurship-and-innovation",
-  "name": "Applied Science (Health Entrepreneurship and Innovation),BAS"
+  "name": "Applied Science (Health Entrepreneurship and Innovation),BAS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CNU/NUHCIBAS/null"
  },
  {
   "code": "NUHSCBAS",
   "slug": "applied-science-health-sciences",
-  "name": "Applied Science (Health Sciences),BAS"
+  "name": "Applied Science (Health Sciences),BAS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/NUHSCBAS/null"
  },
  {
   "code": "TSIWDBAS",
   "slug": "applied-science-internet-and-web-development",
-  "name": "Applied Science (Internet and Web Development),BAS"
+  "name": "Applied Science (Internet and Web Development),BAS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSIWDBAS/null"
  },
  {
   "code": "NUMLSBAS",
@@ -182,97 +217,116 @@
  {
   "code": "TSIMCOBAS",
   "slug": "applied-science-operations-management",
-  "name": "Applied Science (Operations Management),BAS"
+  "name": "Applied Science (Operations Management),BAS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSIMCOBAS/null"
  },
  {
   "code": "LSAPSPMBAS",
   "slug": "applied-science-project-management",
-  "name": "Applied Science (Project Management),BAS"
+  "name": "Applied Science (Project Management),BAS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSAPSPMBAS/null"
  },
  {
   "code": "LSTECBAS",
   "slug": "applied-science-technical-communication",
-  "name": "Applied Science (Technical Communication),BAS"
+  "name": "Applied Science (Technical Communication),BAS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSTECBAS/null"
  },
  {
   "code": "ASBASBAS",
   "slug": "applied-science",
-  "name": "Applied Science,BAS"
+  "name": "Applied Science,BAS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASBASBAS/null"
  },
  {
   "code": "ARSTDBSD",
   "slug": "architectural-studies",
-  "name": "Architectural Studies,BSD"
+  "name": "Architectural Studies,BSD",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/ARSTDBSD/null"
  },
  {
   "code": "HIARTANBFA",
   "slug": "art-animation",
-  "name": "Art (Animation),BFA"
+  "name": "Art (Animation),BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIARTANBFA/null"
  },
  {
   "code": "FAARTEBFA",
   "slug": "art-art-education",
-  "name": "Art (Art Education),BFA"
+  "name": "Art (Art Education),BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAARTEBFA/null"
  },
  {
   "code": "FAARTHBA",
   "slug": "art-art-history",
-  "name": "Art (Art History),BA"
+  "name": "Art (Art History),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAARTHBA/null"
  },
  {
   "code": "FAARTSTDBA",
   "slug": "art-art-studies",
-  "name": "Art (Art Studies),BA"
+  "name": "Art (Art Studies),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAARTSTDBA/null"
  },
  {
   "code": "HIARTATBFA",
   "slug": "art-art-therapy",
-  "name": "Art (Art Therapy),BFA"
+  "name": "Art (Art Therapy),BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIARTATBFA/null"
  },
  {
   "code": "FAARTCBFA",
   "slug": "art-ceramics",
-  "name": "Art (Ceramics),BFA"
+  "name": "Art (Ceramics),BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAARTCBFA/null"
  },
  {
   "code": "FAARTSBFA",
   "slug": "art-craft-and-sculptural-practices",
-  "name": "Art (Craft and Sculptural Practices),BFA"
+  "name": "Art (Craft and Sculptural Practices),BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAARTSBFA/null"
  },
  {
   "code": "HIARTDPBFA",
   "slug": "art-digital-photography",
-  "name": "Art (Digital Photography),BFA"
+  "name": "Art (Digital Photography),BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIARTDPBFA/null"
  },
  {
   "code": "FAARTIBFA",
   "slug": "art-expanded-arts",
-  "name": "Art (Expanded Arts),BFA"
+  "name": "Art (Expanded Arts),BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAARTIBFA/null"
  },
  {
   "code": "FAARTMSBA",
   "slug": "art-museum-and-curatorial-practices",
-  "name": "Art (Museum and Curatorial Practices),BA"
+  "name": "Art (Museum and Curatorial Practices),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAARTMSBA/null"
  },
  {
   "code": "HIARTPDBFA",
   "slug": "art-painting-drawing-and-printmaking",
-  "name": "Art (Painting, Drawing and Printmaking),BFA"
+  "name": "Art (Painting, Drawing and Printmaking),BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIARTPDBFA/null"
  },
  {
   "code": "FAARTPHBFA",
   "slug": "art-photography",
-  "name": "Art (Photography),BFA"
+  "name": "Art (Photography),BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAARTPHBFA/null"
  },
  {
   "code": "BAAIBBS",
   "slug": "artificial-intelligence-in-business",
-  "name": "Artificial Intelligence in Business,BS"
+  "name": "Artificial Intelligence in Business,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BAAIBBS/null"
  },
  {
   "code": "FAATSBA",
   "slug": "arts-ba-in-the-arts",
-  "name": "Arts (BA in the Arts),BA"
+  "name": "Arts (BA in the Arts),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAATSBA/null"
  },
  {
   "code": "LACHIBA",
@@ -282,732 +336,878 @@
  {
   "code": "LAJPNBA",
   "slug": "asian-languages-japanese",
-  "name": "Asian Languages (Japanese),BA"
+  "name": "Asian Languages (Japanese),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAJPNBA/null"
  },
  {
   "code": "LAAPABA",
   "slug": "asian-pacific-american-studies",
-  "name": "Asian Pacific American Studies,BA"
+  "name": "Asian Pacific American Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAAPABA/null"
  },
  {
   "code": "TEBEHANBS",
   "slug": "behavior-analysis",
-  "name": "Behavior Analysis,BS"
+  "name": "Behavior Analysis,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/TEBEHANBS/null"
  },
  {
   "code": "LABSCMBS",
   "slug": "biological-sciences-biomedical-sciences",
-  "name": "Biological Sciences (Biomedical Sciences),BS"
+  "name": "Biological Sciences (Biomedical Sciences),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LABSCMBS/null"
  },
  {
   "code": "LABSCCBS",
   "slug": "biological-sciences-conservation-biology-and-ecology",
-  "name": "Biological Sciences (Conservation Biology and Ecology),BS"
+  "name": "Biological Sciences (Conservation Biology and Ecology),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LABSCCBS/null"
  },
  {
   "code": "ASLSCEJBA",
   "slug": "biology-environmental-justice",
-  "name": "Biology (Environmental Justice),BA"
+  "name": "Biology (Environmental Justice),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASLSCEJBA/null"
  },
  {
   "code": "ASLSCEJBS",
   "slug": "biology-environmental-justice",
-  "name": "Biology (Environmental Justice),BS"
+  "name": "Biology (Environmental Justice),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASLSCEJBS/null"
  },
  {
   "code": "ASLSCPBS",
   "slug": "biology-pharmacology-toxicology",
-  "name": "Biology (Pharmacology/Toxicology),BS"
+  "name": "Biology (Pharmacology/Toxicology),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASLSCPBS/null"
  },
  {
   "code": "ESBMEBDBSE",
   "slug": "biomedical-engineering-biological-devices",
-  "name": "Biomedical Engineering (Biological Devices),BSE"
+  "name": "Biomedical Engineering (Biological Devices),BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESBMEBDBSE/null"
  },
  {
   "code": "ESBMEMDBSE",
   "slug": "biomedical-engineering-biomedical-devices",
-  "name": "Biomedical Engineering (Biomedical Devices),BSE"
+  "name": "Biomedical Engineering (Biomedical Devices),BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESBMEMDBSE/null"
  },
  {
   "code": "ESBMEBSE",
   "slug": "biomedical-engineering",
-  "name": "Biomedical Engineering,BSE"
+  "name": "Biomedical Engineering,BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESBMEBSE/null"
  },
  {
   "code": "ESBMIBS",
   "slug": "biomedical-informatics-and-data-science",
-  "name": "Biomedical Informatics and Data Science,BS"
+  "name": "Biomedical Informatics and Data Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/ESBMIBS/null"
  },
  {
   "code": "BABUSCABA",
   "slug": "business-accounting-and-business-decisions",
-  "name": "Business (Accounting and Business Decisions),BA"
+  "name": "Business (Accounting and Business Decisions),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSCABA/null"
  },
  {
   "code": "BABUSGAGBA",
   "slug": "business-agribusiness-innovation-and-technology",
-  "name": "Business (Agribusiness Innovation and Technology),BA"
+  "name": "Business (Agribusiness Innovation and Technology),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSGAGBA/null"
  },
  {
   "code": "BABUSGLBA",
   "slug": "business-applied-supply-chains",
-  "name": "Business (Applied Supply Chains),BA"
+  "name": "Business (Applied Supply Chains),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSGLBA/null"
  },
  {
   "code": "BABUSBABA",
   "slug": "business-business-administration",
-  "name": "Business (Business Administration),BA"
+  "name": "Business (Business Administration),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSBABA/null"
  },
  {
   "code": "BABUSCBA",
   "slug": "business-communication",
-  "name": "Business (Communication),BA"
+  "name": "Business (Communication),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSCBA/null"
  },
  {
   "code": "BABUSFPBA",
   "slug": "business-financial-planning",
-  "name": "Business (Financial Planning),BA"
+  "name": "Business (Financial Planning),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSFPBA/null"
  },
  {
   "code": "BABUSFIMBA",
   "slug": "business-food-industry-management",
-  "name": "Business (Food Industry Management),BA"
+  "name": "Business (Food Industry Management),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSFIMBA/null"
  },
  {
   "code": "BABUSGBA",
   "slug": "business-global-leadership",
-  "name": "Business (Global Leadership),BA"
+  "name": "Business (Global Leadership),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSGBA/null"
  },
  {
   "code": "BABUSGPBA",
   "slug": "business-global-politics",
-  "name": "Business (Global Politics),BA"
+  "name": "Business (Global Politics),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSGPBA/null"
  },
  {
   "code": "BABUSHCBA",
   "slug": "business-health-care",
-  "name": "Business (Health Care),BA"
+  "name": "Business (Health Care),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSHCBA/null"
  },
  {
   "code": "BABUSHRBA",
   "slug": "business-human-resources",
-  "name": "Business (Human Resources),BA"
+  "name": "Business (Human Resources),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSHRBA/null"
  },
  {
   "code": "BABUSISBA",
   "slug": "business-information-security",
-  "name": "Business (Information Security),BA"
+  "name": "Business (Information Security),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSISBA/null"
  },
  {
   "code": "BABSLACUBA",
   "slug": "business-language-and-culture",
-  "name": "Business (Language and Culture),BA"
+  "name": "Business (Language and Culture),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABSLACUBA/null"
  },
  {
   "code": "BABUSLBA",
   "slug": "business-law",
-  "name": "Business (Law),BA"
+  "name": "Business (Law),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSLBA/null"
  },
  {
   "code": "BABUSPBA",
   "slug": "business-public-service-and-public-policy",
-  "name": "Business (Public Service and Public Policy),BA"
+  "name": "Business (Public Service and Public Policy),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSPBA/null"
  },
  {
   "code": "BABUSRBA",
   "slug": "business-retail-management",
-  "name": "Business (Retail Management),BA"
+  "name": "Business (Retail Management),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSRBA/null"
  },
  {
   "code": "BABUSMSBA",
   "slug": "business-sports-business",
-  "name": "Business (Sports Business),BA"
+  "name": "Business (Sports Business),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSMSBA/null"
  },
  {
   "code": "BABUSTABA",
   "slug": "business-statistics",
-  "name": "Business (Statistics),BA"
+  "name": "Business (Statistics),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSTABA/null"
  },
  {
   "code": "BABUSSBA",
   "slug": "business-sustainability",
-  "name": "Business (Sustainability),BA"
+  "name": "Business (Sustainability),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSSBA/null"
  },
  {
   "code": "BABUSTCBA",
   "slug": "business-technology",
-  "name": "Business (Technology),BA"
+  "name": "Business (Technology),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSTCBA/null"
  },
  {
   "code": "BABUSTBA",
   "slug": "business-tourism",
-  "name": "Business (Tourism),BA"
+  "name": "Business (Tourism),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSTBA/null"
  },
  {
   "code": "BABDABS",
   "slug": "business-data-analytics",
-  "name": "Business Data Analytics,BS"
+  "name": "Business Data Analytics,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABDABS/null"
  },
  {
   "code": "BABUENTBS",
   "slug": "business-entrepreneurship",
-  "name": "Business Entrepreneurship,BS"
+  "name": "Business Entrepreneurship,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUENTBS/null"
  },
  {
   "code": "BABUSEXP",
   "slug": "business-exploratory",
-  "name": "Business Exploratory"
+  "name": "Business Exploratory",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSEXP/null"
  },
  {
   "code": "BABUSBA",
   "slug": "business",
-  "name": "Business,BA"
+  "name": "Business,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BABUSBA/null"
  },
  {
   "code": "ESCHEBSE",
   "slug": "chemical-engineering",
-  "name": "Chemical Engineering,BSE"
+  "name": "Chemical Engineering,BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESCHEBSE/null"
  },
  {
   "code": "LACELBA",
   "slug": "civic-and-economic-thought-and-leadership",
-  "name": "Civic and Economic Thought and Leadership,BA"
+  "name": "Civic and Economic Thought and Leadership,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LACELBA/null"
  },
  {
   "code": "LACETLBS",
   "slug": "civic-and-economic-thought-and-leadership",
-  "name": "Civic and Economic Thought and Leadership,BS"
+  "name": "Civic and Economic Thought and Leadership,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LACETLBS/null"
  },
  {
   "code": "ESCEESUBSE",
   "slug": "civil-engineering-sustainable-engineering",
-  "name": "Civil Engineering (Sustainable Engineering),BSE"
+  "name": "Civil Engineering (Sustainable Engineering),BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESCEESUBSE/null"
  },
  {
   "code": "ESCEEBSE",
   "slug": "civil-engineering",
-  "name": "Civil Engineering,BSE"
+  "name": "Civil Engineering,BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESCEEBSE/null"
  },
  {
   "code": "ECEXERBS",
   "slug": "clinical-exercise-science",
-  "name": "Clinical Exercise Science,BS"
+  "name": "Clinical Exercise Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/ECEXERBS/null"
  },
  {
   "code": "ASCOMMBA",
   "slug": "communication",
-  "name": "Communication,BA"
+  "name": "Communication,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASCOMMBA/null"
  },
  {
   "code": "LACOMBA",
   "slug": "communication",
-  "name": "Communication,BA"
+  "name": "Communication,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LACOMBA/null"
  },
  {
   "code": "LSCOMBA",
   "slug": "communication",
-  "name": "Communication,BA"
+  "name": "Communication,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSCOMBA/null"
  },
  {
   "code": "LACOMBS",
   "slug": "communication",
-  "name": "Communication,BS"
+  "name": "Communication,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LACOMBS/null"
  },
  {
   "code": "ASCOMMBS",
   "slug": "communication",
-  "name": "Communication,BS"
+  "name": "Communication,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASCOMMBS/null"
  },
  {
   "code": "PPCASPBA",
   "slug": "community-advocacy-and-social-policy",
-  "name": "Community Advocacy and Social Policy,BA"
+  "name": "Community Advocacy and Social Policy,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPCASPBA/null"
  },
  {
   "code": "NUCHLTBS",
   "slug": "community-health",
-  "name": "Community Health,BS"
+  "name": "Community Health,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CNU/NUCHLTBS/null"
  },
  {
   "code": "LAAMLBS",
   "slug": "complexity-science",
-  "name": "Complexity Science,BS"
+  "name": "Complexity Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CGF/LAAMLBS/null"
  },
  {
   "code": "LACMSBS",
   "slug": "computational-mathematical-sciences",
-  "name": "Computational Mathematical Sciences,BS"
+  "name": "Computational Mathematical Sciences,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LACMSBS/null"
  },
  {
   "code": "BACISBS",
   "slug": "computer-information-systems",
-  "name": "Computer Information Systems,BS"
+  "name": "Computer Information Systems,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BACISBS/null"
  },
  {
   "code": "ESCSEAIBS",
   "slug": "computer-science-artificial-intelligence",
-  "name": "Computer Science (Artificial Intelligence),BS"
+  "name": "Computer Science (Artificial Intelligence),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESCSEAIBS/null"
  },
  {
   "code": "ESCSEIBA",
   "slug": "computer-science-cybersecurity",
-  "name": "Computer Science (Cybersecurity),BA"
+  "name": "Computer Science (Cybersecurity),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESCSEIBA/null"
  },
  {
   "code": "ESCSEIBS",
   "slug": "computer-science-cybersecurity",
-  "name": "Computer Science (Cybersecurity),BS"
+  "name": "Computer Science (Cybersecurity),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESCSEIBS/null"
  },
  {
   "code": "ESCSESBS",
   "slug": "computer-science-software-engineering",
-  "name": "Computer Science (Software Engineering),BS"
+  "name": "Computer Science (Software Engineering),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESCSESBS/null"
  },
  {
   "code": "ESCSEAIAS",
   "slug": "computer-science-and-artificial-intelligence",
-  "name": "Computer Science and Artificial Intelligence,AS"
+  "name": "Computer Science and Artificial Intelligence,AS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESCSEAIAS/null"
  },
  {
   "code": "ESCSEBA",
   "slug": "computer-science",
-  "name": "Computer Science,BA"
+  "name": "Computer Science,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESCSEBA/null"
  },
  {
   "code": "ESCSEBS",
   "slug": "computer-science",
-  "name": "Computer Science,BS"
+  "name": "Computer Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESCSEBS/null"
  },
  {
   "code": "ESCSEIBSE",
   "slug": "computer-systems-engineering-cybersecurity",
-  "name": "Computer Systems Engineering (Cybersecurity),BSE"
+  "name": "Computer Systems Engineering (Cybersecurity),BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESCSEIBSE/null"
  },
  {
   "code": "ESCSEBSE",
   "slug": "computer-systems-engineering",
-  "name": "Computer Systems Engineering,BSE"
+  "name": "Computer Systems Engineering,BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESCSEBSE/null"
  },
  {
   "code": "ASCNRBA",
   "slug": "conflict-resolution",
-  "name": "Conflict Resolution,BA"
+  "name": "Conflict Resolution,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASCNRBA/null"
  },
  {
   "code": "ESCONBSE",
   "slug": "construction-engineering",
-  "name": "Construction Engineering,BSE"
+  "name": "Construction Engineering,BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESCONBSE/null"
  },
  {
   "code": "ESCONMGTBS",
   "slug": "construction-management-and-technology",
-  "name": "Construction Management and Technology,BS"
+  "name": "Construction Management and Technology,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESCONMGTBS/null"
  },
  {
   "code": "CSCCBA",
   "slug": "content-creation",
-  "name": "Content Creation,BA"
+  "name": "Content Creation,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CCS/CSCCBA/null"
  },
  {
   "code": "HICOSBFA",
   "slug": "costume-design-and-technology-for-the-creative-industries",
-  "name": "Costume Design and Technology for the Creative Industries,BFA"
+  "name": "Costume Design and Technology for the Creative Industries,BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HICOSBFA/null"
  },
  {
   "code": "LSCAPSMVBS",
   "slug": "counseling-and-applied-psychological-science-counseling-military-members-and-veterans",
-  "name": "Counseling and Applied Psychological Science (Counseling Military Members and Veterans),BS"
+  "name": "Counseling and Applied Psychological Science (Counseling Military Members and Veterans),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSCAPSMVBS/null"
  },
  {
   "code": "LSCAPSSGBS",
   "slug": "counseling-and-applied-psychological-science-sexuality-and-gender-issues-in-counseling",
-  "name": "Counseling and Applied Psychological Science (Sexuality and Gender Issues in Counseling),BS"
+  "name": "Counseling and Applied Psychological Science (Sexuality and Gender Issues in Counseling),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSCAPSSGBS/null"
  },
  {
   "code": "LSCAPSSPBS",
   "slug": "counseling-and-applied-psychological-science-sport-and-performance-counseling",
-  "name": "Counseling and Applied Psychological Science (Sport and Performance Counseling),BS"
+  "name": "Counseling and Applied Psychological Science (Sport and Performance Counseling),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSCAPSSPBS/null"
  },
  {
   "code": "LSCAPSAABS",
   "slug": "counseling-and-applied-psychological-science-substance-abuse-and-addictions",
-  "name": "Counseling and Applied Psychological Science (Substance Abuse and Addictions),BS"
+  "name": "Counseling and Applied Psychological Science (Substance Abuse and Addictions),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSCAPSAABS/null"
  },
  {
   "code": "LSCAPSBS",
   "slug": "counseling-and-applied-psychological-science",
-  "name": "Counseling and Applied Psychological Science,BS"
+  "name": "Counseling and Applied Psychological Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSCAPSBS/null"
  },
  {
   "code": "PPCRJCSLBS",
   "slug": "criminology-and-criminal-justice-community-safety-law-and-social-change",
-  "name": "Criminology and Criminal Justice (Community Safety, Law and Social Change),BS"
+  "name": "Criminology and Criminal Justice (Community Safety, Law and Social Change),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPCRJCSLBS/null"
  },
  {
   "code": "PPCRJPOLBS",
   "slug": "criminology-and-criminal-justice-policing",
-  "name": "Criminology and Criminal Justice (Policing),BS"
+  "name": "Criminology and Criminal Justice (Policing),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPCRJPOLBS/null"
  },
  {
   "code": "PPCRIMJBS",
   "slug": "criminology-and-criminal-justice",
-  "name": "Criminology and Criminal Justice,BS"
+  "name": "Criminology and Criminal Justice,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPCRIMJBS/null"
  },
  {
   "code": "LACTEBA",
   "slug": "culture-technology-and-environment",
-  "name": "Culture, Technology and Environment,BA"
+  "name": "Culture, Technology and Environment,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LACTEBA/null"
  },
  {
   "code": "FADANEBFA",
   "slug": "dance-dance-education",
-  "name": "Dance (Dance Education),BFA"
+  "name": "Dance (Dance Education),BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FADANEBFA/null"
  },
  {
   "code": "FADANBFA",
   "slug": "dance",
-  "name": "Dance,BFA"
+  "name": "Dance,BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FADANBFA/null"
  },
  {
   "code": "LADATSCIBS",
   "slug": "data-science",
-  "name": "Data Science,BS"
+  "name": "Data Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LADATSCIBS/null"
  },
  {
   "code": "NHDIETCSBS",
   "slug": "dietetics",
-  "name": "Dietetics,BS"
+  "name": "Dietetics,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/NHDIETCSBS/null"
  },
  {
   "code": "ASCPFBS",
   "slug": "digital-forensics",
-  "name": "Digital Forensics,BS"
+  "name": "Digital Forensics,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASCPFBS/null"
  },
  {
   "code": "CSDIGABS",
   "slug": "digital-strategy-and-audience-engagement",
-  "name": "Digital Strategy and Audience Engagement,BS"
+  "name": "Digital Strategy and Audience Engagement,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CCS/CSDIGABS/null"
  },
  {
   "code": "ASDISASBA",
   "slug": "disability-studies",
-  "name": "Disability Studies,BA"
+  "name": "Disability Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASDISASBA/null"
  },
  {
   "code": "TEECDEDBAE",
   "slug": "early-childhood-education",
-  "name": "Early Childhood Education,BAE"
+  "name": "Early Childhood Education,BAE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/TEECDEDBAE/null"
  },
  {
   "code": "LAEESBA",
   "slug": "earth-and-environmental-sciences",
-  "name": "Earth and Environmental Sciences,BA"
+  "name": "Earth and Environmental Sciences,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAEESBA/null"
  },
  {
   "code": "LAEESBS",
   "slug": "earth-and-environmental-sciences",
-  "name": "Earth and Environmental Sciences,BS"
+  "name": "Earth and Environmental Sciences,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAEESBS/null"
  },
  {
   "code": "LASESABBS",
   "slug": "earth-and-space-exploration-astrobiology-and-biogeosciences",
-  "name": "Earth and Space Exploration (Astrobiology and Biogeosciences),BS"
+  "name": "Earth and Space Exploration (Astrobiology and Biogeosciences),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LASESABBS/null"
  },
  {
   "code": "LASESABS",
   "slug": "earth-and-space-exploration-astrophysics",
-  "name": "Earth and Space Exploration (Astrophysics),BS"
+  "name": "Earth and Space Exploration (Astrophysics),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LASESABS/null"
  },
  {
   "code": "LASESESDBS",
   "slug": "earth-and-space-exploration-exploration-systems-design",
-  "name": "Earth and Space Exploration (Exploration Systems Design),BS"
+  "name": "Earth and Space Exploration (Exploration Systems Design),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LASESESDBS/null"
  },
  {
   "code": "LASESGSBS",
   "slug": "earth-and-space-exploration-geological-and-planetary-sciences",
-  "name": "Earth and Space Exploration (Geological and Planetary Sciences),BS"
+  "name": "Earth and Space Exploration (Geological and Planetary Sciences),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LASESGSBS/null"
  },
  {
   "code": "LASESBS",
   "slug": "earth-and-space-exploration",
-  "name": "Earth and Space Exploration,BS"
+  "name": "Earth and Space Exploration,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LASESBS/null"
  },
  {
   "code": "LAECNPECBS",
   "slug": "economics-politics-and-the-economy",
-  "name": "Economics (Politics and the Economy),BS"
+  "name": "Economics (Politics and the Economy),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAECNPECBS/null"
  },
  {
   "code": "BAECNBS",
   "slug": "economics",
-  "name": "Economics,BS"
+  "name": "Economics,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BAECNBS/null"
  },
  {
   "code": "LAECNBS",
   "slug": "economics",
-  "name": "Economics,BS"
+  "name": "Economics,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAECNBS/null"
  },
  {
   "code": "TEEDUEXPL",
   "slug": "education-exploratory",
-  "name": "Education Exploratory"
+  "name": "Education Exploratory",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/TEEDUEXPL/null"
  },
  {
   "code": "TEESECEBAE",
   "slug": "educational-studies-early-childhood-studies",
-  "name": "Educational Studies (Early Childhood Studies),BAE"
+  "name": "Educational Studies (Early Childhood Studies),BAE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/TEESECEBAE/null"
  },
  {
   "code": "TEEDUSTBAE",
   "slug": "educational-studies-instructional-design",
-  "name": "Educational Studies (Instructional Design),BAE"
+  "name": "Educational Studies (Instructional Design),BAE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/TEEDUSTBAE/null"
  },
  {
   "code": "EDSLSTBAE",
   "slug": "educational-studies",
-  "name": "Educational Studies,BAE"
+  "name": "Educational Studies,BAE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/EDSLSTBAE/null"
  },
  {
   "code": "ESEEEPBSE",
   "slug": "electrical-engineering-electric-power-and-energy-systems",
-  "name": "Electrical Engineering (Electric Power and Energy Systems),BSE"
+  "name": "Electrical Engineering (Electric Power and Energy Systems),BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESEEEPBSE/null"
  },
  {
   "code": "ESEEEBSE",
   "slug": "electrical-engineering",
-  "name": "Electrical Engineering,BSE"
+  "name": "Electrical Engineering,BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESEEEBSE/null"
  },
  {
   "code": "TEEEDBAE",
   "slug": "elementary-education",
-  "name": "Elementary Education,BAE"
+  "name": "Elementary Education,BAE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/TEEEDBAE/null"
  },
  {
   "code": "TEEMLEBAE",
   "slug": "elementary-multilingual-education",
-  "name": "Elementary Multilingual Education,BAE"
+  "name": "Elementary Multilingual Education,BAE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/TEEMLEBAE/null"
  },
  {
   "code": "PPEMHSBS",
   "slug": "emergency-management-and-homeland-security",
-  "name": "Emergency Management and Homeland Security,BS"
+  "name": "Emergency Management and Homeland Security,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPEMHSBS/null"
  },
  {
   "code": "PPEMEAS",
   "slug": "emergency-management",
-  "name": "Emergency Management,AS"
+  "name": "Emergency Management,AS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPEMEAS/null"
  },
  {
   "code": "TSEGRASBSE",
   "slug": "engineering-automotive-systems",
-  "name": "Engineering (Automotive Systems),BSE"
+  "name": "Engineering (Automotive Systems),BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSEGRASBSE/null"
  },
  {
   "code": "ESEGRCEBSE",
   "slug": "engineering-clean-energy-systems",
-  "name": "Engineering (Clean Energy Systems),BSE"
+  "name": "Engineering (Clean Energy Systems),BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESEGRCEBSE/null"
  },
  {
   "code": "TSEGRESBSE",
   "slug": "engineering-electrical-systems",
-  "name": "Engineering (Electrical Systems),BSE"
+  "name": "Engineering (Electrical Systems),BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSEGRESBSE/null"
  },
  {
   "code": "TSEGRMEBSE",
   "slug": "engineering-mechanical-engineering-systems",
-  "name": "Engineering (Mechanical Engineering Systems),BSE"
+  "name": "Engineering (Mechanical Engineering Systems),BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSEGRMEBSE/null"
  },
  {
   "code": "TSEGRRBSE",
   "slug": "engineering-robotics",
-  "name": "Engineering (Robotics),BSE"
+  "name": "Engineering (Robotics),BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSEGRRBSE/null"
  },
  {
   "code": "ESEMGBSE",
   "slug": "engineering-management",
-  "name": "Engineering Management,BSE"
+  "name": "Engineering Management,BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESEMGBSE/null"
  },
  {
   "code": "ESESCBUSBS",
   "slug": "engineering-science-business",
-  "name": "Engineering Science (Business),BS"
+  "name": "Engineering Science (Business),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESESCBUSBS/null"
  },
  {
   "code": "ESESCMEBS",
   "slug": "engineering-science-microelectronics",
-  "name": "Engineering Science (Microelectronics),BS"
+  "name": "Engineering Science (Microelectronics),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESESCMEBS/null"
  },
  {
   "code": "TSEGRBSE",
   "slug": "engineering",
-  "name": "Engineering,BSE"
+  "name": "Engineering,BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSEGRBSE/null"
  },
  {
   "code": "LAENGCBA",
   "slug": "english-creative-writing",
-  "name": "English (Creative Writing),BA"
+  "name": "English (Creative Writing),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAENGCBA/null"
  },
  {
   "code": "LAENGNBA",
   "slug": "english-linguistics",
-  "name": "English (Linguistics),BA"
+  "name": "English (Linguistics),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAENGNBA/null"
  },
  {
   "code": "LAENGTBA",
   "slug": "english-literature",
-  "name": "English (Literature),BA"
+  "name": "English (Literature),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAENGTBA/null"
  },
  {
   "code": "LAENGNSBA",
   "slug": "english-narrative-studies",
-  "name": "English (Narrative Studies),BA"
+  "name": "English (Narrative Studies),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAENGNSBA/null"
  },
  {
   "code": "LAENGSEBA",
   "slug": "english-secondary-education",
-  "name": "English (Secondary Education),BA"
+  "name": "English (Secondary Education),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAENGSEBA/null"
  },
  {
   "code": "ASENGSEBA",
   "slug": "english-secondary-education",
-  "name": "English (Secondary Education),BA"
+  "name": "English (Secondary Education),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASENGSEBA/null"
  },
  {
   "code": "LAENGWBA",
   "slug": "english-writing-rhetorics-and-literacies",
-  "name": "English (Writing, Rhetorics and Literacies),BA"
+  "name": "English (Writing, Rhetorics and Literacies),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAENGWBA/null"
  },
  {
   "code": "ASENGBA",
   "slug": "english",
-  "name": "English,BA"
+  "name": "English,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASENGBA/null"
  },
  {
   "code": "LSENGBA",
   "slug": "english",
-  "name": "English,BA"
+  "name": "English,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSENGBA/null"
  },
  {
   "code": "LAENGBA",
   "slug": "english",
-  "name": "English,BA"
+  "name": "English,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAENGBA/null"
  },
  {
   "code": "BAENTLBA",
   "slug": "entrepreneurial-leadership",
-  "name": "Entrepreneurial Leadership,BA"
+  "name": "Entrepreneurial Leadership,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BAENTLBA/null"
  },
  {
   "code": "HIEDSBS",
   "slug": "environmental-design",
-  "name": "Environmental Design,BS"
+  "name": "Environmental Design,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIEDSBS/null"
  },
  {
   "code": "ESEVEBSE",
   "slug": "environmental-engineering",
-  "name": "Environmental Engineering,BSE"
+  "name": "Environmental Engineering,BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESEVEBSE/null"
  },
  {
   "code": "ASENVEJBS",
   "slug": "environmental-science-environmental-justice",
-  "name": "Environmental Science (Environmental Justice),BS"
+  "name": "Environmental Science (Environmental Justice),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASENVEJBS/null"
  },
  {
   "code": "ASENVBS",
   "slug": "environmental-science",
-  "name": "Environmental Science,BS"
+  "name": "Environmental Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASENVBS/null"
  },
  {
   "code": "ASENVEJBA",
   "slug": "environmental-studies-environmental-justice",
-  "name": "Environmental Studies (Environmental Justice),BA"
+  "name": "Environmental Studies (Environmental Justice),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASENVEJBA/null"
  },
  {
   "code": "ASENVBA",
   "slug": "environmental-studies",
-  "name": "Environmental Studies,BA"
+  "name": "Environmental Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASENVBA/null"
  },
  {
   "code": "TSETMBS",
   "slug": "environmental-and-resource-management",
-  "name": "Environmental and Resource Management,BS"
+  "name": "Environmental and Resource Management,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSETMBS/null"
  },
  {
   "code": "ASHSCIEXPL",
   "slug": "exploratory-health-and-life-sciences",
-  "name": "Exploratory Health and Life Sciences"
+  "name": "Exploratory Health and Life Sciences",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASHSCIEXPL/null"
  },
  {
   "code": "UCHSCIEXPL",
   "slug": "exploratory-health-and-life-sciences",
-  "name": "Exploratory Health and Life Sciences"
+  "name": "Exploratory Health and Life Sciences",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CUC/UCHSCIEXPL/null"
  },
  {
   "code": "UCHUFAEXPL",
   "slug": "exploratory-humanities-fine-arts-and-design",
-  "name": "Exploratory Humanities, Fine Arts and Design"
+  "name": "Exploratory Humanities, Fine Arts and Design",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CUC/UCHUFAEXPL/null"
  },
  {
   "code": "ASHUFAEXPL",
   "slug": "exploratory-humanities-fine-arts-and-design",
-  "name": "Exploratory Humanities, Fine Arts and Design"
+  "name": "Exploratory Humanities, Fine Arts and Design",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASHUFAEXPL/null"
  },
  {
   "code": "ASACMTEXPL",
   "slug": "exploratory-math-physical-sciences-engineering-and-technology",
-  "name": "Exploratory Math, Physical Sciences, Engineering and Technology"
+  "name": "Exploratory Math, Physical Sciences, Engineering and Technology",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASACMTEXPL/null"
  },
  {
   "code": "UCEMTPEXPL",
   "slug": "exploratory-math-physical-sciences-engineering-and-technology",
-  "name": "Exploratory Math, Physical Sciences, Engineering and Technology"
+  "name": "Exploratory Math, Physical Sciences, Engineering and Technology",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CUC/UCEMTPEXPL/null"
  },
  {
   "code": "UCSBSEXPL",
   "slug": "exploratory-social-and-behavioral-sciences",
-  "name": "Exploratory Social and Behavioral Sciences"
+  "name": "Exploratory Social and Behavioral Sciences",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CUC/UCSBSEXPL/null"
  },
  {
   "code": "ASSBSEXPL",
   "slug": "exploratory-social-and-behavioral-sciences",
-  "name": "Exploratory Social and Behavioral Sciences"
+  "name": "Exploratory Social and Behavioral Sciences",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASSBSEXPL/null"
  },
  {
   "code": "LAFASBS",
   "slug": "family-and-human-development",
-  "name": "Family and Human Development,BS"
+  "name": "Family and Human Development,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAFASBS/null"
  },
  {
   "code": "HIFSHAPDBA",
   "slug": "fashion-apparel-product-development",
-  "name": "Fashion (Apparel Product Development),BA"
+  "name": "Fashion (Apparel Product Development),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIFSHAPDBA/null"
  },
  {
   "code": "HIFSHATDBA",
   "slug": "fashion-apparel-technical-design",
-  "name": "Fashion (Apparel Technical Design),BA"
+  "name": "Fashion (Apparel Technical Design),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIFSHATDBA/null"
  },
  {
   "code": "HIFSHDBA",
   "slug": "fashion-design",
-  "name": "Fashion (Design),BA"
+  "name": "Fashion (Design),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIFSHDBA/null"
  },
  {
   "code": "HIFSHMBA",
   "slug": "fashion-merchandising",
-  "name": "Fashion (Merchandising),BA"
+  "name": "Fashion (Merchandising),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIFSHMBA/null"
  },
  {
   "code": "HIFSHAA",
   "slug": "fashion-styling",
-  "name": "Fashion Styling,AA"
+  "name": "Fashion Styling,AA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIFSHAA/null"
  },
  {
   "code": "HIFSHBA",
   "slug": "fashion",
-  "name": "Fashion,BA"
+  "name": "Fashion,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIFSHBA/null"
  },
  {
   "code": "FAFLMBA",
@@ -1017,127 +1217,152 @@
  {
   "code": "LAFMSBA",
   "slug": "film-film-and-media-studies",
-  "name": "Film (Film and Media Studies),BA"
+  "name": "Film (Film and Media Studies),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAFMSBA/null"
  },
  {
   "code": "FAFPRBA",
   "slug": "film-filmmaking-practices",
-  "name": "Film (Filmmaking Practices),BA"
+  "name": "Film (Filmmaking Practices),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAFPRBA/null"
  },
  {
   "code": "HIFMPCBFA",
   "slug": "film-and-media-production-cinematography",
-  "name": "Film and Media Production (Cinematography),BFA"
+  "name": "Film and Media Production (Cinematography),BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIFMPCBFA/null"
  },
  {
   "code": "HIFMPDBFA",
   "slug": "film-and-media-production-directing",
-  "name": "Film and Media Production (Directing),BFA"
+  "name": "Film and Media Production (Directing),BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIFMPDBFA/null"
  },
  {
   "code": "HIFMPPBFA",
   "slug": "film-and-media-production-post-production",
-  "name": "Film and Media Production (Post-Production),BFA"
+  "name": "Film and Media Production (Post-Production),BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIFMPPBFA/null"
  },
  {
   "code": "HIFMPSBFA",
   "slug": "film-and-media-production-screenwriting",
-  "name": "Film and Media Production (Screenwriting),BFA"
+  "name": "Film and Media Production (Screenwriting),BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIFMPSBFA/null"
  },
  {
   "code": "HIFMPBFA",
   "slug": "film-and-media-production",
-  "name": "Film and Media Production,BFA"
+  "name": "Film and Media Production,BFA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIFMPBFA/null"
  },
  {
   "code": "BAFINBS",
   "slug": "finance",
-  "name": "Finance,BS"
+  "name": "Finance,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BAFINBS/null"
  },
  {
   "code": "BAFINTBS",
   "slug": "financial-technology",
-  "name": "Financial Technology,BS"
+  "name": "Financial Technology,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BAFINTBS/null"
  },
  {
   "code": "ASFOREDIBS",
   "slug": "forensic-science-death-investigations",
-  "name": "Forensic Science (Death Investigations),BS"
+  "name": "Forensic Science (Death Investigations),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASFOREDIBS/null"
  },
  {
   "code": "ASFOREBS",
   "slug": "forensic-science",
-  "name": "Forensic Science,BS"
+  "name": "Forensic Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASFOREBS/null"
  },
  {
   "code": "LAFREBA",
   "slug": "french",
-  "name": "French,BA"
+  "name": "French,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAFREBA/null"
  },
  {
   "code": "HIGMDESBS",
   "slug": "game-design",
-  "name": "Game Design,BS"
+  "name": "Game Design,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIGMDESBS/null"
  },
  {
   "code": "LAWSTBA",
   "slug": "gender-women-and-sexuality-studies",
-  "name": "Gender, Women and Sexuality Studies,BA"
+  "name": "Gender, Women and Sexuality Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAWSTBA/null"
  },
  {
   "code": "ASWSTBS",
   "slug": "gender-women-and-sexuality-studies",
-  "name": "Gender, Women and Sexuality Studies,BS"
+  "name": "Gender, Women and Sexuality Studies,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASWSTBS/null"
  },
  {
   "code": "LSGNSBGS",
   "slug": "general-studies",
-  "name": "General Studies,BA"
+  "name": "General Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSGNSBGS/null"
  },
  {
   "code": "LAGISBS",
   "slug": "geographic-information-science",
-  "name": "Geographic Information Science,BS"
+  "name": "Geographic Information Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAGISBS/null"
  },
  {
   "code": "LAGCUMBS",
   "slug": "geography-meteorology-climatology",
-  "name": "Geography (Meteorology-Climatology),BS"
+  "name": "Geography (Meteorology-Climatology),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAGCUMBS/null"
  },
  {
   "code": "LAGCUBA",
   "slug": "geography",
-  "name": "Geography,BA"
+  "name": "Geography,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAGCUBA/null"
  },
  {
   "code": "LAGCUBS",
   "slug": "geography",
-  "name": "Geography,BS"
+  "name": "Geography,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAGCUBS/null"
  },
  {
   "code": "LAGERBA",
   "slug": "german",
-  "name": "German,BA"
+  "name": "German,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAGERBA/null"
  },
  {
   "code": "LAASIABA",
   "slug": "global-asia-studies",
-  "name": "Global Asia Studies,BA"
+  "name": "Global Asia Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAASIABA/null"
  },
  {
   "code": "LAGCZBA",
   "slug": "global-citizenship",
-  "name": "Global Citizenship,BA"
+  "name": "Global Citizenship,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAGCZBA/null"
  },
  {
   "code": "LASSHBA",
   "slug": "global-health",
-  "name": "Global Health,BA"
+  "name": "Global Health,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LASSHBA/null"
  },
  {
   "code": "LASSHBS",
   "slug": "global-health",
-  "name": "Global Health,BS"
+  "name": "Global Health,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LASSHBS/null"
  },
  {
   "code": "TBTGMBGM",
@@ -1147,42 +1372,50 @@
  {
   "code": "LASGSBA",
   "slug": "global-studies",
-  "name": "Global Studies,BA"
+  "name": "Global Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LASGSBA/null"
  },
  {
   "code": "ARGRABSD",
   "slug": "graphic-design",
-  "name": "Graphic Design,BSD"
+  "name": "Graphic Design,BSD",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/ARGRABSD/null"
  },
  {
   "code": "ESGITFSWBS",
   "slug": "graphic-information-technology-full-stack-web-development",
-  "name": "Graphic Information Technology (Full-Stack Web Development),BS"
+  "name": "Graphic Information Technology (Full-Stack Web Development),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESGITFSWBS/null"
  },
  {
   "code": "ESGITUEBS",
   "slug": "graphic-information-technology-user-experience",
-  "name": "Graphic Information Technology (User Experience),BS"
+  "name": "Graphic Information Technology (User Experience),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESGITUEBS/null"
  },
  {
   "code": "TSGITBS",
   "slug": "graphic-information-technology",
-  "name": "Graphic Information Technology,BS"
+  "name": "Graphic Information Technology,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSGITBS/null"
  },
  {
   "code": "NHHCDBS",
   "slug": "health-care-administration-and-policy",
-  "name": "Health Care Administration and Policy,BS"
+  "name": "Health Care Administration and Policy,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/NHHCDBS/null"
  },
  {
   "code": "NUHCCRBS",
   "slug": "health-care-compliance-and-regulations",
-  "name": "Health Care Compliance and Regulations,BS"
+  "name": "Health Care Compliance and Regulations,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CNU/NUHCCRBS/null"
  },
  {
   "code": "NUHCCOBS",
   "slug": "health-care-coordination",
-  "name": "Health Care Coordination,BS"
+  "name": "Health Care Coordination,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CNU/NUHCCOBS/null"
  },
  {
   "code": "NHHEHPBS",
@@ -1192,52 +1425,62 @@
  {
   "code": "NUHCIBS",
   "slug": "health-entrepreneurship-and-innovation",
-  "name": "Health Entrepreneurship and Innovation,BS"
+  "name": "Health Entrepreneurship and Innovation,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CNU/NUHCIBS/null"
  },
  {
   "code": "NUHSCHLCBS",
   "slug": "health-sciences-healthy-lifestyles-and-fitness-science",
-  "name": "Health Sciences (Healthy Lifestyles and Fitness Science),BS"
+  "name": "Health Sciences (Healthy Lifestyles and Fitness Science),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/NUHSCHLCBS/null"
  },
  {
   "code": "NHHSCBS",
   "slug": "health-sciences",
-  "name": "Health Sciences,BS"
+  "name": "Health Sciences,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/NHHSCBS/null"
  },
  {
   "code": "LSHISVSSBA",
   "slug": "history-military-and-veterans-studies",
-  "name": "History (Military and Veterans Studies),BA"
+  "name": "History (Military and Veterans Studies),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSHISVSSBA/null"
  },
  {
   "code": "LAHISSEBA",
   "slug": "history-secondary-education",
-  "name": "History (Secondary Education),BA"
+  "name": "History (Secondary Education),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAHISSEBA/null"
  },
  {
   "code": "ASHISSEBA",
   "slug": "history-secondary-education",
-  "name": "History (Secondary Education),BA"
+  "name": "History (Secondary Education),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASHISSEBA/null"
  },
  {
   "code": "LSHSIIBA",
   "slug": "history-of-science-technology-and-innovation",
-  "name": "History of Science, Technology and Innovation,BA"
+  "name": "History of Science, Technology and Innovation,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSHSIIBA/null"
  },
  {
   "code": "LAHISBA",
   "slug": "history",
-  "name": "History,BA"
+  "name": "History,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAHISBA/null"
  },
  {
   "code": "LSHISBA",
   "slug": "history",
-  "name": "History,BA"
+  "name": "History,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSHISBA/null"
  },
  {
   "code": "ASHISBA",
   "slug": "history",
-  "name": "History,BA"
+  "name": "History,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASHISBA/null"
  },
  {
   "code": "9HOHONALL",
@@ -1247,62 +1490,74 @@
  {
   "code": "ESHSEUEBS",
   "slug": "human-systems-engineering-user-experience",
-  "name": "Human Systems Engineering (User Experience),BS"
+  "name": "Human Systems Engineering (User Experience),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESHSEUEBS/null"
  },
  {
   "code": "ESHSEBS",
   "slug": "human-systems-engineering",
-  "name": "Human Systems Engineering,BS"
+  "name": "Human Systems Engineering,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESHSEBS/null"
  },
  {
   "code": "ARINDBSD",
   "slug": "industrial-design",
-  "name": "Industrial Design,BSD"
+  "name": "Industrial Design,BSD",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/ARINDBSD/null"
  },
  {
   "code": "ESIEEBSE",
   "slug": "industrial-engineering",
-  "name": "Industrial Engineering,BSE"
+  "name": "Industrial Engineering,BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESIEEBSE/null"
  },
  {
   "code": "ESCPIBS",
   "slug": "informatics",
-  "name": "Informatics,BS"
+  "name": "Informatics,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESCPIBS/null"
  },
  {
   "code": "ESIFTCSBS",
   "slug": "information-technology-cybersecurity",
-  "name": "Information Technology (Cybersecurity),BS"
+  "name": "Information Technology (Cybersecurity),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESIFTCSBS/null"
  },
  {
   "code": "ESIFTNBS",
   "slug": "information-technology-networking",
-  "name": "Information Technology (Networking),BS"
+  "name": "Information Technology (Networking),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESIFTNBS/null"
  },
  {
   "code": "TSIFTBS",
   "slug": "information-technology",
-  "name": "Information Technology,BS"
+  "name": "Information Technology,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSIFTBS/null"
  },
  {
   "code": "FIFISBA",
   "slug": "innovation-in-society",
-  "name": "Innovation in Society,BA"
+  "name": "Innovation in Society,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CGF/FIFISBA/null"
  },
  {
   "code": "FIFISBS",
   "slug": "innovation-in-society",
-  "name": "Innovation in Society,BS"
+  "name": "Innovation in Society,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CGF/FIFISBS/null"
  },
  {
   "code": "LAISTBA",
   "slug": "integrated-studies",
-  "name": "Integrated Studies,BA"
+  "name": "Integrated Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAISTBA/null"
  },
  {
   "code": "LAISTBS",
   "slug": "integrated-studies",
-  "name": "Integrated Studies,BS"
+  "name": "Integrated Studies,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAISTBS/null"
  },
  {
   "code": "NUIHLTBS",
@@ -1312,42 +1567,50 @@
  {
   "code": "LSISSBS",
   "slug": "integrative-social-science",
-  "name": "Integrative Social Science,BS"
+  "name": "Integrative Social Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSISSBS/null"
  },
  {
   "code": "ASIAPBA",
   "slug": "interdisciplinary-arts-and-performance",
-  "name": "Interdisciplinary Arts and Performance,BA"
+  "name": "Interdisciplinary Arts and Performance,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASIAPBA/null"
  },
  {
   "code": "ASIASBA",
   "slug": "interdisciplinary-arts-and-sciences",
-  "name": "Interdisciplinary Arts and Sciences,BA"
+  "name": "Interdisciplinary Arts and Sciences,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASIASBA/null"
  },
  {
   "code": "LSORGBIS",
   "slug": "interdisciplinary-studies-organizational-studies",
-  "name": "Interdisciplinary Studies (Organizational Studies),BA"
+  "name": "Interdisciplinary Studies (Organizational Studies),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2025/CLS/LSORGBIS/null"
  },
  {
   "code": "LSBISBIS",
   "slug": "interdisciplinary-studies",
-  "name": "Interdisciplinary Studies,BA"
+  "name": "Interdisciplinary Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSBISBIS/null"
  },
  {
   "code": "ARINTBSD",
   "slug": "interior-design",
-  "name": "Interior Design,BSD"
+  "name": "Interior Design,BSD",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/ARINTBSD/null"
  },
  {
   "code": "LASLCASBA",
   "slug": "international-letters-and-cultures-arabic-studies",
-  "name": "International Letters and Cultures (Arabic Studies),BA"
+  "name": "International Letters and Cultures (Arabic Studies),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LASLCASBA/null"
  },
  {
   "code": "LASLCVBA",
   "slug": "international-letters-and-cultures-classical-civilization",
-  "name": "International Letters and Cultures (Classical Civilization),BA"
+  "name": "International Letters and Cultures (Classical Civilization),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LASLCVBA/null"
  },
  {
   "code": "LASLCCBA",
@@ -1357,177 +1620,212 @@
  {
   "code": "LASLCBA",
   "slug": "international-letters-and-cultures",
-  "name": "International Letters and Cultures,BA"
+  "name": "International Letters and Cultures,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LASLCBA/null"
  },
  {
   "code": "NHIPHBIPH",
   "slug": "international-public-health",
-  "name": "International Public Health,BIPH"
+  "name": "International Public Health,BIPH",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/NHIPHBIPH/null"
  },
  {
   "code": "LAINRBA",
   "slug": "international-relations",
-  "name": "International Relations,BA"
+  "name": "International Relations,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAINRBA/null"
  },
  {
   "code": "LAINRBS",
   "slug": "international-relations",
-  "name": "International Relations,BS"
+  "name": "International Relations,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAINRBS/null"
  },
  {
   "code": "TBINTRABS",
   "slug": "international-trade",
-  "name": "International Trade,BS"
+  "name": "International Trade,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTB/TBINTRABS/null"
  },
  {
   "code": "LAITABA",
   "slug": "italian",
-  "name": "Italian,BA"
+  "name": "Italian,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAITABA/null"
  },
  {
   "code": "LAJSTBA",
   "slug": "jewish-studies",
-  "name": "Jewish Studies,BA"
+  "name": "Jewish Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAJSTBA/null"
  },
  {
   "code": "CSJMCBA",
   "slug": "journalism",
-  "name": "Journalism,BA"
+  "name": "Journalism,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CCS/CSJMCBA/null"
  },
  {
   "code": "LAJUSBA",
   "slug": "justice-studies",
-  "name": "Justice Studies,BA"
+  "name": "Justice Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAJUSBA/null"
  },
  {
   "code": "LAJUSBS",
   "slug": "justice-studies",
-  "name": "Justice Studies,BS"
+  "name": "Justice Studies,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAJUSBS/null"
  },
  {
   "code": "NUKINBS",
   "slug": "kinesiology",
-  "name": "Kinesiology,BS"
+  "name": "Kinesiology,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/NUKINBS/null"
  },
  {
   "code": "ARPLABSLA",
   "slug": "landscape-architecture",
-  "name": "Landscape Architecture,BSLA"
+  "name": "Landscape Architecture,BSLA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/ARPLABSLA/null"
  },
  {
   "code": "ASLASBA",
   "slug": "latin-american-studies",
-  "name": "Latin American Studies,BA"
+  "name": "Latin American Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASLASBA/null"
  },
  {
   "code": "LABLSBLS",
   "slug": "liberal-studies",
-  "name": "Liberal Studies,BA"
+  "name": "Liberal Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LABLSBLS/null"
  },
  {
   "code": "BALGMARAS",
   "slug": "logistics-maritime",
-  "name": "Logistics (Maritime),AS"
+  "name": "Logistics (Maritime),AS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BALGMARAS/null"
  },
  {
   "code": "BAMGTBS",
   "slug": "management",
-  "name": "Management,BS"
+  "name": "Management,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BAMGTBS/null"
  },
  {
   "code": "TSMEGRBS",
   "slug": "manufacturing-engineering",
-  "name": "Manufacturing Engineering,BS"
+  "name": "Manufacturing Engineering,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSMEGRBS/null"
  },
  {
   "code": "ESMFGSYBAS",
   "slug": "manufacturing-systems",
-  "name": "Manufacturing Systems,BAS"
+  "name": "Manufacturing Systems,BAS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESMFGSYBAS/null"
  },
  {
   "code": "BAMKDIMCBS",
   "slug": "marketing-digital",
-  "name": "Marketing (Digital),BS"
+  "name": "Marketing (Digital),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BAMKDIMCBS/null"
  },
  {
   "code": "BAMKTPSBS",
   "slug": "marketing-professional-sales",
-  "name": "Marketing (Professional Sales),BS"
+  "name": "Marketing (Professional Sales),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BAMKTPSBS/null"
  },
  {
   "code": "BAMKTBS",
   "slug": "marketing",
-  "name": "Marketing,BS"
+  "name": "Marketing,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BAMKTBS/null"
  },
  {
   "code": "CSMCMSTBA",
   "slug": "mass-communication-and-media-studies",
-  "name": "Mass Communication and Media Studies,BA"
+  "name": "Mass Communication and Media Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CCS/CSMCMSTBA/null"
  },
  {
   "code": "ESMSEBSE",
   "slug": "materials-science-and-engineering",
-  "name": "Materials Science and Engineering,BSE"
+  "name": "Materials Science and Engineering,BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESMSEBSE/null"
  },
  {
   "code": "LAMATTBS",
   "slug": "mathematics-statistics",
-  "name": "Mathematics (Statistics),BS"
+  "name": "Mathematics (Statistics),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAMATTBS/null"
  },
  {
   "code": "LAMATBA",
   "slug": "mathematics",
-  "name": "Mathematics,BA"
+  "name": "Mathematics,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAMATBA/null"
  },
  {
   "code": "LAMATBS",
   "slug": "mathematics",
-  "name": "Mathematics,BS"
+  "name": "Mathematics,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAMATBS/null"
  },
  {
   "code": "ESMAECBSE",
   "slug": "mechanical-engineering-computational-mechanics",
-  "name": "Mechanical Engineering (Computational Mechanics),BSE"
+  "name": "Mechanical Engineering (Computational Mechanics),BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESMAECBSE/null"
  },
  {
   "code": "ESMAEEBSE",
   "slug": "mechanical-engineering-energy-and-environment",
-  "name": "Mechanical Engineering (Energy and Environment),BSE"
+  "name": "Mechanical Engineering (Energy and Environment),BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESMAEEBSE/null"
  },
  {
   "code": "ESMAEMBSE",
   "slug": "mechanical-engineering",
-  "name": "Mechanical Engineering,BSE"
+  "name": "Mechanical Engineering,BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESMAEMBSE/null"
  },
  {
   "code": "HIDGCABA",
   "slug": "media-arts-and-sciences-art",
-  "name": "Media Arts and Sciences (Art),BA"
+  "name": "Media Arts and Sciences (Art),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIDGCABA/null"
  },
  {
   "code": "HIDGCDBA",
   "slug": "media-arts-and-sciences-design",
-  "name": "Media Arts and Sciences (Design),BA"
+  "name": "Media Arts and Sciences (Design),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIDGCDBA/null"
  },
  {
   "code": "HIMASEDBA",
   "slug": "media-arts-and-sciences-education",
-  "name": "Media Arts and Sciences (Education),BA"
+  "name": "Media Arts and Sciences (Education),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIMASEDBA/null"
  },
  {
   "code": "HIDGCFBA",
   "slug": "media-arts-and-sciences-film",
-  "name": "Media Arts and Sciences (Film),BA"
+  "name": "Media Arts and Sciences (Film),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIDGCFBA/null"
  },
  {
   "code": "HIMASGIMBS",
   "slug": "media-arts-and-sciences-games-and-interactive-media",
-  "name": "Media Arts and Sciences (Games and Interactive Media),BS"
+  "name": "Media Arts and Sciences (Games and Interactive Media),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIMASGIMBS/null"
  },
  {
   "code": "HIDGCTEBA",
   "slug": "media-arts-and-sciences-graphic-information-technology",
-  "name": "Media Arts and Sciences (Graphic Information Technology),BA"
+  "name": "Media Arts and Sciences (Graphic Information Technology),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIDGCTEBA/null"
  },
  {
   "code": "HIDCIAPBA",
@@ -1537,52 +1835,62 @@
  {
   "code": "HIDGCMPBS",
   "slug": "media-arts-and-sciences-media-processing",
-  "name": "Media Arts and Sciences (Media Processing),BS"
+  "name": "Media Arts and Sciences (Media Processing),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIDGCMPBS/null"
  },
  {
   "code": "HIDGCMBA",
   "slug": "media-arts-and-sciences-music",
-  "name": "Media Arts and Sciences (Music),BA"
+  "name": "Media Arts and Sciences (Music),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIDGCMBA/null"
  },
  {
   "code": "HIDGCBA",
   "slug": "media-arts-and-sciences",
-  "name": "Media Arts and Sciences,BA"
+  "name": "Media Arts and Sciences,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIDGCBA/null"
  },
  {
   "code": "CSDMLBA",
   "slug": "media-literacy",
-  "name": "Media Literacy,BA"
+  "name": "Media Literacy,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CCS/CSDMLBA/null"
  },
  {
   "code": "NHMEDBS",
   "slug": "medical-studies",
-  "name": "Medical Studies,BS"
+  "name": "Medical Studies,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/NHMEDBS/null"
  },
  {
   "code": "HIMERCHAA",
   "slug": "merchandising",
-  "name": "Merchandising,AA"
+  "name": "Merchandising,AA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIMERCHAA/null"
  },
  {
   "code": "LAMICMBS",
   "slug": "microbiology-medical-microbiology",
-  "name": "Microbiology (Medical Microbiology),BS"
+  "name": "Microbiology (Medical Microbiology),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAMICMBS/null"
  },
  {
   "code": "TEMGEBAE",
   "slug": "middle-grades-education",
-  "name": "Middle Grades Education,BAE"
+  "name": "Middle Grades Education,BAE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/TEMGEBAE/null"
  },
  {
   "code": "LSMILSTAA",
   "slug": "military-studies",
-  "name": "Military Studies,AA"
+  "name": "Military Studies,AA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSMILSTAA/null"
  },
  {
   "code": "HIMUSMCBA",
   "slug": "music-music-and-culture",
-  "name": "Music (Music and Culture),BA"
+  "name": "Music (Music and Culture),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/HIMUSMCBA/null"
  },
  {
   "code": "HIMUSPMBA",
@@ -1592,32 +1900,38 @@
  {
   "code": "FAMUSEBM",
   "slug": "music-learning-and-teaching",
-  "name": "Music Learning and Teaching,BMUS"
+  "name": "Music Learning and Teaching,BMUS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAMUSEBM/null"
  },
  {
   "code": "FAMUSTHBM",
   "slug": "music-therapy",
-  "name": "Music Therapy,BMUS"
+  "name": "Music Therapy,BMUS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAMUSTHBM/null"
  },
  {
   "code": "FAMUSBA",
   "slug": "music",
-  "name": "Music,BA"
+  "name": "Music,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAMUSBA/null"
  },
  {
   "code": "LABMENBS",
   "slug": "neuroscience",
-  "name": "Neuroscience,BS"
+  "name": "Neuroscience,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LABMENBS/null"
  },
  {
   "code": "PPNLMAIBS",
   "slug": "nonprofit-leadership-and-management-american-indian-studies",
-  "name": "Nonprofit Leadership and Management (American Indian Studies),BS"
+  "name": "Nonprofit Leadership and Management (American Indian Studies),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPNLMAIBS/null"
  },
  {
   "code": "PPNLMBS",
   "slug": "nonprofit-leadership-and-management",
-  "name": "Nonprofit Leadership and Management,BS"
+  "name": "Nonprofit Leadership and Management,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPNLMBS/null"
  },
  {
   "code": "NUNURDBSN",
@@ -1627,67 +1941,80 @@
  {
   "code": "NHNUSCIBS",
   "slug": "nutritional-science",
-  "name": "Nutritional Science,BS"
+  "name": "Nutritional Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/NHNUSCIBS/null"
  },
  {
   "code": "LSORGLVSBA",
   "slug": "organizational-leadership-military-and-veterans-studies",
-  "name": "Organizational Leadership (Military and Veterans Studies),BA"
+  "name": "Organizational Leadership (Military and Veterans Studies),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSORGLVSBA/null"
  },
  {
   "code": "LSORGLPMBA",
   "slug": "organizational-leadership-project-management",
-  "name": "Organizational Leadership (Project Management),BA"
+  "name": "Organizational Leadership (Project Management),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSORGLPMBA/null"
  },
  {
   "code": "LSORGLAA",
   "slug": "organizational-leadership",
-  "name": "Organizational Leadership,AA"
+  "name": "Organizational Leadership,AA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSORGLAA/null"
  },
  {
   "code": "LSORGLBA",
   "slug": "organizational-leadership",
-  "name": "Organizational Leadership,BA"
+  "name": "Organizational Leadership,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSORGLBA/null"
  },
  {
   "code": "PPPRMBS",
   "slug": "parks-recreation-and-sport-management",
-  "name": "Parks, Recreation and Sport Management,BS"
+  "name": "Parks, Recreation and Sport Management,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPPRMBS/null"
  },
  {
   "code": "FAMUSPPBM",
   "slug": "performance-collaborative-piano",
-  "name": "Performance (Collaborative Piano),BMUS"
+  "name": "Performance (Collaborative Piano),BMUS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAMUSPPBM/null"
  },
  {
   "code": "FAMUSPGBM",
   "slug": "performance-guitar",
-  "name": "Performance (Guitar),BMUS"
+  "name": "Performance (Guitar),BMUS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAMUSPGBM/null"
  },
  {
   "code": "FAMUSPJBM",
   "slug": "performance-jazz",
-  "name": "Performance (Jazz),BMUS"
+  "name": "Performance (Jazz),BMUS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAMUSPJBM/null"
  },
  {
   "code": "FAMUSPKBM",
   "slug": "performance-keyboard",
-  "name": "Performance (Keyboard),BMUS"
+  "name": "Performance (Keyboard),BMUS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAMUSPKBM/null"
  },
  {
   "code": "FAMUSPMBM",
   "slug": "performance-music-theatre",
-  "name": "Performance (Music Theatre),BMUS"
+  "name": "Performance (Music Theatre),BMUS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAMUSPMBM/null"
  },
  {
   "code": "FAMUSPOBM",
   "slug": "performance-orchestral-instrument",
-  "name": "Performance (Orchestral Instrument),BMUS"
+  "name": "Performance (Orchestral Instrument),BMUS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAMUSPOBM/null"
  },
  {
   "code": "FAMUSPVBM",
   "slug": "performance-voice",
-  "name": "Performance (Voice),BMUS"
+  "name": "Performance (Voice),BMUS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAMUSPVBM/null"
  },
  {
   "code": "HIPERMVBA",
@@ -1697,72 +2024,86 @@
  {
   "code": "ASPTXEJBS",
   "slug": "pharmacology-and-toxicology-environmental-studies",
-  "name": "Pharmacology and Toxicology (Environmental Studies),BS"
+  "name": "Pharmacology and Toxicology (Environmental Studies),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASPTXEJBS/null"
  },
  {
   "code": "ASPTXBS",
   "slug": "pharmacology-and-toxicology",
-  "name": "Pharmacology and Toxicology,BS"
+  "name": "Pharmacology and Toxicology,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASPTXBS/null"
  },
  {
   "code": "LAPHIMPBA",
   "slug": "philosophy-morality-politics-and-law",
-  "name": "Philosophy (Morality, Politics and Law),BA"
+  "name": "Philosophy (Morality, Politics and Law),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAPHIMPBA/null"
  },
  {
   "code": "LAPHISNMBA",
   "slug": "philosophy-science-nature-and-mind",
-  "name": "Philosophy (Science, Nature and Mind),BA"
+  "name": "Philosophy (Science, Nature and Mind),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAPHISNMBA/null"
  },
  {
   "code": "ASRELBA",
   "slug": "philosophy-religion-and-society",
-  "name": "Philosophy, Religion and Society,BA"
+  "name": "Philosophy, Religion and Society,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASRELBA/null"
  },
  {
   "code": "LAPHIBA",
   "slug": "philosophy",
-  "name": "Philosophy,BA"
+  "name": "Philosophy,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAPHIBA/null"
  },
  {
   "code": "TEPPEBAE",
   "slug": "physical-education",
-  "name": "Physical Education,BAE"
+  "name": "Physical Education,BAE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/TEPPEBAE/null"
  },
  {
   "code": "LAPOSBA",
   "slug": "political-science",
-  "name": "Political Science,BA"
+  "name": "Political Science,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAPOSBA/null"
  },
  {
   "code": "ASPOLBA",
   "slug": "political-science",
-  "name": "Political Science,BA"
+  "name": "Political Science,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASPOLBA/null"
  },
  {
   "code": "LSPOLBS",
   "slug": "political-science",
-  "name": "Political Science,BS"
+  "name": "Political Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSPOLBS/null"
  },
  {
   "code": "LAPOSBS",
   "slug": "political-science",
-  "name": "Political Science,BS"
+  "name": "Political Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAPOSBS/null"
  },
  {
   "code": "ASPOLBS",
   "slug": "political-science",
-  "name": "Political Science,BS"
+  "name": "Political Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASPOLBS/null"
  },
  {
   "code": "LAPECBS",
   "slug": "politics-and-the-economy",
-  "name": "Politics and the Economy,BS"
+  "name": "Politics and the Economy,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAPECBS/null"
  },
  {
   "code": "NHPOPHLBS",
   "slug": "population-health",
-  "name": "Population Health,BS"
+  "name": "Population Health,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/NHPOPHLBS/null"
  },
  {
   "code": "LALAWPRE",
@@ -1772,107 +2113,128 @@
  {
   "code": "LSPRFSTAA",
   "slug": "professional-studies",
-  "name": "Professional Studies,AA"
+  "name": "Professional Studies,AA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2025/CLS/LSPRFSTAA/null"
  },
  {
   "code": "LSPMGBS",
   "slug": "project-management",
-  "name": "Project Management,BS"
+  "name": "Project Management,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSPMGBS/null"
  },
  {
   "code": "ASPGSFPBA",
   "slug": "psychology-forensic-psychology",
-  "name": "Psychology (Forensic Psychology),BA"
+  "name": "Psychology (Forensic Psychology),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASPGSFPBA/null"
  },
  {
   "code": "ASPGSFPBS",
   "slug": "psychology-forensic-psychology",
-  "name": "Psychology (Forensic Psychology),BS"
+  "name": "Psychology (Forensic Psychology),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASPGSFPBS/null"
  },
  {
   "code": "ASPGSIOPBA",
   "slug": "psychology-industrial-and-organizational-psychology",
-  "name": "Psychology (Industrial and Organizational Psychology),BA"
+  "name": "Psychology (Industrial and Organizational Psychology),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASPGSIOPBA/null"
  },
  {
   "code": "ASPGSIOPBS",
   "slug": "psychology-industrial-and-organizational-psychology",
-  "name": "Psychology (Industrial and Organizational Psychology),BS"
+  "name": "Psychology (Industrial and Organizational Psychology),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASPGSIOPBS/null"
  },
  {
   "code": "ASPGSPPBA",
   "slug": "psychology-positive-psychology",
-  "name": "Psychology (Positive Psychology),BA"
+  "name": "Psychology (Positive Psychology),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASPGSPPBA/null"
  },
  {
   "code": "ASPGSPPBS",
   "slug": "psychology-positive-psychology",
-  "name": "Psychology (Positive Psychology),BS"
+  "name": "Psychology (Positive Psychology),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASPGSPPBS/null"
  },
  {
   "code": "LAPGSPSBS",
   "slug": "psychology-psychological-science",
-  "name": "Psychology (Psychological Science),BS"
+  "name": "Psychology (Psychological Science),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAPGSPSBS/null"
  },
  {
   "code": "LSPGSBA",
   "slug": "psychology",
-  "name": "Psychology,BA"
+  "name": "Psychology,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSPGSBA/null"
  },
  {
   "code": "ASPGSBA",
   "slug": "psychology",
-  "name": "Psychology,BA"
+  "name": "Psychology,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASPGSBA/null"
  },
  {
   "code": "LAPGSBA",
   "slug": "psychology",
-  "name": "Psychology,BA"
+  "name": "Psychology,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAPGSBA/null"
  },
  {
   "code": "LSPGSBS",
   "slug": "psychology",
-  "name": "Psychology,BS"
+  "name": "Psychology,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSPGSBS/null"
  },
  {
   "code": "ASPGSBS",
   "slug": "psychology",
-  "name": "Psychology,BS"
+  "name": "Psychology,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASPGSBS/null"
  },
  {
   "code": "LAPGSBS",
   "slug": "psychology",
-  "name": "Psychology,BS"
+  "name": "Psychology,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LAPGSBS/null"
  },
  {
   "code": "NHPBHBS",
   "slug": "public-health",
-  "name": "Public Health,BS"
+  "name": "Public Health,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/NHPBHBS/null"
  },
  {
   "code": "PPPAFBUBS",
   "slug": "public-service-and-public-policy-business",
-  "name": "Public Service and Public Policy (Business),BS"
+  "name": "Public Service and Public Policy (Business),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPPAFBUBS/null"
  },
  {
   "code": "PPPAFCBS",
   "slug": "public-service-and-public-policy-criminology",
-  "name": "Public Service and Public Policy (Criminology),BS"
+  "name": "Public Service and Public Policy (Criminology),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPPAFCBS/null"
  },
  {
   "code": "PPPAFEHBS",
   "slug": "public-service-and-public-policy-emergency-management-and-homeland-security",
-  "name": "Public Service and Public Policy (Emergency Management and Homeland Security),BS"
+  "name": "Public Service and Public Policy (Emergency Management and Homeland Security),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPPAFEHBS/null"
  },
  {
   "code": "PPPAFHPBS",
   "slug": "public-service-and-public-policy-health-policy",
-  "name": "Public Service and Public Policy (Health Policy),BS"
+  "name": "Public Service and Public Policy (Health Policy),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPPAFHPBS/null"
  },
  {
   "code": "PPPAFLPBS",
   "slug": "public-service-and-public-policy-law-and-policy",
-  "name": "Public Service and Public Policy (Law and Policy),BS"
+  "name": "Public Service and Public Policy (Law and Policy),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPPAFLPBS/null"
  },
  {
   "code": "PPPANLMBS",
@@ -1892,57 +2254,68 @@
  {
   "code": "PPPAFSBS",
   "slug": "public-service-and-public-policy-sustainability",
-  "name": "Public Service and Public Policy (Sustainability),BS"
+  "name": "Public Service and Public Policy (Sustainability),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPPAFSBS/null"
  },
  {
   "code": "PPPAFBS",
   "slug": "public-service-and-public-policy",
-  "name": "Public Service and Public Policy,BS"
+  "name": "Public Service and Public Policy,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPPAFBS/null"
  },
  {
   "code": "BAREAFBS",
   "slug": "real-estate-and-applied-finance",
-  "name": "Real Estate and Applied Finance,BS"
+  "name": "Real Estate and Applied Finance,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BAREAFBS/null"
  },
  {
   "code": "PPRECTBS",
   "slug": "recreational-therapy",
-  "name": "Recreational Therapy,BS"
+  "name": "Recreational Therapy,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPRECTBS/null"
  },
  {
   "code": "LARELCPBA",
   "slug": "religious-studies-religion-culture-and-public-life",
-  "name": "Religious Studies (Religion, Culture and Public Life),BA"
+  "name": "Religious Studies (Religion, Culture and Public Life),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LARELCPBA/null"
  },
  {
   "code": "LARELPGBA",
   "slug": "religious-studies-religion-politics-and-global-affairs",
-  "name": "Religious Studies (Religion, Politics and Global Affairs),BA"
+  "name": "Religious Studies (Religion, Politics and Global Affairs),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LARELPGBA/null"
  },
  {
   "code": "ESRASBSE",
   "slug": "robotics-and-autonomous-systems",
-  "name": "Robotics and Autonomous Systems,BSE"
+  "name": "Robotics and Autonomous Systems,BSE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/ESRASBSE/null"
  },
  {
   "code": "LARUSBA",
   "slug": "russian",
-  "name": "Russian,BA"
+  "name": "Russian,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LARUSBA/null"
  },
  {
   "code": "CSSCOMBA",
   "slug": "science-communication",
-  "name": "Science Communication,BA"
+  "name": "Science Communication,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CCS/CSSCOMBA/null"
  },
  {
   "code": "ECSTSBS",
   "slug": "science-technology-and-society",
-  "name": "Science, Technology and Society,BS"
+  "name": "Science, Technology and Society,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/ECSTSBS/null"
  },
  {
   "code": "TEBIOBAE",
   "slug": "secondary-education-biological-sciences",
-  "name": "Secondary Education (Biological Sciences),BAE"
+  "name": "Secondary Education (Biological Sciences),BAE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/TEBIOBAE/null"
  },
  {
   "code": "EDESSBAE",
@@ -1952,92 +2325,110 @@
  {
   "code": "TEENGBAE",
   "slug": "secondary-education-english",
-  "name": "Secondary Education (English),BAE"
+  "name": "Secondary Education (English),BAE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/TEENGBAE/null"
  },
  {
   "code": "TEHISBAE",
   "slug": "secondary-education-history",
-  "name": "Secondary Education (History),BAE"
+  "name": "Secondary Education (History),BAE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/TEHISBAE/null"
  },
  {
   "code": "TEMATBAE",
   "slug": "secondary-education-mathematics",
-  "name": "Secondary Education (Mathematics),BAE"
+  "name": "Secondary Education (Mathematics),BAE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/TEMATBAE/null"
  },
  {
   "code": "TESEDBAE",
   "slug": "secondary-education",
-  "name": "Secondary Education,BAE"
+  "name": "Secondary Education,BAE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/TESEDBAE/null"
  },
  {
   "code": "ASJHRBA",
   "slug": "social-justice-and-human-rights",
-  "name": "Social Justice and Human Rights,BA"
+  "name": "Social Justice and Human Rights,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASJHRBA/null"
  },
  {
   "code": "PPSWUSWU",
   "slug": "social-work",
-  "name": "Social Work,BSW"
+  "name": "Social Work,BSW",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPSWUSWU/null"
  },
  {
   "code": "ASSBSBA",
   "slug": "social-and-behavioral-sciences",
-  "name": "Social and Behavioral Sciences,BA"
+  "name": "Social and Behavioral Sciences,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASSBSBA/null"
  },
  {
   "code": "ASSBSBS",
   "slug": "social-and-behavioral-sciences",
-  "name": "Social and Behavioral Sciences,BS"
+  "name": "Social and Behavioral Sciences,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASSBSBS/null"
  },
  {
   "code": "ASSCAASBA",
   "slug": "social-and-cultural-analysis-american-studies",
-  "name": "Social and Cultural Analysis (American Studies),BA"
+  "name": "Social and Cultural Analysis (American Studies),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASSCAASBA/null"
  },
  {
   "code": "ASSCAERBA",
   "slug": "social-and-cultural-analysis-ethnicity-race-and-indigenous-studies",
-  "name": "Social and Cultural Analysis (Ethnicity, Race and Indigenous Studies),BA"
+  "name": "Social and Cultural Analysis (Ethnicity, Race and Indigenous Studies),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASSCAERBA/null"
  },
  {
   "code": "ASSCAPSBA",
   "slug": "social-and-cultural-analysis-peace-studies",
-  "name": "Social and Cultural Analysis (Peace Studies),BA"
+  "name": "Social and Cultural Analysis (Peace Studies),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASSCAPSBA/null"
  },
  {
   "code": "ASSCAQSBA",
   "slug": "social-and-cultural-analysis-queer-and-sexuality-studies",
-  "name": "Social and Cultural Analysis (Queer and Sexuality Studies),BA"
+  "name": "Social and Cultural Analysis (Queer and Sexuality Studies),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASSCAQSBA/null"
  },
  {
   "code": "ASSCAWSBA",
   "slug": "social-and-cultural-analysis-women-and-gender-studies",
-  "name": "Social and Cultural Analysis (Women and Gender Studies),BA"
+  "name": "Social and Cultural Analysis (Women and Gender Studies),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASSCAWSBA/null"
  },
  {
   "code": "ASSOCBA",
   "slug": "sociology",
-  "name": "Sociology,BA"
+  "name": "Sociology,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASSOCBA/null"
  },
  {
   "code": "ASSOCBS",
   "slug": "sociology",
-  "name": "Sociology,BS"
+  "name": "Sociology,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASSOCBS/null"
  },
  {
   "code": "LASOCBS",
   "slug": "sociology",
-  "name": "Sociology,BS"
+  "name": "Sociology,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LASOCBS/null"
  },
  {
   "code": "TSSERBS",
   "slug": "software-engineering",
-  "name": "Software Engineering,BS"
+  "name": "Software Engineering,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSSERBS/null"
  },
  {
   "code": "ASSPABA",
   "slug": "spanish",
-  "name": "Spanish,BA"
+  "name": "Spanish,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASSPABA/null"
  },
  {
   "code": "LASPABA",
@@ -2047,161 +2438,193 @@
  {
   "code": "TESPCEDBAE",
   "slug": "special-education",
-  "name": "Special Education,BAE"
+  "name": "Special Education,BAE",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CTE/TESPCEDBAE/null"
  },
  {
   "code": "LASHSBS",
   "slug": "speech-and-hearing-science",
-  "name": "Speech and Hearing Science,BS"
+  "name": "Speech and Hearing Science,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/LASHSBS/null"
  },
  {
   "code": "PPTRMBS",
   "slug": "sport-and-recreation-management",
-  "name": "Sport and Recreation Management,BS"
+  "name": "Sport and Recreation Management,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPTRMBS/null"
  },
  {
   "code": "CSSPJBA",
   "slug": "sports-journalism",
-  "name": "Sports Journalism,BA"
+  "name": "Sports Journalism,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CCS/CSSPJBA/null"
  },
  {
   "code": "NHSSPPSCBS",
   "slug": "sports-science-and-performance-programming-strength-and-conditioning",
-  "name": "Sports Science and Performance Programming (Strength and Conditioning),BS"
+  "name": "Sports Science and Performance Programming (Strength and Conditioning),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/NHSSPPSCBS/null"
  },
  {
   "code": "NHSPTSPPBS",
   "slug": "sports-science-and-performance-programming",
-  "name": "Sports Science and Performance Programming,BS"
+  "name": "Sports Science and Performance Programming,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHL/NHSPTSPPBS/null"
  },
  {
   "code": "CSSPSTCOBA",
   "slug": "sports-strategic-communication",
-  "name": "Sports Strategic Communication,BA"
+  "name": "Sports Strategic Communication,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CCS/CSSPSTCOBA/null"
  },
  {
   "code": "ASSTABS",
   "slug": "statistics",
-  "name": "Statistics,BS"
+  "name": "Statistics,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CAS/ASSTABS/null"
  },
  {
   "code": "CSSTRCOMBA",
   "slug": "strategic-communication",
-  "name": "Strategic Communication,BA"
+  "name": "Strategic Communication,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CCS/CSSTRCOMBA/null"
  },
  {
   "code": "BASCMBS",
   "slug": "supply-chain-management",
-  "name": "Supply Chain Management,BS"
+  "name": "Supply Chain Management,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CBA/BASCMBS/null"
  },
  {
   "code": "SUSUSTBA",
   "slug": "sustainability",
-  "name": "Sustainability,BA"
+  "name": "Sustainability,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CGF/SUSUSTBA/null"
  },
  {
   "code": "SUSUSTBS",
   "slug": "sustainability",
-  "name": "Sustainability,BS"
+  "name": "Sustainability,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CGF/SUSUSTBS/null"
  },
  {
   "code": "SUSFOSYSBS",
   "slug": "sustainable-food-systems",
-  "name": "Sustainable Food Systems,BS"
+  "name": "Sustainable Food Systems,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CGF/SUSFOSYSBS/null"
  },
  {
   "code": "LSTECDVBS",
   "slug": "technical-communication-data-visualization",
-  "name": "Technical Communication (Data Visualization),BS"
+  "name": "Technical Communication (Data Visualization),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSTECDVBS/null"
  },
  {
   "code": "LSTECMHBS",
   "slug": "technical-communication-medical-and-health",
-  "name": "Technical Communication (Medical and Health),BS"
+  "name": "Technical Communication (Medical and Health),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSTECMHBS/null"
  },
  {
   "code": "LSTECSMMBS",
   "slug": "technical-communication-social-media-management",
-  "name": "Technical Communication (Social Media Management),BS"
+  "name": "Technical Communication (Social Media Management),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSTECSMMBS/null"
  },
  {
   "code": "LSTECUBS",
   "slug": "technical-communication-user-experience",
-  "name": "Technical Communication (User Experience),BS"
+  "name": "Technical Communication (User Experience),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSTECUBS/null"
  },
  {
   "code": "LSTECBS",
   "slug": "technical-communication",
-  "name": "Technical Communication,BS"
+  "name": "Technical Communication,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSTECBS/null"
  },
  {
   "code": "TSTEMBS",
   "slug": "technological-entrepreneurship-and-management",
-  "name": "Technological Entrepreneurship and Management,BS"
+  "name": "Technological Entrepreneurship and Management,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CES/TSTEMBS/null"
  },
  {
   "code": "LATECLDRBS",
   "slug": "technological-leadership",
-  "name": "Technological Leadership,BS"
+  "name": "Technological Leadership,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LATECLDRBS/null"
  },
  {
   "code": "FATHEABA",
   "slug": "theatre-acting",
-  "name": "Theatre (Acting),BA"
+  "name": "Theatre (Acting),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FATHEABA/null"
  },
  {
   "code": "FADSNPRBA",
   "slug": "theatre-design-and-production",
-  "name": "Theatre (Design and Production),BA"
+  "name": "Theatre (Design and Production),BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FADSNPRBA/null"
  },
  {
   "code": "FATHEBA",
   "slug": "theatre",
-  "name": "Theatre,BA"
+  "name": "Theatre,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FATHEBA/null"
  },
  {
   "code": "FAMUSTCBM",
   "slug": "theory-and-composition-composition",
-  "name": "Theory and Composition (Composition),BMUS"
+  "name": "Theory and Composition (Composition),BMUS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAMUSTCBM/null"
  },
  {
   "code": "FAMUSTTBM",
   "slug": "theory-and-composition-theory",
-  "name": "Theory and Composition (Theory),BMUS"
+  "name": "Theory and Composition (Theory),BMUS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CHI/FAMUSTTBM/null"
  },
  {
   "code": "PPTDMMEBS",
   "slug": "tourism-development-and-management-meetings-and-events",
-  "name": "Tourism Development and Management (Meetings and Events),BS"
+  "name": "Tourism Development and Management (Meetings and Events),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPTDMMEBS/null"
  },
  {
   "code": "PPTDMRBS",
   "slug": "tourism-development-and-management-resort-and-hotel-leadership",
-  "name": "Tourism Development and Management (Resort and Hotel Leadership),BS"
+  "name": "Tourism Development and Management (Resort and Hotel Leadership),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPTDMRBS/null"
  },
  {
   "code": "PPTDMSBS",
   "slug": "tourism-development-and-management-sustainable-tourism",
-  "name": "Tourism Development and Management (Sustainable Tourism),BS"
+  "name": "Tourism Development and Management (Sustainable Tourism),BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPTDMSBS/null"
  },
  {
   "code": "PPTDMBS",
   "slug": "tourism-development-and-management",
-  "name": "Tourism Development and Management,BS"
+  "name": "Tourism Development and Management,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CPP/PPTDMBS/null"
  },
  {
   "code": "LATCLBA",
   "slug": "transborder-chicana-o-and-latina-o-studies",
-  "name": "Transborder Chicana/o and Latina/o Studies,BA"
+  "name": "Transborder Chicana/o and Latina/o Studies,BA",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/LATCLBA/null"
  },
  {
   "code": "ARPUPBSP",
   "slug": "urban-planning",
-  "name": "Urban Planning,BSP"
+  "name": "Urban Planning,BSP",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLA/ARPUPBSP/null"
  },
  {
   "code": "LSUSEXBS",
   "slug": "user-experience",
-  "name": "User Experience,BS"
+  "name": "User Experience,BS",
+  "checksheet_url": "https://degrees.apps.asu.edu/checksheet/2026/CLS/LSUSEXBS/null"
  }
 ]
