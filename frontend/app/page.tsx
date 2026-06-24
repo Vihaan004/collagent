@@ -1,28 +1,29 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import { api } from "@/lib/api";
 import { streamDashboardRefresh } from "@/lib/dashboardRefresh";
-import type { Profile, DashboardView } from "@/lib/types";
-import Card from "@/components/ui/Card";
-import Badge from "@/components/ui/Badge";
+import type { DashboardView, Profile } from "@/lib/types";
 import Button from "@/components/ui/Button";
+import Eyebrow from "@/components/ui/Eyebrow";
+import Markdown from "@/components/ui/Markdown";
 import EventCard from "@/components/EventCard";
 import PersonCard from "@/components/PersonCard";
-import { EmptyState, Spinner } from "@/components/ui/States";
+import NewsCard from "@/components/NewsCard";
+import { Spinner } from "@/components/ui/States";
 
 const EMPTY_VIEW: DashboardView = {
   brief_md: "", generated_at: null, news: [], events: [], people: [], deadlines: [],
 };
 
-function formatDate(iso: string | null): string {
-  if (!iso) return "TBD";
-  const d = new Date(iso);
-  if (isNaN(d.getTime())) return iso; // calendar dates may be non-ISO strings
-  return d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
-}
+// How many items each dashboard panel previews before "View all". Tuned so the page
+// holds on one screen; the rest live on the dedicated pages.
+const LIMITS = { events: 4, people: 4, news: 6 };
+
+const TODAY = new Date().toLocaleDateString(undefined, {
+  weekday: "long", month: "long", day: "numeric",
+});
 
 export default function HomePage() {
   const router = useRouter();
@@ -61,116 +62,135 @@ export default function HomePage() {
   if (!profile) return <main className="p-6"><Spinner /></main>;
 
   const v = view;
-  const everythingEmpty =
-    !!v && !v.brief_md && v.news.length === 0 && v.events.length === 0 &&
-    v.people.length === 0 && v.deadlines.length === 0;
+  const firstName = profile.full_name ? profile.full_name.split(" ")[0] : null;
+  const events = (v?.events ?? []).slice(0, LIMITS.events);
+  const people = (v?.people ?? []).slice(0, LIMITS.people);
+  const news = (v?.news ?? []).slice(0, LIMITS.news);
+  // Split news into two newspaper-style columns to use the wide bottom band.
+  const newsCols = [news.filter((_, i) => i % 2 === 0), news.filter((_, i) => i % 2 === 1)];
 
   return (
-    <main className="mx-auto max-w-3xl space-y-8 p-6">
-      <header className="flex items-end justify-between gap-4">
-        <div>
-          <h1 className="font-display text-4xl leading-tight text-ink">
-            Hey{profile.full_name ? `, ${profile.full_name.split(" ")[0]}` : ""}
-          </h1>
-          <p className="mt-2 text-sm text-muted">
-            {profile.major_name ?? "No major set"}
-            {profile.academic_year ? ` · ${profile.academic_year}` : ""}
-          </p>
-        </div>
-        <Button onClick={refresh} disabled={step !== null} className="shrink-0">
-          {step !== null ? "Refreshing…" : "Refresh my dashboard"}
-        </Button>
-      </header>
+    <main className="lg:h-[calc(100vh-57px)] lg:overflow-hidden">
+      <div className="grid h-full grid-cols-1 lg:grid-cols-[minmax(280px,23%)_1fr]">
+        {/* ── Masthead / Brief rail ─────────────────────────────────────────── */}
+        <aside className="flex min-h-0 flex-col border-b border-line bg-surface/50 lg:border-b-0 lg:border-r">
+          <div className="border-b border-line px-6 pb-5 pt-6">
+            <div className="flex items-center justify-between gap-3">
+              <Eyebrow>The Daily Brief</Eyebrow>
+              <span className="font-mono text-[11px] text-muted">{TODAY}</span>
+            </div>
+            <h1 className="mt-3 font-display text-[2rem] leading-tight text-ink">
+              Hey{firstName ? <>, <span className="italic text-naval">{firstName}</span></> : ""}
+            </h1>
+            <p className="mt-1 text-sm text-muted">
+              {profile.major_name ?? "No major set"}
+              {profile.academic_year ? ` · ${profile.academic_year}` : ""}
+            </p>
+            <Button onClick={refresh} disabled={step !== null} className="mt-4 w-full">
+              {step !== null ? "Refreshing…" : "Refresh my dashboard"}
+            </Button>
+            {step !== null && (
+              <p className="mt-3 flex items-center gap-2 text-xs text-muted">
+                <span className="h-3 w-3 animate-spin rounded-full border-2 border-line-strong border-t-naval" />
+                {step}
+              </p>
+            )}
+            {error && <p className="mt-3 text-xs text-orange">{error}</p>}
+          </div>
 
-      {step !== null && (
-        <p className="flex items-center gap-2 text-sm text-muted">
-          <span className="h-3 w-3 animate-spin rounded-full border-2 border-line-strong border-t-naval" />
-          {step}
-        </p>
-      )}
-      {error && <p className="text-sm text-orange">{error}</p>}
+          <div className="thin-scroll min-h-0 flex-1 overflow-y-auto px-6 py-5">
+            {!v ? (
+              <Spinner />
+            ) : v.brief_md ? (
+              <Markdown>{v.brief_md}</Markdown>
+            ) : (
+              <p className="text-sm text-muted">
+                Your brief is empty. Hit <span className="font-medium text-ink">Refresh my dashboard</span> and
+                Collagent will pull together your week — deadlines, events, people, and the
+                ASU news that matters to you.
+              </p>
+            )}
+          </div>
+        </aside>
 
-      {!v ? (
-        <Spinner />
-      ) : everythingEmpty && step === null ? (
-        <EmptyState
-          title="Your Daily Brief is empty"
-          hint="Hit “Refresh my dashboard” and Collagent will pull together your events, people, news, and deadlines."
-          action={<Button onClick={refresh}>Refresh my dashboard</Button>}
-        />
-      ) : (
-        <div className="space-y-8">
-          {v.brief_md && (
-            <Card>
-              <div className="chat-md">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>{v.brief_md}</ReactMarkdown>
-              </div>
-            </Card>
-          )}
-
-          {v.deadlines.length > 0 && (
-            <Section title="Upcoming Deadlines">
-              <Card>
-                <ul className="space-y-2">
-                  {v.deadlines.map((c) => (
-                    <li key={c.id} className="flex items-center gap-3 text-sm">
-                      <span className="w-14 shrink-0 font-medium text-naval">{formatDate(c.date_start)}</span>
-                      <span className="flex-1 text-ink">{c.title}</span>
-                      {c.category && <Badge>{c.category}</Badge>}
-                    </li>
-                  ))}
+        {/* ── Panels: Events + People over News ─────────────────────────────── */}
+        <section className="grid min-h-0 grid-cols-1 lg:grid-rows-[minmax(0,1fr)_minmax(0,1fr)]">
+          <div className="grid min-h-0 grid-cols-1 lg:grid-cols-2">
+            <Panel label="Events" href="/events" count={v?.events.length}>
+              {!v ? (
+                <PanelEmpty muted>Loading…</PanelEmpty>
+              ) : events.length ? (
+                <ul className="divide-y divide-line">
+                  {events.map((rec) => <EventCard key={rec.id} rec={rec} compact />)}
                 </ul>
-              </Card>
-            </Section>
-          )}
+              ) : (
+                <PanelEmpty>No events yet — refresh to find some.</PanelEmpty>
+              )}
+            </Panel>
+            <Panel label="People" href="/people" count={v?.people.length}
+              className="border-t border-line lg:border-l lg:border-t-0">
+              {!v ? (
+                <PanelEmpty muted>Loading…</PanelEmpty>
+              ) : people.length ? (
+                <ul className="divide-y divide-line">
+                  {people.map((rec) => <PersonCard key={rec.id} rec={rec} compact />)}
+                </ul>
+              ) : (
+                <PanelEmpty>No people yet — refresh to find collaborators.</PanelEmpty>
+              )}
+            </Panel>
+          </div>
 
-          {v.news.length > 0 && (
-            <Section title="ASU Happenings">
-              <ul className="space-y-4">
-                {v.news.map((n, i) => (
-                  <Card as="li" key={n.id ?? i}>
-                    <a href={n.url} target="_blank" rel="noopener noreferrer"
-                      className="font-medium text-ink hover:text-naval hover:underline">
-                      {n.title}
-                    </a>
-                    {n.summary && <p className="mt-1 text-sm text-muted">{n.summary}</p>}
-                    {n.why_note && (
-                      <p className="mt-3 rounded-r-md border-l-[3px] border-orange bg-cream-200 px-3 py-2 text-sm leading-relaxed text-ink/90">
-                        {n.why_note}
-                      </p>
-                    )}
-                  </Card>
+          <Panel label="News" href="/news" count={v?.news.length}
+            className="border-t border-line">
+            {!v ? (
+              <PanelEmpty muted>Loading…</PanelEmpty>
+            ) : news.length ? (
+              <div className="grid grid-cols-1 gap-x-10 lg:grid-cols-2">
+                {newsCols.map((col, i) => (
+                  <ul key={i} className="divide-y divide-line">
+                    {col.map((n, j) => <NewsCard key={n.id ?? `${i}-${j}`} item={n} compact />)}
+                  </ul>
                 ))}
-              </ul>
-            </Section>
-          )}
-
-          {v.events.length > 0 && (
-            <Section title="Recommended Events">
-              <ul className="space-y-4">
-                {v.events.map((rec) => <EventCard key={rec.id} rec={rec} />)}
-              </ul>
-            </Section>
-          )}
-
-          {v.people.length > 0 && (
-            <Section title="People to Connect">
-              <ul className="space-y-4">
-                {v.people.map((rec) => <PersonCard key={rec.id} rec={rec} />)}
-              </ul>
-            </Section>
-          )}
-        </div>
-      )}
+              </div>
+            ) : (
+              <PanelEmpty>No news yet — refresh to pull the latest from ASU.</PanelEmpty>
+            )}
+          </Panel>
+        </section>
+      </div>
     </main>
   );
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Panel({
+  label, href, count, children, className = "",
+}: {
+  label: string;
+  href: string;
+  count?: number;
+  children: ReactNode;
+  className?: string;
+}) {
   return (
-    <section>
-      <h2 className="mb-3 font-display text-xl text-ink">{title}</h2>
-      {children}
-    </section>
+    <div className={`flex min-h-0 flex-col ${className}`}>
+      <div className="flex items-center justify-between gap-3 px-5 pb-3 pt-4">
+        <span className="flex items-center gap-2.5">
+          <Eyebrow>{label}</Eyebrow>
+          {count !== undefined && count > 0 && (
+            <span className="font-mono text-[11px] text-muted/70">{count}</span>
+          )}
+        </span>
+        <Link href={href}
+          className="text-xs font-medium text-muted transition-colors hover:text-naval">
+          View all →
+        </Link>
+      </div>
+      <div className="thin-scroll min-h-0 flex-1 overflow-y-auto px-5 pb-5">{children}</div>
+    </div>
   );
+}
+
+function PanelEmpty({ children, muted = false }: { children: ReactNode; muted?: boolean }) {
+  return <p className={`pt-2 text-sm ${muted ? "text-muted/70" : "text-muted"}`}>{children}</p>;
 }

@@ -5,6 +5,9 @@ import { createClient } from "@/lib/supabase/client";
 
 const LINKS = [
   { href: "/", label: "Home" },
+  { href: "/events", label: "Events" },
+  { href: "/people", label: "People" },
+  { href: "/news", label: "News" },
   { href: "/chat", label: "Chat" },
   { href: "/profile", label: "Profile" },
 ];
@@ -20,18 +23,18 @@ export default function Nav() {
   }
 
   return (
-    <nav className="sticky top-0 z-20 flex items-center gap-6 border-b border-line bg-surface/90 px-6 py-3 backdrop-blur">
-      <Link href="/" className="font-display text-xl tracking-tight text-naval">
+    <nav className="thin-scroll sticky top-0 z-20 flex items-center gap-5 overflow-x-auto border-b border-line bg-surface/90 px-6 py-3 backdrop-blur">
+      <Link href="/" className="shrink-0 font-display text-xl tracking-tight text-naval">
         collagent
       </Link>
-      <div className="flex items-center gap-5">
+      <div className="flex shrink-0 items-center gap-5">
         {LINKS.map((l) => {
           const active = l.href === "/" ? pathname === "/" : pathname.startsWith(l.href);
           return (
             <Link
               key={l.href}
               href={l.href}
-              className={`relative pb-0.5 text-sm tracking-wide transition-colors ${
+              className={`relative shrink-0 pb-0.5 text-sm tracking-wide transition-colors ${
                 active ? "text-ink" : "text-muted hover:text-ink"
               }`}
             >
@@ -45,7 +48,7 @@ export default function Nav() {
       </div>
       <button
         onClick={signOut}
-        className="ml-auto text-sm tracking-wide text-muted transition-colors hover:text-ink"
+        className="ml-auto shrink-0 pl-4 text-sm tracking-wide text-muted transition-colors hover:text-ink"
       >
         Sign out
       </button>
