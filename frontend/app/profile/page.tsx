@@ -1,8 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
-import type { CurriculumView, Memory, Profile } from "@/lib/types";
-import Markdown from "@/components/ui/Markdown";
+import type { CurriculumLink, Memory, Profile } from "@/lib/types";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import { Field, Input, Textarea } from "@/components/ui/Field";
@@ -15,7 +14,7 @@ export default function ProfilePage() {
   const [goals, setGoals] = useState("");
   const [saved, setSaved] = useState(false);
   const [memories, setMemories] = useState<Memory[]>([]);
-  const [curriculum, setCurriculum] = useState<CurriculumView | null>(null);
+  const [curriculum, setCurriculum] = useState<CurriculumLink | null>(null);
   const [curriculumLoading, setCurriculumLoading] = useState(true);
 
   useEffect(() => {
@@ -83,23 +82,24 @@ export default function ProfilePage() {
         <h2 className="mb-3 font-display text-xl text-ink">Your curriculum</h2>
         {curriculumLoading ? (
           <Spinner />
-        ) : curriculum?.markdown ? (
+        ) : curriculum?.checksheet_url ? (
           <Card>
-            <Markdown>{curriculum.markdown}</Markdown>
-            {curriculum.checksheet_url && (
-              <a
-                href={curriculum.checksheet_url}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 inline-block text-xs text-muted underline hover:text-ink"
-              >
-                View official ASU checksheet
-              </a>
-            )}
+            <p className="text-sm text-ink">
+              Your official ASU degree checksheet lists every course required for{" "}
+              {curriculum.program_name ?? "your program"}.
+            </p>
+            <a
+              href={curriculum.checksheet_url}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-block text-sm text-naval underline hover:text-orange"
+            >
+              View curriculum on degrees.asu.edu →
+            </a>
           </Card>
         ) : (
           <p className="text-sm text-muted">
-            No curriculum on file for your program yet.
+            No curriculum link on file for your program yet.
           </p>
         )}
       </section>

@@ -9,10 +9,12 @@ import httpx
 from bs4 import BeautifulSoup
 
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
-# "3 Credit Hours Minimum Grade:C" trails every requirement label — drop it.
-_CREDIT_TAIL = re.compile(r"\s*\d+(?:\.\d+)?\s*Credit Hours.*$", re.IGNORECASE | re.DOTALL)
 _WS = re.compile(r"\s+")
 _CACHE: dict[str, str] = {}
+# Requirements offering more alternatives than this are elective/specialization
+# pools — collapse them to a count instead of dumping every option (the dumps
+# were hundreds of duplicated courses, useless as agent context).
+_POOL_THRESHOLD = 8
 
 
 def _clean(text: str) -> str:
@@ -20,24 +22,42 @@ def _clean(text: str) -> str:
 
 
 def render_checksheet_markdown(html: str) -> str:
+    """Render a checksheet to a lean course list: section headers + each
+    requirement's course(s). Courses come only from `a.ttCourse` anchors (each
+    is "CODE Title"), so prose notes, regulations, and GPA rules — which live in
+    sibling elements with no anchor — are dropped. Large pools collapse to a
+    count. The goal is to highlight a program's courses, not reproduce the page."""
     soup = BeautifulSoup(html, "html.parser")
-    lines: list[str] = []
+    out: list[str] = []
+    section: str | None = None
+    section_emitted = False
     for tr in soup.find_all("tr"):
         sub = tr.find("td", class_="subsection-name")
         if sub is not None:
-            lines.append(f"\n## {_clean(sub.get_text())}")
+            section = _clean(sub.get_text())
+            section_emitted = False
             continue
         if "checksheet-requirement" not in (tr.get("class") or []):
             continue
+        courses: list[str] = []
+        for a in tr.select("a.ttCourse"):
+            c = _clean(a.get_text())
+            if c and c not in courses:  # dedupe within the row
+                courses.append(c)
+        if not courses:
+            continue  # note / regulation / placement row — no course, skip
         tds = tr.find_all("td", recursive=False)
-        if not tds:
-            continue
-        label = _clean(_CREDIT_TAIL.sub("", tds[0].get_text()))
-        if not label:
-            continue
         credits = _clean(tds[2].get_text()) if len(tds) > 2 else ""
-        lines.append(f"- {label}" + (f" — {credits} cr" if credits else ""))
-    return "\n".join(lines).strip()
+        cr = f" — {credits} cr" if credits else ""
+        if len(courses) > _POOL_THRESHOLD:
+            line = f"- Elective — choose from {len(courses)} courses{cr}"
+        else:
+            line = f"- {' OR '.join(courses)}{cr}"
+        if section is not None and not section_emitted:
+            out.append(f"\n## {section}")
+            section_emitted = True
+        out.append(line)
+    return "\n".join(out).strip()
 
 
 def fetch_curriculum(url: str) -> str:

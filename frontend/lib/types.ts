@@ -109,8 +109,7 @@ export interface DashboardView {
   deadlines: CalendarItem[];
 }
 
-export interface CurriculumView {
+export interface CurriculumLink {
   program_name: string | null;
   checksheet_url: string | null;
-  markdown: string | null;
 }
