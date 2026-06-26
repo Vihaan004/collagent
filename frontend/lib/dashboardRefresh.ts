@@ -24,9 +24,12 @@ export const REFRESH_PROMPT = "Refresh my dashboard";
 export async function streamDashboardRefresh(
   onStep: (label: string) => void,
 ): Promise<void> {
+  // Each refresh runs on its own fresh thread: it must always re-run the full pipeline
+  // (a reused thread lets the agent short-circuit on "already refreshed") and it keeps
+  // the refresh's tool chatter out of the user's "web" chat history.
   const res = await apiFetch("/api/chat", {
     method: "POST",
-    body: JSON.stringify({ message: REFRESH_PROMPT, thread_id: "web" }),
+    body: JSON.stringify({ message: REFRESH_PROMPT, thread_id: `refresh-${Date.now()}` }),
   });
   const reader = res.body!.getReader();
   const decoder = new TextDecoder();

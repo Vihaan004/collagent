@@ -1,14 +1,13 @@
 "use client";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import { apiFetch } from "@/lib/api";
-import Button from "@/components/ui/Button";
+import Markdown from "@/components/ui/Markdown";
 
 interface Msg {
-  role: "user" | "assistant" | "tool";
+  role: "user" | "assistant";
   content: string;
+  tools?: string[]; // tool names used during this assistant turn (deduped, in order)
 }
 
 function ChatInner() {
@@ -17,6 +16,7 @@ function ChatInner() {
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const taRef = useRef<HTMLTextAreaElement>(null);
   const busyRef = useRef(false);
 
   const sendMessage = useCallback(async (text: string) => {
@@ -25,6 +25,16 @@ function ChatInner() {
     busyRef.current = true;
     setBusy(true);
     setMessages((m) => [...m, { role: "user", content: trimmed }, { role: "assistant", content: "" }]);
+
+    // Append a tool name to the in-flight assistant turn (the last message), deduped.
+    const addTool = (name: string) =>
+      setMessages((m) => {
+        const copy = [...m];
+        const last = copy[copy.length - 1];
+        const tools = last.tools ?? [];
+        if (!tools.includes(name)) copy[copy.length - 1] = { ...last, tools: [...tools, name] };
+        return copy;
+      });
 
     try {
       const res = await apiFetch("/api/chat", {
@@ -46,37 +56,29 @@ function ChatInner() {
           if (event.type === "token") {
             setMessages((m) => {
               const copy = [...m];
-              copy[copy.length - 1] = {
-                role: "assistant",
-                content: copy[copy.length - 1].content + event.content,
-              };
+              const last = copy[copy.length - 1];
+              copy[copy.length - 1] = { ...last, content: last.content + event.content };
               return copy;
             });
-          } else if (event.type === "tool") {
-            const args =
-              event.args && Object.keys(event.args).length
-                ? `(${JSON.stringify(event.args)})`
-                : "";
-            setMessages((m) => [
-              ...m.slice(0, -1),
-              { role: "tool", content: `Using ${event.name}${args}` },
-              m[m.length - 1],
-            ]);
-          } else if (event.type === "tool_result") {
-            const preview = String(event.content ?? "").replace(/\s+/g, " ").slice(0, 300);
-            setMessages((m) => [
-              ...m.slice(0, -1),
-              { role: "tool", content: `↳ ${event.name}: ${preview || "(no result)"}` },
-              m[m.length - 1],
-            ]);
+          } else if (event.type === "tool" && event.name) {
+            // Record the tool used; results are intentionally not surfaced in the UI.
+            addTool(event.name);
           } else if (event.type === "error") {
-            setMessages((m) => [...m, { role: "assistant", content: "Something went wrong — try again." }]);
+            setMessages((m) => {
+              const copy = [...m];
+              copy[copy.length - 1] = { ...copy[copy.length - 1], content: "Something went wrong — try again." };
+              return copy;
+            });
           }
           bottomRef.current?.scrollIntoView({ behavior: "smooth" });
         }
       }
     } catch {
-      setMessages((m) => [...m, { role: "assistant", content: "Something went wrong — try again." }]);
+      setMessages((m) => {
+        const copy = [...m];
+        copy[copy.length - 1] = { ...copy[copy.length - 1], content: "Something went wrong — try again." };
+        return copy;
+      });
     } finally {
       busyRef.current = false;
       setBusy(false);
@@ -97,60 +99,125 @@ function ChatInner() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
+  function submit() {
     const text = input;
     setInput("");
+    if (taRef.current) taRef.current.style.height = "auto";
     void sendMessage(text);
   }
 
+  function onKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      submit();
+    }
+  }
+
+  function autosize(el: HTMLTextAreaElement) {
+    el.style.height = "auto";
+    el.style.height = `${Math.min(el.scrollHeight, 200)}px`;
+  }
+
+  const empty = messages.length === 0;
+
   return (
-    <main className="mx-auto flex h-[calc(100vh-57px)] w-full max-w-2xl flex-col p-4">
-      <div className="flex-1 space-y-4 overflow-y-auto px-1 pb-4">
-        {messages.length === 0 && (
-          <div className="pt-16 text-center">
-            <p className="font-display text-2xl text-ink">Ask Collagent</p>
-            <p className="mx-auto mt-2 max-w-sm text-sm text-muted">
-              Anything about your classes, ASU, events, people to meet, or your degree plan.
-            </p>
-          </div>
-        )}
-        {messages.map((m, i) =>
-          m.role === "tool" ? (
-            <div key={i} className="flex justify-center">
-              <span className="rounded-full bg-cream-200 px-3 py-1 font-mono text-[11px] text-muted">
-                {m.content}
-              </span>
-            </div>
-          ) : m.role === "user" ? (
-            <div key={i} className="ml-auto max-w-[85%] rounded-2xl rounded-br-sm bg-naval px-4 py-2.5 text-sm leading-relaxed text-paper">
-              {m.content}
+    <main className="flex h-[calc(100vh-57px)] flex-col">
+      {/* Full-width scroller so the scrollbar sits at the page's right edge, with the
+          conversation centered in a comfortable reading column inside it. */}
+      <div className="flex-1 overflow-y-auto">
+        <div className="mx-auto w-full max-w-3xl px-4">
+          {empty ? (
+            <div className="pt-24 text-center">
+              <p className="font-display text-3xl text-ink">Ask Collagent</p>
+              <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-muted">
+                Anything about your classes, ASU, events, people to meet, or your degree plan.
+              </p>
             </div>
           ) : (
-            <div key={i} className="max-w-[88%] rounded-2xl rounded-bl-sm border border-line bg-surface px-4 py-2.5 text-sm text-ink">
-              {m.content ? (
-                <div className="chat-md">
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{m.content}</ReactMarkdown>
-                </div>
-              ) : (
-                <span className="inline-flex gap-1 text-muted">
-                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-line-strong [animation-delay:-0.2s]" />
-                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-line-strong [animation-delay:-0.1s]" />
-                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-line-strong" />
-                </span>
+            <div className="space-y-7 py-8">
+              {messages.map((m, i) =>
+                m.role === "user" ? (
+                  <div key={i} className="flex justify-end">
+                    <div className="max-w-[80%] rounded-2xl rounded-br-sm bg-naval px-4 py-2.5 text-[15px] leading-relaxed text-paper">
+                      {m.content}
+                    </div>
+                  </div>
+                ) : (
+                  <div key={i} className="text-[15px] leading-7 text-ink">
+                    {m.content ? (
+                      <Markdown>{m.content}</Markdown>
+                    ) : (
+                      !m.tools?.length && (
+                        <span className="inline-flex gap-1 text-muted">
+                          <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-line-strong [animation-delay:-0.2s]" />
+                          <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-line-strong [animation-delay:-0.1s]" />
+                          <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-line-strong" />
+                        </span>
+                      )
+                    )}
+                    {m.tools && m.tools.length > 0 && <ToolList tools={m.tools} />}
+                  </div>
+                )
               )}
             </div>
-          )
-        )}
-        <div ref={bottomRef} />
+          )}
+          <div ref={bottomRef} />
+        </div>
       </div>
-      <form onSubmit={onSubmit} className="flex gap-2 border-t border-line pt-3">
-        <input value={input} onChange={(e) => setInput(e.target.value)}
-          placeholder="Message Collagent…"
-          className="flex-1 rounded-lg border border-line-strong bg-surface px-3 py-2 text-sm text-ink placeholder:text-muted/70 focus:border-naval" />
-        <Button type="submit" disabled={busy}>Send</Button>
-      </form>
+
+      {/* Composer: send is an icon button inside the box. */}
+      <div className="bg-paper">
+        <div className="mx-auto w-full max-w-3xl px-4 py-3">
+          <div className="relative flex items-end rounded-2xl border border-line-strong bg-surface focus-within:border-naval">
+            <textarea
+              ref={taRef}
+              value={input}
+              rows={1}
+              onChange={(e) => {
+                setInput(e.target.value);
+                autosize(e.target);
+              }}
+              onKeyDown={onKeyDown}
+              placeholder="Message Collagent…"
+              className="max-h-[200px] flex-1 resize-none bg-transparent py-3 pl-4 pr-12 text-[15px] leading-relaxed text-ink placeholder:text-muted/70 focus:outline-none"
+            />
+            <button
+              type="button"
+              onClick={submit}
+              disabled={busy || !input.trim()}
+              aria-label="Send message"
+              className="absolute bottom-2 right-2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-naval text-paper transition-colors hover:bg-naval-700 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 19V5M5 12l7-7 7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
+  );
+}
+
+// Collapsible list of the tools the agent used for a turn. Names only — results are
+// deliberately hidden to keep the conversation readable.
+function ToolList({ tools }: { tools: string[] }) {
+  return (
+    <details className="group mt-3">
+      <summary className="inline-flex cursor-pointer list-none items-center gap-1.5 text-xs text-muted transition-colors hover:text-ink [&::-webkit-details-marker]:hidden">
+        <svg viewBox="0 0 24 24" className="h-3 w-3 transition-transform group-open:rotate-90" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+        Used {tools.length} {tools.length === 1 ? "tool" : "tools"}
+      </summary>
+      <ul className="mt-1.5 ml-1.5 space-y-1 border-l border-line pl-3">
+        {tools.map((t, j) => (
+          <li key={j} className="font-mono text-[11px] text-muted">
+            {t}
+          </li>
+        ))}
+      </ul>
+    </details>
   );
 }
 

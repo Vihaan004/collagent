@@ -60,3 +60,13 @@ def test_prompt_includes_orchestrator_full_refresh_flow():
     assert "update_profile" in out  # vs persistent-interest path
     # still present when the student is fully onboarded
     assert "save_dashboard_brief" in build_system_prompt(PROFILE, COURSES)
+
+
+def test_prompt_makes_reading_the_default_over_refreshing():
+    # The agent must answer everyday questions from the curated store and only run the
+    # expensive refresh_* pipelines on an explicit request.
+    out = build_system_prompt(PROFILE, COURSES)
+    low = out.lower()
+    assert "get_person_recommendations" in out and "get_event_recommendations" in out
+    assert "explicitly" in low  # refresh gated behind an explicit ask
+    assert "do not regenerate" in low or "do not refresh" in low

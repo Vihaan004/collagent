@@ -39,21 +39,28 @@ def make_dashboard_tools(user_id: str) -> list:
     # ---- deterministic pipeline tools (write to DB, return only a status) ----
     @tool("refresh_events")
     def refresh_events(focus: list[str] | None = None) -> str:
-        """Re-ingest upcoming ASU events and regenerate this student's ranked event
-        recommendations. Writes to the database (the dashboard's Events section reflects
-        it). Returns a short status, not the data. Pass `focus` (a few keywords) for a
-        one-off refresh weighted toward those topics WITHOUT changing the saved profile;
-        focus re-ranks the upcoming-events feed toward those topics."""
+        """Only call when the student EXPLICITLY asks to refresh/update/regenerate events
+        (or their dashboard). For ordinary "what events are coming up?" questions, read the
+        existing recommendations with get_event_recommendations instead — do not refresh by
+        default. Re-ingest upcoming ASU events and regenerate this student's ranked event
+        recommendations, OVERWRITING the saved ones. Writes to the database (the dashboard's
+        Events section reflects it). Returns a short status, not the data. Pass `focus` (a
+        few keywords) for a one-off refresh weighted toward those topics WITHOUT changing
+        the saved profile; focus re-ranks the upcoming-events feed toward those topics."""
         db.upsert_events(fetch_upcoming_events())
         recs = curate_events(user_id, focus=focus)
         return f"Events refreshed: {len(recs)} recommendations{_focus_suffix(focus)}."
 
     @tool("refresh_people")
     def refresh_people(focus: list[str] | None = None) -> str:
-        """Re-ingest ASU faculty/staff matched to this student and regenerate ranked
-        people-to-contact recommendations. Writes to the database. Returns a short
-        status, not the data. Pass `focus` (a few keywords) for a one-off refresh aimed
-        at those topics WITHOUT changing the saved profile; focus both seeds the directory
+        """Only call when the student EXPLICITLY asks to refresh/update/regenerate their
+        people (or their dashboard). For ordinary "who should I reach out to?" questions,
+        read the existing recommendations with get_person_recommendations instead — do not
+        refresh by default; use search_people for an ad-hoc person/topic lookup. Re-ingest
+        ASU faculty/staff matched to this student and regenerate ranked people-to-contact
+        recommendations, OVERWRITING the saved ones. Writes to the database. Returns a short
+        status, not the data. Pass `focus` (a few keywords) for a one-off refresh aimed at
+        those topics WITHOUT changing the saved profile; focus both seeds the directory
         search and weights the ranking."""
         profile = db.get_profile(user_id)
         terms = _merge_focus(query_terms(profile), focus)
@@ -63,8 +70,11 @@ def make_dashboard_tools(user_id: str) -> list:
 
     @tool("refresh_news")
     def refresh_news() -> str:
-        """Re-ingest open-web ASU news via web search and update the shared news cache.
-        Returns a short status. No-ops if the news provider key is unset."""
+        """Only call when the student EXPLICITLY asks to refresh/update news (or their
+        dashboard). For ordinary "what's new at ASU?" questions, read the cache with
+        get_news instead — do not refresh by default. Re-ingest open-web ASU news via web
+        search and update the shared news cache. Returns a short status. No-ops if the news
+        provider key is unset."""
         rows = fetch_news()
         if rows:
             db.upsert_news_items(rows)
@@ -72,9 +82,12 @@ def make_dashboard_tools(user_id: str) -> list:
 
     @tool("update_calendar")
     def update_calendar() -> str:
-        """Re-ingest the current term's ASU academic calendar (deadlines, breaks,
-        registration windows) from the registrar and update the stored calendar. Returns
-        a short status. (The calendar can only be re-ingested, never hand-edited.)"""
+        """Only call when the student EXPLICITLY asks to refresh/update the calendar (or
+        their dashboard). For ordinary "any deadlines?" questions, read the stored calendar
+        with get_deadlines instead — do not re-ingest by default. Re-ingest the current
+        term's ASU academic calendar (deadlines, breaks, registration windows) from the
+        registrar and update the stored calendar. Returns a short status. (The calendar can
+        only be re-ingested, never hand-edited.)"""
         rows = fetch_calendar()
         if rows:
             db.upsert_calendar_items(rows)
